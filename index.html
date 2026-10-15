@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website demos for local trades</title>
+<meta name="description" content="Three example websites for fictional Australian trade businesses: a plumber, an electrician and a landscaper.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315191e'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
+<style>
+  :root { --text: #15191e; --muted: #4a5360; --line: #dde1e7; --bg: #f5f6f8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 400 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--text); background: var(--bg); }
+  main { max-width: 1040px; margin: 0 auto; padding: 56px 20px 64px; }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 12px; letter-spacing: -.02em; }
+  .lead { color: var(--muted); font-size: 1.2rem; max-width: 40em; margin: 0 0 12px; }
+  .note { display: inline-block; background: #fff4c2; border: 1px solid #e8d77a; color: #3d3100; padding: 8px 14px; border-radius: 10px; font-size: .95rem; margin: 8px 0 32px; }
+  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  li a { display: block; height: 100%; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.08); transition: transform .15s; }
+  li a:hover { transform: translateY(-2px); }
+  li a:focus-visible { outline: 3px solid #15191e; outline-offset: 3px; }
+  .swatch { height: 96px; display: flex; align-items: flex-end; padding: 14px 20px; color: #fff; font-weight: 800; font-size: 1.25rem; }
+  .body { padding: 18px 20px 22px; }
+  .body p { margin: 0 0 10px; color: var(--muted); }
+  .tag { display: inline-block; font-size: .85rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--bg); color: var(--text); margin-right: 6px; }
+  .go { font-weight: 700; color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: .95rem; }
+  @media (prefers-reduced-motion: reduce) { li a { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Website demos for local trades</h1>
+  <p class="lead">Three example websites for Australian trade businesses, each built from a short intake form. Fast on phones, easy to call from, and checked for accessibility before launch.</p>
+  <p class="note"><strong>All three businesses are fictional.</strong> Names, prices, phone numbers and emails are made up for these demos.</p>
+  <ul>
+    <li><a href="plumber/">
+      <div class="swatch" style="background:#12395c">Ironbark Plumbing Co.</div>
+      <div class="body"><p>Plumber, Parramatta area. Pricing table and question assistant.</p><span class="tag">Assistant on</span><p class="go">View the plumber demo</p></div>
+    </a></li>
+    <li><a href="electrician/">
+      <div class="swatch" style="background:#1f2933">Tallowwood Electrical</div>
+      <div class="body"><p>Electrician, Penrith area. Emergency call-outs and question assistant.</p><span class="tag">Assistant on</span><p class="go">View the electrician demo</p></div>
+    </a></li>
+    <li><a href="landscaper/">
+      <div class="swatch" style="background:#1e4d2b">Greenline Garden Care</div>
+      <div class="body"><p>Landscaper, Castle Hill area. Simple site without the assistant.</p><span class="tag">Assistant off</span><p class="go">View the landscaper demo</p></div>
+    </a></li>
+  </ul>
+  <footer><p>Each demo includes a verification checklist (CHECKLIST.md in its folder) with accessibility and performance results.</p></footer>
+</main>
+</body>
+</html>
