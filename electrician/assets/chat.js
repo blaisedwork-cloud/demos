@@ -52,6 +52,17 @@
     });
     if (best) return { text: best.a, src: 'From our FAQs: "' + best.q + '"' };
 
+    // 1b. Other ways of asking an FAQ, listed per site in faqs[].also (e.g. "credit card" for
+    //     "How do I pay?"). Every word of a phrase must be in the question, and only one FAQ
+    //     may match: if two do, it's ambiguous, so fall through rather than guess.
+    var alsoHits = data.faqs.filter(function (f) {
+      return (f.also || []).some(function (phrase) {
+        var pw = unique(words(phrase));
+        return pw.length && pw.every(function (w) { return qw.indexOf(w) !== -1; });
+      });
+    });
+    if (alsoHits.length === 1) return { text: alsoHits[0].a, src: 'From our FAQs: "' + alsoHits[0].q + '"' };
+
     // 2. Built-in answers drawn strictly from the site's own details.
     if (data.emergency && /\b(emergenc\w*|urgent|burst|after.?hours?|out of hours|night)\b/.test(lower)) {
       return { text: data.emergency.replace(/\.$/, '') + '. Call ' + data.phone + '.', src: 'Emergency service' };

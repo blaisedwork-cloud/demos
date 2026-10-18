@@ -14,7 +14,7 @@ Site: `electrician` · Checked: 2026-10-17 · Tool: tools/verify-site/verify.js
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | marked "needs review": privacy.html, terms.html |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 96, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 95, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/electrician/checks/ |
 
@@ -36,8 +36,13 @@ PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed 
 | Do you offer a warranty? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
 | Can you install solar panels? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
 | asdf | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
+| Do you take Visa? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
+| Can I pay by bank transfer? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
+| Is there a callout charge? | contains "$110" | Yes, our call-out fee is $110 including GST, which covers travel and the first 20 minutes. From our FAQs: "Do you charge a call-out fee?" | PASS |
+| Do you take cash? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
+| Can you come out today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
 
-12/12 passed.
+17/17 passed.
 
 ## Manual review (2026-10-15, Claude Code)
 
@@ -48,3 +53,14 @@ PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed 
 | PASS | Screenshots look right by eye | Phone, tablet and desktop in `checks/`. Header, hero card, cards, pricing table, FAQ and footer all render cleanly. |
 | CHECK | External link oaic.gov.au | Unreachable from the build sandbox (network policy); it's a government site. Re-check on the live demo. |
 | PASS | Visual polish pass (2026-10-17) | Visual direction set; checked at 375, 768 and 1280px (no horizontal scroll) in light and dark mode; skill checklist run (see LOG 2026-10-17). |
+
+## Copy review (overnight run 1, 2026-10-17, Claude): awaiting owner review
+
+Checked every string in `site.json` and the built page for wording, grammar and Australian spelling (en-AU). No US spellings found. Facts (phone, prices, hours, licence) were checked against `intake.json` and **none were changed**.
+
+| Where | Now | Proposed | Applied? |
+|---|---|---|---|
+| `whyUs[0].text` | "We're owner-operated by a local sparky." (awkward: "operated by" a person) | "The owner, a local sparky, is on every job." (same facts as the intake: "Owner-operated by a local sparky" and "Owner on every job") | **Yes** |
+| `whyUs[2].text` | "We explain what we found before we fix it, and we always clean up." | Fine as is (two intake facts in one line) | No change |
+
+**Copy fixes applied: 1** (`whyUs[0].text`, listed above).
