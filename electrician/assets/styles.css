@@ -350,7 +350,7 @@ body.dir-flow {
 .dir-flow .hero .btn-ghost { color: #f2fbfb; }
 .pulse { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; margin: 0 0 var(--s3); border-radius: 999px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .25); font-weight: 600; }
 .pulse-dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--alert); flex: none; }
-.pulse-dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--alert); animation: ping 2s ease-out infinite; }
+.pulse-dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--alert); animation: ping 2s ease-out 3; }
 @keyframes ping { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
 .art-flow .pipe { stroke: rgba(242, 251, 251, .9); stroke-width: 34; stroke-linecap: round; stroke-dasharray: 1; animation: draw 1.8s cubic-bezier(.6, 0, .2, 1) backwards; }
 .art-flow .pipe-flow { stroke: var(--aqua); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 18 26; animation: flow 1.6s linear 1.6s 2, fadein 1s ease 1.6s backwards; }
@@ -389,3 +389,38 @@ body.dir-lawn {
 .rhythm-m { font-weight: 700; font-size: .875rem; color: var(--muted); }
 @media (min-width: 700px) { .rhythm { gap: 12px; } .rhythm-bar { height: 140px; } .rhythm-bar i { height: 64px; } .rhythm-m { font-size: 1rem; } }
 .svc-note { margin-top: var(--s3); }
+
+/* ===================== Motion (assets/motion.js adds .js; nothing is hidden without it) ===================== */
+.js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .5s cubic-bezier(.22, 1, .36, 1), transform .5s cubic-bezier(.22, 1, .36, 1); transition-delay: calc(var(--i, 0) * 80ms); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+.js .rhythm li[data-reveal] { transform: none; }
+.js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(0); transform-origin: bottom; transition: transform .6s cubic-bezier(.22, 1, .36, 1) calc(var(--i, 0) * 60ms + .15s); }
+.js .rhythm li.in .rhythm-bar i { transform: none; }
+.split .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+.split .w > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
+@keyframes rise { to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal], .js .rhythm li[data-reveal] .rhythm-bar i, .split .w > span { opacity: 1 !important; transform: none !important; } }
+
+/* Service rows: hover feedback (UI/UX Pro Max "Home Services": service menu animations) */
+.svc li { transition: background-color .2s ease; border-radius: 4px; }
+.svc-mark { transition: transform .2s cubic-bezier(.22, 1, .36, 1); }
+@media (hover: hover) { .svc li:hover { background: var(--brand-tint); } .svc li:hover .svc-mark { transform: translateX(4px); } }
+.btn-accent:hover:not(:disabled) { transform: translateY(-1px); }
+
+/* Moving strip: pause on hover or focus, and a visible pause button (WCAG 2.2.2) */
+.marquee-wrap { background: var(--bg); border-bottom: 1px solid var(--line); }
+.marquee { border-bottom: 0; }
+.marquee-wrap:hover .track, .marquee.paused .track { animation-play-state: paused; }
+.marquee-toggle { margin: 0 0 var(--s2); min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: 600 .9375rem/1.2 var(--font-body); cursor: pointer; }
+.marquee-toggle:hover { background: var(--surface); }
+@media (prefers-reduced-motion: reduce) { .marquee-toggle { display: none; } }
+
+/* Photo band (labelled AI-generated on demos) */
+.band { margin: 0; position: relative; }
+.band img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.band figcaption { font-size: .875rem; color: var(--muted); padding-top: 10px; padding-bottom: 10px; }
+@media (min-width: 700px) { .band img { aspect-ratio: 21 / 8; } }
+.dir-blueprint .band img { filter: saturate(.85) brightness(.92); }
+
+/* Phones: keep a keyboard-focused control from hiding under the call bar (WCAG 2.4.11) */
+@media (max-width: 767px) { html { scroll-padding-bottom: 96px; } }
