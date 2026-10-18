@@ -5,16 +5,16 @@ Site: `electrician` · Checked: 2026-10-18 · Tool: tools/verify-site/verify.js
 | Result | Check | Notes |
 |---|---|---|
 | PASS | No placeholder text, lorem ipsum or unfilled values | 3 pages scanned |
-| PASS | Internal links and anchors resolve | 13 internal links/anchors checked |
+| PASS | Internal links and anchors resolve | 12 internal links/anchors checked |
 | CHECK | External links load | https://www.oaic.gov.au: unreachable from this machine (ENOTFOUND) |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/electrician/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
+| PASS | Keyboard navigation and visible focus | 24 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | marked "needs review": privacy.html, terms.html |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 95, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 33, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/electrician/checks/ |
 
@@ -41,8 +41,10 @@ PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed 
 | Is there a callout charge? | contains "$110" | Yes, our call-out fee is $110 including GST, which covers travel and the first 20 minutes. From our FAQs: "Do you charge a call-out fee?" | PASS |
 | Do you take cash? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
 | Can you come out today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
+| How do I pay? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
+| Can I pay later? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
 
-17/17 passed.
+19/19 passed.
 
 ## Manual review (2026-10-15, Claude Code)
 
@@ -64,3 +66,5 @@ Checked every string in `site.json` and the built page for wording, grammar and 
 | `whyUs[2].text` | "We explain what we found before we fix it, and we always clean up." | Fine as is (two intake facts in one line) | No change |
 
 **Copy fixes applied: 1** (`whyUs[0].text`, listed above).
+
+| PASS | Redesign (2026-10-18) | Own art direction per trade (see docs/design/demo-redesign-2026-10-18.md). Every new section uses only intake facts; no photos, stats or reviews invented. Checked by eye at 1440px and 390px in light and dark mode. |

@@ -5,16 +5,16 @@ Site: `plumber` · Checked: 2026-10-18 · Tool: tools/verify-site/verify.js
 | Result | Check | Notes |
 |---|---|---|
 | PASS | No placeholder text, lorem ipsum or unfilled values | 3 pages scanned |
-| PASS | Internal links and anchors resolve | 13 internal links/anchors checked |
+| PASS | Internal links and anchors resolve | 11 internal links/anchors checked |
 | CHECK | External links load | https://www.oaic.gov.au: unreachable from this machine (ENOTFOUND) |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/plumber/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
+| PASS | Keyboard navigation and visible focus | 23 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | marked "needs review": privacy.html, terms.html |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 98, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 97, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/plumber/checks/ |
 
@@ -41,8 +41,10 @@ PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed 
 | Can you come out today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
 | Do you take Afterpay? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
 | Can I pay by the hour? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
+| How do I pay? | contains "card, bank transfer and cash" | We accept card, bank transfer and cash. Payment is due when the job is finished. From our FAQs: "How do I pay?" | PASS |
+| Can I pay later? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
 
-17/17 passed.
+19/19 passed.
 
 ## Manual review (2026-10-15, Claude Code)
 
@@ -65,3 +67,5 @@ Checked every string in `site.json` and the built page for wording, grammar and 
 | Unused intake fact | The intake says customers can email a photo of the problem | Could become an FAQ ("Can I send a photo?"), using the intake's own words | No: adds content, not a copy fix |
 
 No grammar or spelling errors found. **Copy fixes applied: none.**
+
+| PASS | Redesign (2026-10-18) | Own art direction per trade (see docs/design/demo-redesign-2026-10-18.md). Every new section uses only intake facts; no photos, stats or reviews invented. Checked by eye at 1440px and 390px in light and dark mode. |

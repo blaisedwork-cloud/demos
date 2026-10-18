@@ -48,7 +48,9 @@
     data.faqs.forEach(function (f) {
       var m = matched(qw, f.q);
       var score = m / qw.length;
-      if (m >= 2 && score >= 0.6 && score > bestScore) { bestScore = score; best = f; }
+      // Exact match of a short FAQ (e.g. "How can I pay?" leaves only "pay") also counts.
+      var exact = m === qw.length && unique(words(f.q)).length === m;
+      if (((m >= 2 && score >= 0.6) || exact) && score > bestScore) { bestScore = score; best = f; }
     });
     if (best) return { text: best.a, src: 'From our FAQs: "' + best.q + '"' };
 

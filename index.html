@@ -3,51 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Website demos for local trades</title>
-<meta name="description" content="Three example websites for fictional Australian trade businesses: a plumber, an electrician and a landscaper.">
+<title>Website demos for local tradies</title>
+<meta name="description" content="Three sample websites for made-up Australian trade businesses: an electrician, a plumber and a landscaper.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315191e'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#14181d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314181d'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
 <style>
-  :root { --text: #15191e; --muted: #4a5360; --line: #dde1e7; --bg: #f5f6f8; }
+  :root { color-scheme: light dark; --bg: #f3f4f1; --raised: #ffffff; --text: #14181d; --muted: #4b5360; --line: #d9ddd5; --note-bg: #fff4c2; --note-line: #e8d77a; --note-text: #3d3100; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111417; --raised: #1a1f24; --text: #ecefeb; --muted: #aeb6bf; --line: #2c333b; --note-bg: #2b2509; --note-line: #4d431a; --note-text: #f3e6a6; } }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 400 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--text); background: var(--bg); }
-  main { max-width: 1040px; margin: 0 auto; padding: 56px 20px 64px; }
-  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 12px; letter-spacing: -.02em; }
-  .lead { color: var(--muted); font-size: 1.2rem; max-width: 40em; margin: 0 0 12px; }
-  .note { display: inline-block; background: #fff4c2; border: 1px solid #e8d77a; color: #3d3100; padding: 8px 14px; border-radius: 10px; font-size: .95rem; margin: 8px 0 32px; }
-  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  li a { display: block; height: 100%; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.08); transition: transform .15s; }
-  li a:hover { transform: translateY(-2px); }
-  li a:focus-visible { outline: 3px solid #15191e; outline-offset: 3px; }
-  .swatch { height: 96px; display: flex; align-items: flex-end; padding: 14px 20px; color: #fff; font-weight: 800; font-size: 1.25rem; }
-  .body { padding: 18px 20px 22px; }
-  .body p { margin: 0 0 10px; color: var(--muted); }
-  .tag { display: inline-block; font-size: .85rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--bg); color: var(--text); margin-right: 6px; }
-  .go { font-weight: 700; color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 400 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: clamp(40px, 7vw, 88px) 20px 64px; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.25rem); line-height: 1; letter-spacing: -.035em; margin: 0 0 16px; max-width: 13ch; font-weight: 800; }
+  .lead { color: var(--muted); font-size: 1.2rem; max-width: 34em; margin: 0 0 16px; }
+  .note { display: inline-block; background: var(--note-bg); border: 1px solid var(--note-line); color: var(--note-text); padding: 8px 14px; border-radius: 10px; font-size: .95rem; margin: 0 0 clamp(32px, 5vw, 56px); }
+  .demos { list-style: none; padding: 0; margin: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .demos a { display: block; color: inherit; text-decoration: none; border-radius: 28px; }
+  .demos a:focus-visible { outline: 3px solid var(--text); outline-offset: 6px; }
+  .phone { aspect-ratio: 390 / 720; border-radius: 28px; overflow: hidden; border: 6px solid var(--text); background: var(--raised); box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .35); transition: transform .2s; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .demos a:hover .phone { transform: translateY(-4px); }
+  .demos h2 { font-size: 1.35rem; margin: 18px 0 2px; letter-spacing: -.01em; }
+  .demos p { margin: 0; color: var(--muted); }
+  .demos .go { color: var(--text); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; margin-top: 6px; }
+  .offer { margin-top: clamp(56px, 9vw, 104px); padding-top: 32px; border-top: 2px solid var(--text); display: grid; gap: 24px; }
+  .offer h2 { font-size: clamp(1.6rem, 3.6vw, 2.25rem); letter-spacing: -.02em; margin: 0; line-height: 1.1; }
+  .offer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .offer li { padding-left: 28px; position: relative; }
+  .offer li::before { content: ""; position: absolute; left: 0; top: .55em; width: 12px; height: 12px; border-radius: 3px; background: var(--text); }
+  .offer strong { display: block; }
+  @media (min-width: 860px) { .offer { grid-template-columns: 1fr 1.6fr; gap: 64px; } .offer ul { grid-template-columns: 1fr 1fr; gap: 20px 40px; } }
   footer { margin-top: 48px; color: var(--muted); font-size: .95rem; }
-  @media (prefers-reduced-motion: reduce) { li a { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .phone { transition: none; } }
 </style>
 </head>
 <body>
 <main>
-  <h1>Website demos for local trades</h1>
-  <p class="lead">Three example websites for Australian trade businesses, each built from a short intake form. Fast on phones, easy to call from, and checked for accessibility before launch.</p>
-  <p class="note"><strong>All three businesses are fictional.</strong> Names, prices, phone numbers and emails are made up for these demos.</p>
-  <ul>
-    <li><a href="plumber/">
-      <div class="swatch" style="background:#12395c">Ironbark Plumbing Co.</div>
-      <div class="body"><p>Plumber, Parramatta area. Pricing table and question assistant.</p><span class="tag">Assistant on</span><p class="go">View the plumber demo</p></div>
-    </a></li>
+  <h1>Websites for local tradies</h1>
+  <p class="lead">Three sample sites, each with its own look for its trade. Tap one to see how it works on your phone.</p>
+  <p class="note"><strong>All three businesses are made up.</strong> Their names, prices, phone numbers and emails aren't real.</p>
+  <ul class="demos">
     <li><a href="electrician/">
-      <div class="swatch" style="background:#1f2933">Tallowwood Electrical</div>
-      <div class="body"><p>Electrician, Penrith area. Emergency call-outs and question assistant.</p><span class="tag">Assistant on</span><p class="go">View the electrician demo</p></div>
+      <div class="phone"><img src="thumb-electrician.jpg" alt="" width="390" height="720" loading="eager"></div>
+      <h2>Tallowwood Electrical</h2><p>Electrician around Penrith</p><p class="go">See the electrician site</p>
+    </a></li>
+    <li><a href="plumber/">
+      <div class="phone"><img src="thumb-plumber.jpg" alt="" width="390" height="720" loading="lazy"></div>
+      <h2>Ironbark Plumbing Co.</h2><p>Plumber around Parramatta</p><p class="go">See the plumber site</p>
     </a></li>
     <li><a href="landscaper/">
-      <div class="swatch" style="background:#1e4d2b">Greenline Garden Care</div>
-      <div class="body"><p>Landscaper, Castle Hill area. Simple site without the assistant.</p><span class="tag">Assistant off</span><p class="go">View the landscaper demo</p></div>
+      <div class="phone"><img src="thumb-landscaper.jpg" alt="" width="390" height="720" loading="lazy"></div>
+      <h2>Greenline Garden Care</h2><p>Lawn and garden care around Castle Hill</p><p class="go">See the landscaper site</p>
     </a></li>
   </ul>
-  <footer><p>Each demo includes a verification checklist (CHECKLIST.md in its folder) with accessibility and performance results.</p></footer>
+  <section class="offer" aria-labelledby="offer-title">
+    <h2 id="offer-title">What you'd get</h2>
+    <ul>
+      <li><strong>A one-page site for your trade</strong>Your services, prices if you want them, hours, suburbs and a big call button.</li>
+      <li><strong>Your licence number and ABN on show</strong>Licence details are required in advertising for many trades in NSW and QLD.</li>
+      <li><strong>Live about a week after your details are in</strong>A 5-minute form on your phone, then a quick call.</li>
+      <li><strong>$990, and you own your web address</strong>No lock-in. An optional monthly plan from $39 if you want someone to look after it.</li>
+    </ul>
+  </section>
+  <footer><p>Each sample site has a checklist (CHECKLIST.md in its folder) with its accessibility and speed results.</p></footer>
 </main>
 </body>
 </html>

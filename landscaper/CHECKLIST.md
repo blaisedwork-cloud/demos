@@ -5,16 +5,16 @@ Site: `landscaper` · Checked: 2026-10-18 · Tool: tools/verify-site/verify.js
 | Result | Check | Notes |
 |---|---|---|
 | PASS | No placeholder text, lorem ipsum or unfilled values | 3 pages scanned |
-| PASS | Internal links and anchors resolve | 13 internal links/anchors checked |
+| PASS | Internal links and anchors resolve | 12 internal links/anchors checked |
 | CHECK | External links load | https://www.oaic.gov.au: unreachable from this machine (ENOTFOUND) |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/landscaper/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 21 stops; skip link first: true; stops without visible focus: 0; n/a |
+| PASS | Keyboard navigation and visible focus | 20 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | marked "needs review": privacy.html, terms.html |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 99, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 69, accessibility 100, best-practices 100, seo 63 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/landscaper/checks/ |
 
@@ -41,3 +41,5 @@ Checked every string in `site.json` and the built page for wording, grammar and 
 | `services[0].icon` | "clock" for mowing | Not copy; a "leaf" or a mower icon would fit better (template has no mower icon) | No |
 
 No grammar or spelling errors found. **Copy fixes applied: none.**
+
+| PASS | Redesign (2026-10-18) | Own art direction per trade (see docs/design/demo-redesign-2026-10-18.md). Every new section uses only intake facts; no photos, stats or reviews invented. Checked by eye at 1440px and 390px in light and dark mode. |
