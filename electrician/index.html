@@ -11,6 +11,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-1.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/inter-2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
 <style>@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/space-grotesk-1.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}:root{--brand:#0b1f3a;--brand-ink:#ffffff;--brand-dark:#08172c;--brand-text-light:#0b1f3a;--brand-text-on-dark:#858f9d;--brand-tint-light:#e7e9eb;--brand-tint-on-dark:#17202d;--accent:#ffb020;--accent-ink:#111418;--accent-hover:#ffbc41;--font-head:'Space Grotesk', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--font-body:'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif}</style>
+<link rel="preload" as="image" href="images/hero-1200.webp" imagesrcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-2048.webp 2048w" imagesizes="100vw" fetchpriority="high">
 </head>
 <body class="texture-grid dir-blueprint">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,8 +24,9 @@
   </div>
 </header>
 <main id="main">
-<section class="hero hero-dir" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
+<section class="hero hero-dir hero-photo" aria-labelledby="hero-title" data-hero>
+  <div class="hero-media"><img src="images/hero-1200.webp" srcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-2048.webp 2048w" sizes="100vw" alt="A brick home at dusk with warm light in every window" width="2048" height="1152" decoding="async" fetchpriority="high" style="object-position:50% 55%"></div><div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-grid hero-solo">
     <div class="hero-copy">
       <p class="eyebrow">Electrician in Penrith, St Marys and Kingswood</p>
       
@@ -36,28 +38,7 @@
       </div>
       <ul class="trust"><li><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 5 5 9-10"/></svg><span>Owner on every job</span></li><li><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 5 5 9-10"/></svg><span>Residential specialists</span></li></ul>
     </div>
-    <div class="hero-art" aria-hidden="true"><svg class="art art-blueprint" viewBox="0 0 560 420" fill="none" focusable="false">
-<rect class="box" x="16" y="40" width="70" height="92" rx="6" style="--d:0s"/><text class="lbl small" x="22" y="158" style="--d:.4s">Meter</text>
-<path class="wire" pathLength="1" d="M86 86 H120 V60 H150" style="--d:.2s"/>
-<rect class="box" pathLength="1" x="120" y="60" width="104" height="330" rx="8" style="--d:.3s"/><text class="lbl small" x="126" y="410" style="--d:.6s">Switchboard</text>
-<path class="house" pathLength="1" d="M248 392 V140 L392 40 L536 140 V392 Z" style="--d:.4s"/>
-<rect class="sw" x="150" y="167" width="44" height="18" rx="3" style="--d:0.5s"/>
-<path class="wire" pathLength="1" d="M194 176 H520" style="--d:0.7s"/>
-<circle class="node" cx="520" cy="176" r="5" style="--d:1.4s"/>
-<text class="lbl" x="262" y="165" style="--d:1.5s">Switchboard upgrades</text><rect class="sw" x="150" y="215" width="44" height="18" rx="3" style="--d:0.62s"/>
-<path class="wire" pathLength="1" d="M194 224 H520" style="--d:0.85s"/>
-<circle class="node" cx="520" cy="224" r="5" style="--d:1.5499999999999998s"/>
-<text class="lbl" x="262" y="213" style="--d:1.65s">Safety switch installation</text><rect class="sw" x="150" y="262" width="44" height="18" rx="3" style="--d:0.74s"/>
-<path class="wire" pathLength="1" d="M194 271 H520" style="--d:1s"/>
-<circle class="node" cx="520" cy="271" r="5" style="--d:1.7s"/>
-<text class="lbl" x="262" y="260" style="--d:1.8s">Lighting and downlights</text><rect class="sw" x="150" y="310" width="44" height="18" rx="3" style="--d:0.86s"/>
-<path class="wire" pathLength="1" d="M194 319 H520" style="--d:1.15s"/>
-<circle class="node" cx="520" cy="319" r="5" style="--d:1.8499999999999999s"/>
-<text class="lbl" x="262" y="308" style="--d:1.95s">Power points</text><rect class="sw" x="150" y="357" width="44" height="18" rx="3" style="--d:0.98s"/>
-<path class="wire" pathLength="1" d="M194 366 H520" style="--d:1.2999999999999998s"/>
-<circle class="node" cx="520" cy="366" r="5" style="--d:2s"/>
-<text class="lbl" x="262" y="355" style="--d:2.1s">Fault finding</text>
-</svg></div>
+    
   </div>
 </section>
 <section class="rail" aria-labelledby="rail-title">
@@ -83,42 +64,70 @@
       <h2 id="services-title">Services</h2>
       
     </div>
-    <ul class="svc" data-reveal-group><li>
+    <div class="svc-wrap"><div><ul class="svc" data-reveal-group><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><span class="breaker"></span></span>
         <div class="svc-body"><h3>Switchboard upgrades</h3><p>Replacing old ceramic-fuse switchboards with modern boards and safety switches.</p></div>
         <p class="svc-price">Quote on inspection</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><span class="breaker"></span></span>
         <div class="svc-body"><h3>Safety switch installation</h3><p>Installing safety switches on the circuits in your home.</p></div>
         <p class="svc-price">From $250</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><span class="breaker"></span></span>
         <div class="svc-body"><h3>Lighting and downlights</h3><p>New lighting, LED downlight swaps and outdoor lights.</p></div>
         
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><span class="breaker"></span></span>
         <div class="svc-body"><h3>Power points</h3><p>Extra power points and USB outlets inside or outside.</p></div>
         <p class="svc-price">From $150</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><span class="breaker"></span></span>
         <div class="svc-body"><h3>Fault finding</h3><p>Tracking down tripping safety switches and dead circuits.</p></div>
         
-      </li></ul><p class="fine svc-note">A guide to common jobs. Call for a quote on anything not listed. All prices include GST.</p>
+      </li></ul><p class="fine svc-note">A guide to common jobs. Call for a quote on anything not listed. All prices include GST.</p></div><div class="svc-art" aria-hidden="true" data-scrub><svg class="art art-blueprint" viewBox="0 0 560 420" fill="none" focusable="false">
+<rect class="box" x="16" y="40" width="70" height="92" rx="6" style="--d:0s;--k:0.00"/><text class="lbl small" x="22" y="158" style="--d:.4s;--k:0.40">Meter</text>
+<path class="wire" pathLength="1" d="M86 86 H120 V60 H150" style="--d:.2s;--k:0.20"/>
+<rect class="box" pathLength="1" x="120" y="60" width="104" height="330" rx="8" style="--d:.3s;--k:0.30"/><text class="lbl small" x="126" y="410" style="--d:.6s;--k:0.60">Switchboard</text>
+<path class="house" pathLength="1" d="M248 392 V140 L392 40 L536 140 V392 Z" style="--d:.4s;--k:0.40"/>
+<rect class="sw" x="150" y="167" width="44" height="18" rx="3" style="--d:0.5s;--k:0.50"/>
+<path class="wire" pathLength="1" d="M194 176 H520" style="--d:0.7s;--k:0.70"/>
+<circle class="node" cx="520" cy="176" r="5" style="--d:1.4s;--k:1.40"/>
+<text class="lbl" x="262" y="165" style="--d:1.5s;--k:1.50">Switchboard upgrades</text><rect class="sw" x="150" y="215" width="44" height="18" rx="3" style="--d:0.62s;--k:0.62"/>
+<path class="wire" pathLength="1" d="M194 224 H520" style="--d:0.85s;--k:0.85"/>
+<circle class="node" cx="520" cy="224" r="5" style="--d:1.5499999999999998s;--k:1.55"/>
+<text class="lbl" x="262" y="213" style="--d:1.65s;--k:1.65">Safety switch installation</text><rect class="sw" x="150" y="262" width="44" height="18" rx="3" style="--d:0.74s;--k:0.74"/>
+<path class="wire" pathLength="1" d="M194 271 H520" style="--d:1s;--k:1.00"/>
+<circle class="node" cx="520" cy="271" r="5" style="--d:1.7s;--k:1.70"/>
+<text class="lbl" x="262" y="260" style="--d:1.8s;--k:1.80">Lighting and downlights</text><rect class="sw" x="150" y="310" width="44" height="18" rx="3" style="--d:0.86s;--k:0.86"/>
+<path class="wire" pathLength="1" d="M194 319 H520" style="--d:1.15s;--k:1.15"/>
+<circle class="node" cx="520" cy="319" r="5" style="--d:1.8499999999999999s;--k:1.85"/>
+<text class="lbl" x="262" y="308" style="--d:1.95s;--k:1.95">Power points</text><rect class="sw" x="150" y="357" width="44" height="18" rx="3" style="--d:0.98s;--k:0.98"/>
+<path class="wire" pathLength="1" d="M194 366 H520" style="--d:1.2999999999999998s;--k:1.30"/>
+<circle class="node" cx="520" cy="366" r="5" style="--d:2s;--k:2.00"/>
+<text class="lbl" x="262" y="355" style="--d:2.1s;--k:2.10">Fault finding</text>
+</svg></div></div>
   </div>
 </section>
-<figure class="band" data-reveal>
-  <img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="Close-up of a residential switchboard with rows of circuit breakers" width="1600" height="900" loading="lazy" decoding="async">
-  <figcaption class="wrap">AI-generated image, made for this demo. A real site uses your own photos.</figcaption>
-</figure>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/lights-1600.webp" srcset="images/lights-800.webp 800w, images/lights-1600.webp 1600w" sizes="100vw" alt="A living room at night lit by warm LED downlights" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">New lighting, LED downlight swaps and outdoor lights.</span></p>
+  
+</div>
 <section id="how" class="section section-alt" aria-labelledby="how-title">
   <div class="wrap split">
     <div class="section-head">
       <h2 id="how-title">How a job goes</h2>
       
     </div>
-    <ol class="process" data-reveal-group><li><h3>Call or book a time</h3><p>Mon–Fri 7am–4pm, Saturdays by appointment.</p></li><li><h3>We find the problem</h3><p>The owner comes out and tracks down the fault.</p></li><li><h3>We explain before we fix</h3><p>We tell you what we found before we fix it.</p></li><li><h3>Fixed, and cleaned up</h3><p>We always clean up when we finish.</p></li></ol>
+    <ol class="process" data-reveal-group data-scrub><li data-lamp><h3>Call or book a time</h3><p>Mon–Fri 7am–4pm, Saturdays by appointment.</p></li><li data-lamp><h3>We find the problem</h3><p>The owner comes out and tracks down the fault.</p></li><li data-lamp><h3>We explain before we fix</h3><p>We tell you what we found before we fix it.</p></li><li data-lamp><h3>Fixed, and cleaned up</h3><p>We always clean up when we finish.</p></li></ol>
   </div>
 </section>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="Close-up of a residential switchboard with rows of circuit breakers" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">We explain what we found before we fix it.</span></p>
+  
+</div>
+
 
 <section id="why-us" class="section section-alt" aria-labelledby="why-title">
   <div class="wrap">
@@ -127,6 +136,12 @@
     
   </div>
 </section>
+<div class="band" data-scrub>
+  <div class="band-media"><img src="images/outdoor-1600.webp" srcset="images/outdoor-800.webp 800w, images/outdoor-1600.webp 1600w" sizes="100vw" alt="An outdoor wall light and a garden path at dusk" width="1600" height="900" decoding="async" loading="lazy"></div>
+  
+  
+</div>
+
 
 
 <section id="faq" class="section section-alt" aria-labelledby="faq-title">
@@ -144,6 +159,7 @@
     </div>
   </div>
 </section>
+
 <section id="contact" class="section contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div>

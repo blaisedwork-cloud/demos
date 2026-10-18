@@ -34,10 +34,34 @@
   .offer strong { display: block; }
   @media (min-width: 860px) { .offer { grid-template-columns: 1fr 1.6fr; gap: 64px; } .offer ul { grid-template-columns: 1fr 1fr; gap: 20px 40px; } }
   footer { margin-top: 48px; color: var(--muted); font-size: .95rem; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1120px; margin: 0 auto; padding: 14px 20px; }
+  .brand { font-weight: 800; letter-spacing: -.02em; font-size: 1.15rem; }
+  .brand span { display: block; font-weight: 500; font-size: .9rem; color: var(--muted); letter-spacing: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); color: var(--text); }
+  .btn-main { background: #ff6a13; border-color: #ff6a13; color: #121417; }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .bar .btn { display: none; }
+  @media (min-width: 640px) { .bar .btn { display: inline-flex; } }
+  .contact { margin-top: clamp(56px, 9vw, 104px); padding: clamp(28px, 5vw, 48px); border-radius: 20px; background: #121417; color: #f3f4f1; }
+  .contact h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3.6vw, 2.25rem); letter-spacing: -.02em; line-height: 1.1; }
+  .contact p { margin: 0 0 20px; color: #c9ced4; max-width: 36em; }
+  .contact .btn { border-color: #f3f4f1; color: #f3f4f1; }
+  .contact .btn-main { border-color: #ff6a13; color: #121417; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .actionbar { display: none; }
+  @media (max-width: 639px) {
+    .actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--raised); border-top: 1px solid var(--line); }
+    body { padding-bottom: 78px; }
+    html { scroll-padding-bottom: 96px; }
+  }
   @media (prefers-reduced-motion: reduce) { .phone { transition: none; } }
 </style>
 </head>
 <body>
+<header class="bar">
+  <div class="brand">Job Done Websites<span>Blaise · Albury–Wodonga · working Australia-wide</span></div>
+  <a class="btn btn-main" href="tel:0475151548">Call Blaise 0475 151 548</a>
+</header>
 <main>
   <h1>Websites for local tradies</h1>
   <p class="lead">Three sample sites, each with its own look for its trade. Tap one to see how it works on your phone.</p>
@@ -60,12 +84,17 @@
     <h2 id="offer-title">What you'd get</h2>
     <ul>
       <li><strong>A one-page site for your trade</strong>Your services, prices if you want them, hours, suburbs and a big call button.</li>
-      <li><strong>Your licence number and ABN on show</strong>Licence details are required in advertising for many trades in NSW and QLD.</li>
+      <li><strong>Your licence number and ABN on show</strong>Many trades must show licence details in advertising, like NSW and QLD licences and Victorian electrical contractors' REC numbers.</li>
       <li><strong>Live about a week after your details are in</strong>A 5-minute form on your phone, then a quick call.</li>
       <li><strong>$990, and you own your web address</strong>No lock-in. An optional monthly plan from $39 if you want someone to look after it.</li>
     </ul>
   </section>
-  <footer><p>Each sample site has a checklist (CHECKLIST.md in its folder) with its accessibility and speed results.</p></footer>
+  <section class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Want one for your business?</h2>
+    <p>Call or text Blaise. I'll have a look at what you've got now and tell you straight whether a site is worth it for you.</p>
+    <div class="ctas"><a class="btn btn-main" href="tel:0475151548">Call 0475 151 548</a><a class="btn" href="sms:0475151548">Text Blaise</a></div>
+  </section>
 </main>
+<nav class="actionbar" aria-label="Contact Blaise"><a class="btn btn-main" href="tel:0475151548">Call Blaise</a><a class="btn" href="sms:0475151548">Text</a></nav>
 </body>
 </html>

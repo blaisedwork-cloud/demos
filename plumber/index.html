@@ -11,6 +11,7 @@
 <link rel="preload" href="assets/fonts/manrope-1.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/inter-2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
 <style>@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/manrope-1.woff2) format('woff2')}@font-face{font-family:'Manrope';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/manrope-1.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-2.woff2) format('woff2')}:root{--brand:#06343f;--brand-ink:#ffffff;--brand-dark:#05272f;--brand-text-light:#06343f;--brand-text-on-dark:#768f95;--brand-tint-light:#e6ebec;--brand-tint-on-dark:#15262e;--accent:#3fd0c9;--accent-ink:#111418;--accent-hover:#5cd7d1;--font-head:'Manrope', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--font-body:'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif}</style>
+<link rel="preload" as="image" href="images/hero-1200.webp" imagesrcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-2048.webp 2048w" imagesizes="100vw" fetchpriority="high">
 </head>
 <body class="texture-none dir-flow">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,8 +24,9 @@
   </div>
 </header>
 <main id="main">
-<section class="hero hero-dir" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
+<section class="hero hero-dir hero-photo" aria-labelledby="hero-title" data-hero>
+  <div class="hero-media"><img src="images/hero-1200.webp" srcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-2048.webp 2048w" sizes="100vw" alt="Clear water splashing" width="2048" height="1152" decoding="async" fetchpriority="high" style="object-position:50% 50%"></div><div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-grid hero-solo">
     <div class="hero-copy">
       <p class="eyebrow">Plumber in Parramatta, Westmead and Harris Park</p>
       <p class="pulse"><span class="pulse-dot" aria-hidden="true"></span>After-hours emergency call-outs available</p>
@@ -36,12 +38,7 @@
       </div>
       <ul class="trust"><li><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 5 5 9-10"/></svg><span>Price before we start</span></li><li><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 5 5 9-10"/></svg><span>We leave it clean</span></li></ul>
     </div>
-    <div class="hero-art" aria-hidden="true"><svg class="art art-flow" viewBox="0 0 520 420" fill="none" focusable="false">
-<path class="pipe" pathLength="1" d="M20 70 H230 a40 40 0 0 1 40 40 V250 a40 40 0 0 0 40 40 H500"/>
-<path class="pipe-flow" d="M20 70 H230 a40 40 0 0 1 40 40 V250 a40 40 0 0 0 40 40 H500"/>
-<rect class="joint" x="96" y="52" width="22" height="36" rx="4"/><rect class="joint" x="252" y="170" width="36" height="22" rx="4"/><rect class="joint" x="390" y="272" width="22" height="36" rx="4"/>
-<path class="drop" d="M470 330 c0 0 -18 22 -18 36 a18 18 0 0 0 36 0 c0 -14 -18 -36 -18 -36z"/>
-</svg></div>
+    
   </div>
 </section>
 <section class="rail" aria-labelledby="rail-title">
@@ -67,38 +64,52 @@
       <h2 id="services-title">Services</h2>
       
     </div>
-    <ul class="svc" data-reveal-group><li>
+    <div class="svc-wrap"><div><ul class="svc" data-reveal-group><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>
         <div class="svc-body"><h3>Blocked drains</h3><p>Drain clearing with a camera inspection to find the cause.</p></div>
         <p class="svc-price">From $180</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-5 5-5 8a7 7 0 0 0 7 7z"/></svg></span>
         <div class="svc-body"><h3>Hot water systems</h3><p>Repairs and replacements for electric, gas and heat-pump systems.</p></div>
         <p class="svc-price">Quote on inspection</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 5.5a4 4 0 0 0 4.9 4.9l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6"/><path d="M14.5 5.5 17 3l1.5 1.5L16 7"/></svg></span>
         <div class="svc-body"><h3>Leaks and taps</h3><p>Leaking taps, toilets and pipes fixed, with common parts carried on the van.</p></div>
         <p class="svc-price">From $120</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
         <div class="svc-body"><h3>Bathroom plumbing</h3><p>Rough-in and fit-off for bathroom renovations, working with your builder or tiler.</p></div>
         <p class="svc-price">Quote on inspection</p>
-      </li></ul><p class="fine svc-note">A guide to common jobs. We always confirm the price with you before any work begins. All prices include GST.</p>
+      </li></ul><p class="fine svc-note">A guide to common jobs. We always confirm the price with you before any work begins. All prices include GST.</p></div><div class="svc-art" aria-hidden="true" data-scrub><svg class="art art-flow" viewBox="0 0 520 420" fill="none" focusable="false">
+<path class="pipe" pathLength="1" style="--d:0s;--k:0.00" d="M20 70 H230 a40 40 0 0 1 40 40 V250 a40 40 0 0 0 40 40 H500"/>
+<path class="pipe-flow" style="--d:1.2s;--k:1.20" d="M20 70 H230 a40 40 0 0 1 40 40 V250 a40 40 0 0 0 40 40 H500"/>
+<rect class="joint" x="96" y="52" width="22" height="36" rx="4"/><rect class="joint" x="252" y="170" width="36" height="22" rx="4"/><rect class="joint" x="390" y="272" width="22" height="36" rx="4"/>
+<path class="drop" d="M470 330 c0 0 -18 22 -18 36 a18 18 0 0 0 36 0 c0 -14 -18 -36 -18 -36z"/>
+</svg></div></div>
   </div>
 </section>
-<figure class="band" data-reveal>
-  <img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="Copper water pipes with soldered joints along a tiled bathroom wall" width="1600" height="900" loading="lazy" decoding="async">
-  <figcaption class="wrap">AI-generated image, made for this demo. A real site uses your own photos.</figcaption>
-</figure>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/bathroom-1600.webp" srcset="images/bathroom-800.webp 800w, images/bathroom-1600.webp 1600w" sizes="100vw" alt="A finished bathroom with a walk-in shower and a timber vanity" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">Rough-in and fit-off for bathroom renovations.</span></p>
+  
+</div>
 <section id="how" class="section section-alt" aria-labelledby="how-title">
   <div class="wrap split">
     <div class="section-head">
       <h2 id="how-title">How a job goes</h2>
       
     </div>
-    <ol class="process" data-reveal-group><li><h3>Call us, or email a photo</h3><p>Email a photo of the problem and we reply the same day.</p></li><li><h3>Price before we start</h3><p>We give you the price before any work starts.</p></li><li><h3>On time, or we call</h3><p>If we’re running late, we ring ahead.</p></li><li><h3>We leave it clean</h3><p>Drop sheets go down, and we take the mess away when we finish.</p></li></ol>
+    <ol class="process" data-reveal-group data-scrub><li data-lamp><h3>Call us, or email a photo</h3><p>Email a photo of the problem and we reply the same day.</p></li><li data-lamp><h3>Price before we start</h3><p>We give you the price before any work starts.</p></li><li data-lamp><h3>On time, or we call</h3><p>If we’re running late, we ring ahead.</p></li><li data-lamp><h3>We leave it clean</h3><p>Drop sheets go down, and we take the mess away when we finish.</p></li></ol>
   </div>
 </section>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="Copper water pipes with soldered joints along a tiled bathroom wall" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">We give you the price before any work starts.</span></p>
+  
+</div>
+
+
+
 
 
 
@@ -118,6 +129,11 @@
     </div>
   </div>
 </section>
+<div class="band" data-scrub>
+  <div class="band-media"><img src="images/tools-1600.webp" srcset="images/tools-800.webp 800w, images/tools-1600.webp 1600w" sizes="100vw" alt="Plumbing tools laid out neatly on a drop sheet" width="1600" height="900" decoding="async" loading="lazy"></div>
+  
+  
+</div>
 <section id="contact" class="section contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div>

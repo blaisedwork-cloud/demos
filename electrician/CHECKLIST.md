@@ -14,7 +14,7 @@ Site: `electrician` · Checked: 2026-10-18 · Tool: tools/verify-site/verify.js
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | marked "needs review": privacy.html, terms.html |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 58, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 65, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/electrician/checks/ |
 

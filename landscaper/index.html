@@ -11,6 +11,7 @@
 <link rel="preload" href="assets/fonts/fraunces-1.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/nunito-sans-2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
 <style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/fraunces-1.woff2) format('woff2')}@font-face{font-family:'Fraunces';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/fraunces-1.woff2) format('woff2')}@font-face{font-family:'Nunito Sans';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/nunito-sans-2.woff2) format('woff2')}@font-face{font-family:'Nunito Sans';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/nunito-sans-2.woff2) format('woff2')}@font-face{font-family:'Nunito Sans';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/nunito-sans-2.woff2) format('woff2')}:root{--brand:#1e4d2b;--brand-ink:#ffffff;--brand-dark:#173a20;--brand-text-light:#1e4d2b;--brand-text-on-dark:#789480;--brand-tint-light:#e9edea;--brand-tint-on-dark:#1c2d29;--accent:#9bcb5b;--accent-ink:#111418;--accent-hover:#aad374;--font-head:'Fraunces', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--font-body:'Nunito Sans', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif}</style>
+<link rel="preload" as="image" href="images/hero-1200.webp" imagesrcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
 </head>
 <body class="texture-none dir-lawn">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,7 +24,8 @@
   </div>
 </header>
 <main id="main">
-<section class="hero hero-dir" aria-labelledby="hero-title">
+<section class="hero hero-dir hero-photo" aria-labelledby="hero-title" data-hero>
+  <div class="hero-media"><img src="images/hero-1200.webp" srcset="images/hero-800.webp 800w, images/hero-1200.webp 1200w, images/hero-1600.webp 1600w" sizes="100vw" alt="A freshly mown, striped front lawn at golden hour" width="2048" height="1152" decoding="async" fetchpriority="high" style="object-position:45% 60%"></div><div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap hero-grid hero-solo">
     <div class="hero-copy">
       <p class="eyebrow">Landscaper in Castle Hill, Baulkham Hills and Kellyville</p>
@@ -62,29 +64,31 @@
       <h2 id="services-title">Services</h2>
       
     </div>
-    <ul class="svc" data-reveal-group><li>
+    <ul class="svc" data-reveal-group><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
         <div class="svc-body"><h3>Lawn mowing and edging</h3><p>Regular or one-off mowing, edging and blowing.</p></div>
         <p class="svc-price">From $65 per visit</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20 14 10"/><path d="M14 4a6 6 0 0 0 6 6l-3 3a6 6 0 0 1-6-6l3-3z"/></svg></span>
         <div class="svc-body"><h3>Hedging and pruning</h3><p>Trimming hedges and pruning garden plants.</p></div>
         
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19 14 10"/></svg></span>
         <div class="svc-body"><h3>Garden clean-ups</h3><p>Weeding, mulching and green waste removal.</p></div>
         <p class="svc-price">From $280</p>
-      </li><li>
+      </li><li data-lamp>
         <span class="svc-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
         <div class="svc-body"><h3>Turf laying</h3><p>Ground preparation and new turf.</p></div>
         <p class="svc-price">Quote on inspection</p>
       </li></ul><p class="fine svc-note">A guide to common jobs. Call for a quote on anything not listed. All prices include GST.</p>
   </div>
 </section>
-<figure class="band" data-reveal>
-  <img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="A freshly mown backyard lawn with mowing stripes and a clipped hedge" width="1600" height="900" loading="lazy" decoding="async">
-  <figcaption class="wrap">AI-generated image, made for this demo. A real site uses your own photos.</figcaption>
-</figure>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/hedge-1600.webp" srcset="images/hedge-800.webp 800w, images/hedge-1600.webp 1600w" sizes="100vw" alt="A dense green clipped hedge" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">Trimming hedges and pruning garden plants.</span></p>
+  
+</div>
+
 
 <section id="through-the-year" class="section" aria-labelledby="rhythm-title">
   <div class="wrap">
@@ -92,10 +96,15 @@
       <h2 id="rhythm-title">Mowing through the year</h2>
       <p class="section-intro">How often we suggest booking a mow, month by month.</p>
     </div>
-    <ol class="rhythm" data-reveal-group><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Jan</span><span class="visually-hidden">January: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Feb</span><span class="visually-hidden">February: about 2 mows</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">Mar</span><span class="visually-hidden">March: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">Apr</span><span class="visually-hidden">April: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">May</span><span class="visually-hidden">May: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">Jun</span><span class="visually-hidden">June: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">Jul</span><span class="visually-hidden">July: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true">Aug</span><span class="visually-hidden">August: about 1 mow</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Sep</span><span class="visually-hidden">September: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Oct</span><span class="visually-hidden">October: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Nov</span><span class="visually-hidden">November: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true">Dec</span><span class="visually-hidden">December: about 2 mows</span></li></ol>
+    <ol class="rhythm" data-reveal-group><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Jan</span><span class="m1">J</span></span><span class="visually-hidden">January: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Feb</span><span class="m1">F</span></span><span class="visually-hidden">February: about 2 mows</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Mar</span><span class="m1">M</span></span><span class="visually-hidden">March: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Apr</span><span class="m1">A</span></span><span class="visually-hidden">April: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">May</span><span class="m1">M</span></span><span class="visually-hidden">May: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Jun</span><span class="m1">J</span></span><span class="visually-hidden">June: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Jul</span><span class="m1">J</span></span><span class="visually-hidden">July: about 1 mow</span></li><li style="--n:1"><span class="rhythm-bar" aria-hidden="true"><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Aug</span><span class="m1">A</span></span><span class="visually-hidden">August: about 1 mow</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Sep</span><span class="m1">S</span></span><span class="visually-hidden">September: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Oct</span><span class="m1">O</span></span><span class="visually-hidden">October: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Nov</span><span class="m1">N</span></span><span class="visually-hidden">November: about 2 mows</span></li><li style="--n:2"><span class="rhythm-bar" aria-hidden="true"><i></i><i></i></span><span class="rhythm-m" aria-hidden="true"><span class="m3">Dec</span><span class="m1">D</span></span><span class="visually-hidden">December: about 2 mows</span></li></ol>
     <p class="fine">Our usual advice: every 2 weeks in spring and summer, and every 3–4 weeks in autumn and winter, suits most lawns.</p>
   </div>
 </section>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/band-1600.webp" srcset="images/band-800.webp 800w, images/band-1600.webp 1600w" sizes="100vw" alt="A freshly mown backyard lawn with mowing stripes and a clipped hedge" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">Same two people every visit.</span></p>
+  
+</div>
 <section id="why-us" class="section section-alt" aria-labelledby="why-title">
   <div class="wrap">
     <div class="section-head"><h2 id="why-title">Why choose Greenline Garden Care</h2></div>
@@ -103,6 +112,12 @@
     
   </div>
 </section>
+<div class="band band-say" data-scrub>
+  <div class="band-media"><img src="images/mulch-1600.webp" srcset="images/mulch-800.webp 800w, images/mulch-1600.webp 1600w" sizes="100vw" alt="A freshly mulched garden bed with native grasses" width="1600" height="900" decoding="async" loading="lazy"></div>
+  <p class="band-text"><span class="wrap">Weeding, mulching and green waste removal.</span></p>
+  
+</div>
+
 
 
 <section id="faq" class="section section-alt" aria-labelledby="faq-title">
@@ -117,6 +132,7 @@
     </div>
   </div>
 </section>
+
 <section id="contact" class="section contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div>

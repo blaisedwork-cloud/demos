@@ -300,10 +300,9 @@ a:hover { text-decoration-thickness: 2px; }
 .process { list-style: none; margin: 0; padding: 0; position: relative; counter-reset: step; }
 .process::before, .process::after { content: ""; position: absolute; left: 21px; top: 22px; bottom: 22px; width: 4px; border-radius: 2px; background: var(--line); }
 .process::after { background: var(--accent); transform-origin: top; }
-@supports (animation-timeline: view()) {
-  .process::after { animation: fill linear both; animation-timeline: view(); animation-range: entry 30% cover 55%; }
-}
-@keyframes fill { from { transform: scaleY(0); } }
+/* Line under the step dots (reveals give each step its own layer, so set the order explicitly) */
+.process::before, .process::after { z-index: 0; }
+.process li { z-index: 1; }
 .process li { position: relative; padding: 0 0 var(--s4) 72px; counter-increment: step; }
 .process li:last-child { padding-bottom: 0; }
 .process li::before { content: counter(step); position: absolute; left: 0; top: 0; z-index: 1; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: var(--raised); border: 3px solid var(--accent); font: 800 1.125rem/1 var(--font-head); color: var(--text); }
@@ -331,7 +330,9 @@ body.dir-blueprint {
 .art-blueprint .lbl.small { fill: #a9d8f5; font-size: 15px; }
 .dir-blueprint .svc { border-top-color: var(--brand-text); }
 .dir-blueprint .breaker { position: relative; width: 22px; height: 36px; border: 2.5px solid var(--brand-text); border-radius: 4px; }
-.dir-blueprint .breaker::after { content: ""; position: absolute; left: 3px; right: 3px; top: 3px; height: 13px; border-radius: 2px; background: var(--accent); }
+.dir-blueprint .breaker::after { content: ""; position: absolute; left: 3px; right: 3px; top: 3px; height: 13px; border-radius: 2px; background: var(--accent); transition: transform .25s cubic-bezier(.22, 1, .36, 1), background-color .25s ease, box-shadow .25s ease; }
+.js .dir-blueprint .svc li:not(.on) .breaker::after { transform: translateY(14px); background: var(--line-strong); }
+.js .dir-blueprint .svc li.on .breaker::after { box-shadow: 0 0 12px var(--accent); }
 .dir-blueprint .process::after { background: linear-gradient(var(--accent), var(--brand-text)); }
 
 /* ---------- Flow (plumbers): deep teal, moving water, a pipe run ---------- */
@@ -377,6 +378,11 @@ body.dir-lawn {
 .dir-lawn .hero .lead { max-width: 34em; }
 .dir-lawn .hero .btn-ghost { color: #f4f6ee; }
 .dir-lawn .svc-mark { color: var(--brand-text); }
+/* Services light up as they pass (reverses on the way back up) */
+.dir-lawn .svc-mark { border-radius: 50%; transition: background-color .25s ease-out, transform .25s cubic-bezier(.22, 1, .36, 1); }
+.js .dir-lawn .svc li.on .svc-mark { background: var(--brand-tint); }
+.dir-flow .svc-mark { transition: background-color .25s ease-out, color .25s ease-out; }
+.js .dir-flow .svc li:not(.on) .svc-mark { background: transparent; }
 .dir-lawn .svc h3 { font-weight: 600; }
 .marquee { overflow: hidden; background: var(--bg); border-bottom: 1px solid var(--line); padding: var(--s3) 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 .track { display: flex; gap: 3rem; width: max-content; animation: mq 45s linear infinite; font: 600 clamp(2.25rem, 6vw, 4.5rem)/1.1 var(--font-head); letter-spacing: -.02em; color: var(--brand-text); }
@@ -387,19 +393,92 @@ body.dir-lawn {
 .rhythm-bar { display: flex; flex-direction: column-reverse; gap: 4px; width: 100%; height: 108px; justify-content: flex-start; }
 .rhythm-bar i { display: block; height: 48px; border-radius: 6px; background: repeating-linear-gradient(100deg, var(--brand-text) 0 6px, color-mix(in srgb, var(--brand-text) 80%, var(--bg)) 6px 12px); }
 .rhythm-m { font-weight: 700; font-size: .875rem; color: var(--muted); }
+.rhythm-m .m1 { display: none; }
+@media (max-width: 560px) { .rhythm-m .m3 { display: none; } .rhythm-m .m1 { display: inline; } }
 @media (min-width: 700px) { .rhythm { gap: 12px; } .rhythm-bar { height: 140px; } .rhythm-bar i { height: 64px; } .rhythm-m { font-size: 1rem; } }
 .svc-note { margin-top: var(--s3); }
 
-/* ===================== Motion (assets/motion.js adds .js; nothing is hidden without it) ===================== */
-.js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .5s cubic-bezier(.22, 1, .36, 1), transform .5s cubic-bezier(.22, 1, .36, 1); transition-delay: calc(var(--i, 0) * 80ms); }
-.js [data-reveal].in { opacity: 1; transform: none; }
-.js .rhythm li[data-reveal] { transform: none; }
-.js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(0); transform-origin: bottom; transition: transform .6s cubic-bezier(.22, 1, .36, 1) calc(var(--i, 0) * 60ms + .15s); }
-.js .rhythm li.in .rhythm-bar i { transform: none; }
-.split .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
-.split .w > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
+/* ===================== Motion =====================
+   assets/motion.js adds .js to <html> and sets CSS variables from the scroll position:
+   --e (reveal, 0→1), --p (whole pass through the screen), --f (focus: top at 75% → bottom at 55%),
+   --h (how far the hero has scrolled away). Because they follow the scroll position, every effect
+   plays backwards when you scroll up. Nothing is hidden or moved without .js, and .js is never added
+   when the device asks for reduced motion. Only transform and opacity change (cheap on phones). */
+.js [data-reveal] { opacity: var(--e, 0); transform: translate3d(0, calc((1 - var(--e, 0)) * 32px), 0); }
+.js .rhythm li[data-reveal] { opacity: 1; transform: none; }
+.js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(var(--e, 0)); transform-origin: bottom; }
+.words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+.words .w > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
 @keyframes rise { to { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .js [data-reveal], .js .rhythm li[data-reveal] .rhythm-bar i, .split .w > span { opacity: 1 !important; transform: none !important; } }
+
+/* Process: the line fills as you read down the steps; each step lights up as it passes */
+.js .process::after { transform: scaleY(var(--f, 0)); }
+.process li::before { transition: background-color .25s ease-out, color .25s ease-out; }
+.js .process li.on::before { background: var(--accent); color: var(--accent-ink); }
+
+/* ===================== Hero photo (hero.image) ===================== */
+.hero-photo { --shade: 11, 31, 58; display: grid; align-items: end; min-height: min(92svh, 860px); }
+.dir-flow .hero-photo { --shade: 6, 52, 63; }
+.dir-lawn .hero-photo { --shade: 16, 44, 24; }
+/* Behind the photo: one flat colour matching the shade, so the fade never shows a seam */
+body .hero.hero-photo { background: rgb(var(--shade)); }
+.dir-lawn .hero-photo h1 { font-size: clamp(2.9rem, 6.6vw, 6rem); max-width: 13ch; }
+body .hero.hero-photo::after { display: none; animation: none; }
+body.dir-blueprint .hero.hero-photo::after { display: block; opacity: .45; }
+.hero-media { position: absolute; inset: 0; z-index: -3; overflow: hidden; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; animation: settle 2.4s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes settle { from { scale: 1.12; } to { scale: 1; } }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: rgb(var(--shade)); opacity: 0; }
+.hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(var(--shade), .25) 0%, rgba(var(--shade), .5) 32%, rgba(var(--shade), .9) 58%, rgba(var(--shade), .97) 100%); }
+.hero-photo .hero-grid { width: 100%; }
+/* Phones: the photo sits on top (so the house, pipes or lawn is actually visible) and fades into the text */
+@media (max-width: 899px) {
+  .hero-photo { display: block; min-height: 0; }
+  .hero-media { position: relative; z-index: auto; height: 50svh; min-height: 300px; max-height: 520px; }
+  .hero-shade { bottom: auto; height: 50svh; min-height: 300px; max-height: 520px; z-index: 0; background: linear-gradient(180deg, rgba(var(--shade), .05) 0%, rgba(var(--shade), .15) 55%, rgb(var(--shade)) 100%); }
+  .hero-photo .hero-grid { position: relative; z-index: 1; margin-top: -72px; padding-top: 0; }
+  body .hero.hero-photo::before { background: none; }
+  body.dir-blueprint .hero.hero-photo::after { display: none; }
+}
+@media (min-width: 900px) {
+  .hero-shade { background: linear-gradient(90deg, rgba(var(--shade), .96) 0%, rgba(var(--shade), .86) 36%, rgba(var(--shade), .3) 66%, rgba(var(--shade), .12) 100%), linear-gradient(0deg, rgba(var(--shade), .55), transparent 45%); }
+  .hero-photo .hero-grid { padding-top: clamp(80px, 10vw, 140px); }
+  .hero-photo .hero-copy { max-width: 46rem; }
+}
+.js .hero-photo .hero-media img { transform: translate3d(0, calc(var(--h, 0) * 24%), 0) scale(calc(1.04 + var(--h, 0) * .1)); will-change: transform; }
+.js .hero-photo .hero-media::after { opacity: calc(var(--h, 0) * .7); }
+/* The hero text drifts up a little but never fades: it stays readable for as long as it's on screen */
+.js .hero-photo .hero-copy { transform: translate3d(0, calc(var(--h, 0) * -48px), 0); }
+
+/* ===================== Drawn art beside the services (when the hero has a photo) ===================== */
+.svc-wrap { display: grid; gap: var(--s5); }
+.svc-art { border-radius: 20px; padding: clamp(16px, 3vw, 32px); overflow: hidden; box-shadow: 0 1px 0 rgba(255, 255, 255, .06) inset, 0 20px 50px -20px rgba(0, 0, 0, .45); }
+.svc-art .art { display: block; max-width: 520px; margin: 0 auto; }
+.svc-art .art * { animation: none; }
+@media (min-width: 1000px) { .svc-wrap { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; } .svc-art { position: sticky; top: 110px; } }
+.dir-blueprint .svc-art { background-color: #0b1f3a; background-image: linear-gradient(rgba(92, 200, 255, .09) 1px, transparent 1px), linear-gradient(90deg, rgba(92, 200, 255, .09) 1px, transparent 1px); background-size: 28px 28px; }
+.dir-flow .svc-art { background: #06343f; }
+/* Lines draw as you scroll through the services (each part waits its turn: --k), and undraw going back */
+.js .svc-art .wire, .js .svc-art .house, .js .svc-art .pipe { stroke-dashoffset: clamp(0, calc(1 - (var(--f, 0) * 2.4 - var(--k, 0) * .55)), 1); }
+.js .svc-art .sw, .js .svc-art .node, .js .svc-art .lbl, .js .svc-art .box, .js .svc-art .joint, .js .svc-art .drop, .js .svc-art .pipe-flow { opacity: clamp(0, calc((var(--f, 0) * 2.4 - var(--k, 0) * .55) * 3), 1); }
+
+/* ===================== Photo bands (band / bands[]) ===================== */
+.band { position: relative; overflow: hidden; margin: 0; background: #0d0d0d; }
+.band-media { overflow: hidden; }
+.band img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.band-say img { aspect-ratio: 4 / 5; }
+@media (min-width: 700px) { .band img, .band-say img { aspect-ratio: 21 / 9; } }
+.js .band img { transform: translate3d(0, calc((var(--p, .5) - .5) * -8%), 0) scale(calc(1.26 - var(--p, .5) * .14)); will-change: transform; }
+.band-text { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: clamp(80px, 14vw, 180px) 0 clamp(28px, 5vw, 64px); background: linear-gradient(0deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .55) 55%, transparent 100%); color: #fff; font: 700 clamp(2rem, 5.5vw, 4.25rem)/1.02 var(--font-head); letter-spacing: -.025em; text-wrap: balance; }
+.band-text .wrap { display: block; max-width: min(1160px, 100%); }
+.js .band-text .wrap { transform: translate3d(0, calc((1 - var(--f, 0)) * 40px), 0); opacity: clamp(0, calc(var(--f, 0) * 3.2), 1); }
+.band-cap { font-size: .875rem; color: var(--muted); padding-top: 10px; padding-bottom: 10px; margin: 0; background: var(--bg); }
+.dir-blueprint .band img { filter: saturate(.9); }
+
+/* Feel: buttons press in a little; headings wrap evenly */
+.btn:active:not(:disabled) { transform: scale(.97); }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
 
 /* Service rows: hover feedback (UI/UX Pro Max "Home Services": service menu animations) */
 .svc li { transition: background-color .2s ease; border-radius: 4px; }
@@ -414,13 +493,6 @@ body.dir-lawn {
 .marquee-toggle { margin: 0 0 var(--s2); min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: 600 .9375rem/1.2 var(--font-body); cursor: pointer; }
 .marquee-toggle:hover { background: var(--surface); }
 @media (prefers-reduced-motion: reduce) { .marquee-toggle { display: none; } }
-
-/* Photo band (labelled AI-generated on demos) */
-.band { margin: 0; position: relative; }
-.band img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
-.band figcaption { font-size: .875rem; color: var(--muted); padding-top: 10px; padding-bottom: 10px; }
-@media (min-width: 700px) { .band img { aspect-ratio: 21 / 8; } }
-.dir-blueprint .band img { filter: saturate(.85) brightness(.92); }
 
 /* Phones: keep a keyboard-focused control from hiding under the call bar (WCAG 2.4.11) */
 @media (max-width: 767px) { html { scroll-padding-bottom: 96px; } }
