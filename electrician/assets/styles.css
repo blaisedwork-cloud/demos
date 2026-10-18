@@ -489,7 +489,10 @@ p { text-wrap: pretty; }
 /* Moving strip: pause on hover or focus, and a visible pause button (WCAG 2.2.2) */
 .marquee-wrap { background: var(--bg); border-bottom: 1px solid var(--line); }
 .marquee { border-bottom: 0; }
-.marquee-wrap:hover .track, .marquee.paused .track { animation-play-state: paused; }
+/* Hover-pause only on devices with a real pointer, and only over the strip itself: phones keep a
+   'hover' after a tap, which used to stop Play from working */
+.marquee.paused .track { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine) { .marquee:hover .track { animation-play-state: paused; } }
 .marquee-toggle { margin: 0 0 var(--s2); min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: 600 .9375rem/1.2 var(--font-body); cursor: pointer; }
 .marquee-toggle:hover { background: var(--surface); }
 @media (prefers-reduced-motion: reduce) { .marquee-toggle { display: none; } }
