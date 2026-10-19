@@ -8,7 +8,7 @@ Site: `plumber` · Checked: 2026-10-19 · Tool: tools/verify-site/verify.js
 | PASS | Internal links and anchors resolve | 13 internal links/anchors checked |
 | PASS | External links load | https://www.oaic.gov.au: ok |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/plumber/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
+| PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
@@ -19,32 +19,6 @@ Site: `plumber` · Checked: 2026-10-19 · Tool: tools/verify-site/verify.js
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/plumber/checks/ |
 
 PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed before the site counts as done.
-
-## Assistant test (FAQ mode)
-
-| Question | Expected | Answer | Result |
-|---|---|---|---|
-| Do you charge a call out fee? | contains "$120" | Yes. Our call-out fee is $120 and includes the first 30 minutes on site. From our FAQs: "Do you charge a call-out fee?" | PASS |
-| What are your hours? | contains "7am–5pm" | Our hours: Mon–Fri: 7am–5pm Saturday: 8am–12pm Sunday: Closed Business hours | PASS |
-| Can you come after hours for a burst pipe? | contains "After-hours emergency" | After-hours emergency call-outs available. Call 0491 570 156. Emergency service | PASS |
-| Do you work on hot water systems? | contains "heat-pump" | Yes, we repair and replace electric, gas and heat-pump hot water systems. We'll quote after inspecting your system. From our FAQs: "Do you work on hot water systems?" | PASS |
-| Do you service Westmead? | contains "Yes, we service Westmead" | Yes, we service Westmead. Call 0491 570 156 to book. Service area | PASS |
-| How much to clear a blocked drain? | contains "From $180" | Blocked drains: From $180 For an exact quote, call 0491 570 156. Prices listed on this website | PASS |
-| Do you offer a warranty? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Can you come today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Is my tap water safe to drink? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Do you do roofing? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| qwerty | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Do you take credit card? | contains "card, bank transfer and cash" | We accept card, bank transfer and cash. Payment is due when the job is finished. From our FAQs: "How do I pay?" | PASS |
-| Can I pay with EFTPOS? | contains "card, bank transfer and cash" | We accept card, bank transfer and cash. Payment is due when the job is finished. From our FAQs: "How do I pay?" | PASS |
-| Is there a callout charge? | contains "$120" | Yes. Our call-out fee is $120 and includes the first 30 minutes on site. From our FAQs: "Do you charge a call-out fee?" | PASS |
-| Can you come out today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Do you take Afterpay? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| Can I pay by the hour? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-| How do I pay? | contains "card, bank transfer and cash" | We accept card, bank transfer and cash. Payment is due when the job is finished. From our FAQs: "How do I pay?" | PASS |
-| Can I pay later? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 156 or email hello@example.com and the team can help. | PASS |
-
-19/19 passed.
 
 ## Manual review (2026-10-15, Claude Code)
 

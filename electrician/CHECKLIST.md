@@ -8,7 +8,7 @@ Site: `electrician` · Checked: 2026-10-19 · Tool: tools/verify-site/verify.js
 | PASS | Internal links and anchors resolve | 14 internal links/anchors checked |
 | PASS | External links load | https://www.oaic.gov.au: ok |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/electrician/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 26 stops; skip link first: true; stops without visible focus: 0; assistant opens with Enter, closes with Esc |
+| PASS | Keyboard navigation and visible focus | 27 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
@@ -19,32 +19,6 @@ Site: `electrician` · Checked: 2026-10-19 · Tool: tools/verify-site/verify.js
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/electrician/checks/ |
 
 PASS = automated check passed. CHECK = needs a human look. FAIL = must be fixed before the site counts as done.
-
-## Assistant test (FAQ mode)
-
-| Question | Expected | Answer | Result |
-|---|---|---|---|
-| What's your call-out fee? | contains "$110" | Yes, our call-out fee is $110 including GST, which covers travel and the first 20 minutes. From our FAQs: "Do you charge a call-out fee?" | PASS |
-| My safety switch keeps tripping | contains "Unplug appliances" | Unplug appliances on that circuit and try resetting it. If it still trips, call us. Don't keep resetting it or open the switchboard yourself. From our FAQs: "My safety switch keeps tripping. What should I do?" | PASS |
-| Do you do commercial work? | contains "only do residential" | No, we only do residential work. From our FAQs: "Do you do commercial work?" | PASS |
-| Do you install EV chargers? | contains "Not at the moment" | Not at the moment. We can recommend someone who does. From our FAQs: "Do you install EV chargers?" | PASS |
-| Are you open Saturday? | contains "By appointment" | Our hours: Mon–Fri: 7am–4pm Saturday: By appointment Sunday: Closed Business hours | PASS |
-| Do you do emergency call outs? | contains "power loss" | Emergency call-outs for power loss and electrical hazards. Call 0491 570 157. Emergency service | PASS |
-| How much for an extra power point in Penrith? | contains "From $150" | Power points: From $150 For an exact quote, call 0491 570 157. Prices listed on this website | PASS |
-| Can you fix my wiring myself over the phone? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| Are you licensed? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| Do you offer a warranty? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| Can you install solar panels? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| asdf | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| Do you take Visa? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
-| Can I pay by bank transfer? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
-| Is there a callout charge? | contains "$110" | Yes, our call-out fee is $110 including GST, which covers travel and the first 20 minutes. From our FAQs: "Do you charge a call-out fee?" | PASS |
-| Do you take cash? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| Can you come out today? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-| How do I pay? | contains "Card or bank transfer" | Card or bank transfer on completion. We send the invoice by email. From our FAQs: "How do I pay?" | PASS |
-| Can I pay later? | says it does not know, gives contact | Sorry, I don't have an answer to that on this website. Please call 0491 570 157 or email jobs@example.com and the team can help. | PASS |
-
-19/19 passed.
 
 ## Manual review (2026-10-15, Claude Code)
 

@@ -8,7 +8,7 @@ Site: `landscaper` · Checked: 2026-10-19 · Tool: tools/verify-site/verify.js
 | PASS | Internal links and anchors resolve | 14 internal links/anchors checked |
 | PASS | External links load | https://www.oaic.gov.au: ok |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/landscaper/checks/ (check them by eye) |
-| PASS | Keyboard navigation and visible focus | 22 stops; skip link first: true; stops without visible focus: 0; n/a |
+| PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |
 | PASS | Accessibility scan (axe, WCAG 2.1 AA): no serious/critical issues | 3 pages scanned, light and dark mode |
 | PASS | No JavaScript errors | none |
