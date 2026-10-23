@@ -2,99 +2,386 @@
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Website demos for local tradies</title>
-<meta name="description" content="Three sample websites for made-up Australian trade businesses: an electrician, a plumber and a landscaper.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Websites for tradies · Blaise Davis</title>
+<meta name="description" content="Proper one-page websites for Australian tradies, done for you. Three sample sites: an electrician, a plumber and a landscaper.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#14181d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314181d'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#121417">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Websites for tradies · Blaise Davis">
+<meta property="og:description" content="Proper one-page websites for tradies, done for you. See three sample sites on your phone.">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121417'/%3E%3Cpath d='M36 8 18 36h12l-4 20 20-30H34z' fill='%23ff6a13'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root { color-scheme: light dark; --bg: #f3f4f1; --raised: #ffffff; --text: #14181d; --muted: #4b5360; --line: #d9ddd5; --note-bg: #fff4c2; --note-line: #e8d77a; --note-text: #3d3100; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #111417; --raised: #1a1f24; --text: #ecefeb; --muted: #aeb6bf; --line: #2c333b; --note-bg: #2b2509; --note-line: #4d431a; --note-text: #f3e6a6; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 400 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 1120px; margin: 0 auto; padding: clamp(40px, 7vw, 88px) 20px 64px; }
-  h1 { font-size: clamp(2.4rem, 7vw, 4.25rem); line-height: 1; letter-spacing: -.035em; margin: 0 0 16px; max-width: 13ch; font-weight: 800; }
-  .lead { color: var(--muted); font-size: 1.2rem; max-width: 34em; margin: 0 0 16px; }
-  .note { display: inline-block; background: var(--note-bg); border: 1px solid var(--note-line); color: var(--note-text); padding: 8px 14px; border-radius: 10px; font-size: .95rem; margin: 0 0 clamp(32px, 5vw, 56px); }
-  .demos { list-style: none; padding: 0; margin: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-  .demos a { display: block; color: inherit; text-decoration: none; border-radius: 28px; }
-  .demos a:focus-visible { outline: 3px solid var(--text); outline-offset: 6px; }
-  .phone { aspect-ratio: 390 / 720; border-radius: 28px; overflow: hidden; border: 6px solid var(--text); background: var(--raised); box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .35); transition: transform .2s; }
-  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-  .demos a:hover .phone { transform: translateY(-4px); }
-  .demos h2 { font-size: 1.35rem; margin: 18px 0 2px; letter-spacing: -.01em; }
-  .demos p { margin: 0; color: var(--muted); }
-  .demos .go { color: var(--text); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; margin-top: 6px; }
-  .offer { margin-top: clamp(56px, 9vw, 104px); padding-top: 32px; border-top: 2px solid var(--text); display: grid; gap: 24px; }
-  .offer h2 { font-size: clamp(1.6rem, 3.6vw, 2.25rem); letter-spacing: -.02em; margin: 0; line-height: 1.1; }
-  .offer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
-  .offer li { padding-left: 28px; position: relative; }
-  .offer li::before { content: ""; position: absolute; left: 0; top: .55em; width: 12px; height: 12px; border-radius: 3px; background: var(--text); }
-  .offer strong { display: block; }
-  @media (min-width: 860px) { .offer { grid-template-columns: 1fr 1.6fr; gap: 64px; } .offer ul { grid-template-columns: 1fr 1fr; gap: 20px 40px; } }
-  footer { margin-top: 48px; color: var(--muted); font-size: .95rem; }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1120px; margin: 0 auto; padding: 14px 20px; }
-  .brand { font-weight: 800; letter-spacing: -.02em; font-size: 1.15rem; }
-  .brand span { display: block; font-weight: 500; font-size: .9rem; color: var(--muted); letter-spacing: 0; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); color: var(--text); }
-  .btn-main { background: #ff6a13; border-color: #ff6a13; color: #121417; }
-  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
-  .bar .btn { display: none; }
-  @media (min-width: 640px) { .bar .btn { display: inline-flex; } }
-  .contact { margin-top: clamp(56px, 9vw, 104px); padding: clamp(28px, 5vw, 48px); border-radius: 20px; background: #121417; color: #f3f4f1; }
-  .contact h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3.6vw, 2.25rem); letter-spacing: -.02em; line-height: 1.1; }
-  .contact p { margin: 0 0 20px; color: #c9ced4; max-width: 36em; }
-  .contact .btn { border-color: #f3f4f1; color: #f3f4f1; }
-  .contact .btn-main { border-color: #ff6a13; color: #121417; }
-  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-  .actionbar { display: none; }
-  @media (max-width: 639px) {
-    .actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--raised); border-top: 1px solid var(--line); }
-    body { padding-bottom: 78px; }
-    html { scroll-padding-bottom: 96px; }
-  }
-  @media (prefers-reduced-motion: reduce) { .phone { transition: none; } }
+/* Concept: a tradie's ute, not a tech startup. Ink, concrete and safety orange; chunky grotesque type;
+   real phones showing the real sample sites, scrolling by themselves. */
+@font-face { font-family: "Bricolage"; src: url("fonts/bricolage.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("fonts/figtree.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+:root {
+  --ink: #121417; --concrete: #eceee9; --raised: #ffffff; --muted: #4c5560; --line: #d6dad2;
+  --orange: #ff6a13; --orange-ink: #1a0d00; --orange-soft: #ffe2cf;
+  --display: "Bricolage", "Arial Black", Arial, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #eef0ec; --concrete: #111316; --raised: #1a1d21; --muted: #a9b1ba; --line: #2b3036; --orange-soft: #3a2111; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--concrete); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); overflow-x: hidden; }
+img { max-width: 100%; }
+a { color: inherit; }
+.gutter { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1160px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02em; line-height: .98; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 26px; height: 4px; border-radius: 2px; background: var(--orange); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 12px 22px; border-radius: 14px; font: 700 1rem var(--body); text-decoration: none; border: 2px solid var(--ink); color: var(--ink); background: transparent; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-main { background: var(--orange); border-color: var(--orange); color: var(--orange-ink); box-shadow: 0 6px 0 -1px #c44a00; }
+.btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 0 -1px #c44a00; }
+.btn-main:active { transform: translateY(3px); box-shadow: 0 2px 0 -1px #c44a00; }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+/* top bar */
+.bar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--concrete) 86%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.mark { width: 40px; height: 40px; border-radius: 11px; background: #121417; display: grid; place-items: center; flex: none; }
+.mark svg { width: 22px; height: 22px; }
+.brand b { font: 800 1.15rem/1.1 var(--display); display: block; }
+.brand span { font-size: .82rem; color: var(--muted); display: block; }
+.bar .btn { min-height: 44px; padding: 8px 16px; display: none; }
+@media (min-width: 700px) { .bar .btn { display: inline-flex; } }
+
+/* hero */
+.hero { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); overflow-x: clip; }
+@media (max-width: 600px) { .fan .d1 { --tx: -48%; } .fan .d3 { --tx: 48%; } .sticker { width: 96px; height: 96px; font-size: .85rem; right: 0; } }
+.hero .wrap { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 980px) { .hero .wrap { grid-template-columns: 1.05fr 1fr; } }
+.hero h1 { font-size: clamp(2.7rem, 7.4vw, 5.4rem); margin: 18px 0 22px; }
+.hero h1 .done { position: relative; white-space: nowrap; color: var(--ink); }
+.hero h1 .done svg { position: absolute; left: -2%; bottom: -.12em; width: 104%; height: .32em; overflow: visible; }
+.hero h1 .done path { fill: none; stroke: var(--orange); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 420; stroke-dashoffset: 0; }
+.hero .lead { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--muted); max-width: 33em; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.price-tag { margin-top: 30px; display: inline-flex; align-items: stretch; border: 2px solid var(--ink); border-radius: 14px; overflow: hidden; }
+.price-tag b { font: 800 1.9rem/1 var(--display); padding: 12px 16px; background: var(--ink); color: var(--concrete); display: grid; place-items: center; }
+.price-tag span { padding: 10px 16px; font-size: .95rem; line-height: 1.35; display: grid; align-content: center; }
+
+/* phones */
+.fan { position: relative; height: clamp(440px, 56vw, 600px); display: flex; justify-content: center; align-items: center; }
+.device { --w: 240px; width: var(--w); aspect-ratio: 390 / 800; border-radius: calc(var(--w) * .15); background: #0c0e10; padding: calc(var(--w) * .032); box-shadow: 0 1px 0 1px #2a2f35 inset, 0 40px 60px -30px rgba(0, 0, 0, .55), 0 12px 24px -12px rgba(0, 0, 0, .35); position: relative; }
+.screen { width: 100%; height: 100%; border-radius: calc(var(--w) * .12); overflow: hidden; position: relative; background: #fff; container-type: size; }
+.screen::before { content: ""; position: absolute; z-index: 2; top: 8px; left: 50%; translate: -50% 0; width: 30%; height: 18px; border-radius: 10px; background: #0c0e10; }
+.screen img { display: block; width: 100%; height: auto; }
+.fan .device { position: absolute; }
+.fan .d1 { --w: clamp(170px, 20vw, 230px); --tx: -62%; --r: -9deg; transform: translateX(var(--tx)) rotate(var(--r)); z-index: 1; }
+.fan .d2 { --w: clamp(200px, 23vw, 262px); z-index: 3; }
+.fan .d3 { --w: clamp(170px, 20vw, 230px); --tx: 62%; --r: 9deg; transform: translateX(var(--tx)) rotate(var(--r)); z-index: 2; }
+.fan .glow { position: absolute; inset: 12% 10%; background: radial-gradient(closest-side, color-mix(in srgb, var(--orange) 45%, transparent), transparent); filter: blur(20px); z-index: 0; }
+.sticker { position: absolute; z-index: 5; right: 2%; top: 6%; transform: rotate(8deg); background: var(--orange); color: var(--orange-ink); font: 800 .95rem/1.05 var(--display); padding: 12px 14px; border-radius: 50%; width: 112px; height: 112px; display: grid; place-items: center; text-align: center; box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .5); }
+
+/* ticker */
+.ticker { background: var(--orange); color: var(--orange-ink); overflow: hidden; border-block: 3px solid #121417; }
+.ticker-track { display: flex; width: max-content; gap: 0; padding-block: 14px; font: 800 clamp(1.1rem, 2.4vw, 1.5rem)/1 var(--display); text-transform: uppercase; letter-spacing: .01em; white-space: nowrap; }
+.ticker-track span { display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; }
+.ticker-track span::after { content: ""; width: 12px; height: 12px; background: #121417; transform: rotate(45deg); }
+
+/* sections */
+.section { padding-block: clamp(64px, 9vw, 112px) 0; }
+.section-head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 52px); max-width: 44em; }
+.section-head h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+.section-head p { color: var(--muted); font-size: 1.12rem; }
+.madeup { display: block; font-size: .92rem; background: var(--orange-soft); border-radius: 14px; padding: 8px 14px; width: fit-content; max-width: 100%; }
+
+/* demo cards */
+.demos { display: grid; gap: 28px; list-style: none; padding: 0; margin: 0; }
+.demo { --bg: #0b1f3a; --acc: #ffb020; --fg: #f4f6f8; border-radius: 28px; background: var(--bg); color: var(--fg); overflow: hidden; display: grid; position: relative; isolation: isolate; }
+.demo.plumber { --bg: #06343f; --acc: #3fd0c9; }
+.demo.landscaper { --bg: #1e4d2b; --acc: #9bcb5b; }
+.demo::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .16; background-image: var(--pattern); background-size: 28px 28px; }
+.demo.electrician { --pattern: linear-gradient(var(--acc) 1px, transparent 1px), linear-gradient(90deg, var(--acc) 1px, transparent 1px); }
+.demo.plumber { --pattern: radial-gradient(circle at 50% 50%, var(--acc) 1.5px, transparent 2px); }
+.demo.landscaper { --pattern: repeating-linear-gradient(90deg, var(--acc) 0 14px, transparent 14px 28px); }
+.demo-copy { padding: clamp(28px, 5vw, 56px); display: grid; gap: 16px; align-content: center; }
+.demo .tradechip { width: fit-content; font-weight: 700; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--bg); background: var(--acc); padding: 5px 12px; border-radius: 999px; }
+.demo h3 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.demo .where { color: color-mix(in srgb, var(--fg) 75%, transparent); font-size: 1.05rem; }
+.demo ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.demo li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; }
+.demo li::before { content: ""; width: 14px; height: 14px; margin-top: 6px; border-radius: 4px; background: var(--acc); }
+.demo .open { margin-top: 10px; width: fit-content; background: var(--acc); border-color: var(--acc); color: var(--bg); }
+.demo .open:hover { transform: translateY(-2px); }
+.demo .open .arrow { transition: transform .2s ease; }
+.demo .open:hover .arrow { transform: translateX(4px); }
+.demo-phone { display: flex; justify-content: center; align-items: flex-end; padding: 0 24px; min-height: 420px; position: relative; }
+.demo-phone .device { --w: min(280px, 72vw); margin-bottom: -90px; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.demo:hover .demo-phone .device { transform: translateY(-14px) rotate(-1.5deg); }
+@media (min-width: 900px) {
+  .demo { grid-template-columns: 1.1fr 1fr; min-height: 520px; }
+  .demo:nth-child(even) .demo-copy { order: 2; }
+  .demo-phone { min-height: 0; align-items: flex-end; }
+  .demo-phone .device { margin-bottom: -120px; }
+}
+
+/* how it works */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: step; }
+@media (min-width: 860px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step { background: var(--raised); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; position: relative; }
+.step::before { counter-increment: step; content: counter(step); font: 800 2.6rem/1 var(--display); color: var(--orange); }
+.step h3 { font-size: 1.35rem; letter-spacing: -.01em; }
+.step p { color: var(--muted); font-size: .98rem; }
+.step .when { font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: var(--orange-soft); width: fit-content; padding: 3px 10px; border-radius: 999px; }
+
+/* what you get */
+.gets { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.get { background: var(--raised); padding: 26px; display: grid; gap: 8px; align-content: start; }
+.get svg { width: 34px; height: 34px; color: var(--orange); }
+.get h3 { font-size: 1.3rem; letter-spacing: -.01em; }
+.get p { color: var(--muted); font-size: .98rem; }
+
+/* price + contact */
+.deal { display: grid; gap: 28px; align-items: center; background: var(--raised); border: 2px solid var(--ink); border-radius: 28px; padding: clamp(28px, 5vw, 56px); }
+@media (min-width: 860px) { .deal { grid-template-columns: auto 1fr; gap: 56px; } }
+.big { font: 800 clamp(4.2rem, 13vw, 8.5rem)/.85 var(--display); letter-spacing: -.04em; }
+.big small { display: block; font: 700 1rem/1.4 var(--body); letter-spacing: 0; color: var(--muted); margin-top: 10px; }
+.deal ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; font-size: 1.05rem; }
+.deal li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; }
+.deal li svg { width: 22px; height: 22px; color: var(--orange); margin-top: 3px; }
+.contact { margin-block: clamp(64px, 9vw, 112px) 0; border: 1px solid var(--line); background: #121417; color: #f1f2ee; border-radius: 28px; padding: clamp(32px, 6vw, 64px); display: grid; gap: 18px; position: relative; overflow: hidden; }
+.contact::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 260px; height: 260px; background: repeating-linear-gradient(-45deg, var(--orange) 0 18px, transparent 18px 36px); opacity: .9; border-radius: 50%; }
+.contact h2 { font-size: clamp(2.2rem, 5.4vw, 3.8rem); max-width: 12ch; }
+.contact p { color: #c4c9cf; max-width: 34em; font-size: 1.1rem; position: relative; z-index: 1; }
+.contact .num { font: 800 clamp(1.6rem, 4vw, 2.4rem)/1 var(--display); letter-spacing: .01em; user-select: all; }
+.contact .ctas { display: flex; flex-wrap: wrap; gap: 14px; position: relative; z-index: 1; }
+.contact .btn { color: #f1f2ee; border-color: #f1f2ee; }
+.contact .btn-main { color: var(--orange-ink); border-color: var(--orange); }
+footer { padding-block: 40px 56px; color: var(--muted); font-size: .92rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* phone bar on small screens */
+.actionbar { display: none; }
+@media (max-width: 699px) {
+  .actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px max(12px, env(safe-area-inset-left, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-right, 0px)); background: var(--raised); border-top: 1px solid var(--line); }
+  .actionbar .btn { min-height: 48px; }
+  body { padding-bottom: 84px; }
+}
+
+/* motion (only when the visitor hasn't asked for less) */
+@media (prefers-reduced-motion: no-preference) {
+  .screen.auto img { animation: browse var(--dur, 22s) ease-in-out infinite alternate; }
+  .d1 .screen.auto img { --dur: 26s; animation-delay: -6s; }
+  .d3 .screen.auto img { --dur: 24s; animation-delay: -12s; }
+  @keyframes browse { 0%, 10% { transform: translateY(0); } 90%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+  .fan .d1 { animation: bob1 7s ease-in-out infinite; }
+  .fan .d2 { animation: bob2 6s ease-in-out infinite; }
+  .fan .d3 { animation: bob3 8s ease-in-out infinite; }
+  @keyframes bob1 { 50% { transform: translateX(var(--tx)) rotate(calc(var(--r) + 2deg)) translateY(-10px); } }
+  @keyframes bob2 { 50% { transform: translateY(-14px); } }
+  @keyframes bob3 { 50% { transform: translateX(var(--tx)) rotate(calc(var(--r) + 2deg)) translateY(-8px); } }
+  .sticker { animation: spin-in .9s cubic-bezier(.2, 1.4, .4, 1) .5s both; }
+  @keyframes spin-in { from { transform: rotate(-40deg) scale(.3); opacity: 0; } }
+  .hero h1 .done path { stroke-dashoffset: 420; animation: draw .9s cubic-bezier(.6, 0, .2, 1) .35s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .ticker-track { animation: slide 38s linear infinite; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  .demo-phone .screen img { animation: browse 20s ease-in-out infinite alternate; animation-play-state: paused; }
+  .demo:hover .demo-phone .screen img, .demo:focus-within .demo-phone .screen img { animation-play-state: running; }
+  @media (hover: none) { .demo-phone .screen img { animation-play-state: running; } }
+  .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
-<header class="bar">
-  <div class="brand">Blaise Davis<span>Websites for tradies · Albury–Wodonga · working Australia-wide</span></div>
-  <a class="btn btn-main" href="tel:0475151548">Call Blaise 0475 151 548</a>
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="bar gutter">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Blaise Davis, websites for tradies">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 2 5 14h6l-1.5 8L19 9.5h-6z" fill="#ff6a13"/></svg></span>
+      <span><b>Blaise Davis</b><span>Websites for tradies · Albury–Wodonga</span></span>
+    </a>
+    <a class="btn btn-main" href="tel:0475151548"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>0475 151 548</a>
+  </div>
 </header>
-<main>
-  <h1>Websites for local tradies</h1>
-  <p class="lead">Three sample sites, each with its own look for its trade. Tap one to see how it works on your phone.</p>
-  <p class="note"><strong>All three businesses are made up.</strong> Their names, prices, phone numbers and emails aren't real.</p>
-  <ul class="demos">
-    <li><a href="electrician/">
-      <div class="phone"><img src="thumb-electrician.jpg" alt="" width="390" height="720" loading="eager"></div>
-      <h2>Tallowwood Electrical</h2><p>Electrician around Penrith</p><p class="go">See the electrician site</p>
-    </a></li>
-    <li><a href="plumber/">
-      <div class="phone"><img src="thumb-plumber.jpg" alt="" width="390" height="720" loading="lazy"></div>
-      <h2>Ironbark Plumbing Co.</h2><p>Plumber around Parramatta</p><p class="go">See the plumber site</p>
-    </a></li>
-    <li><a href="landscaper/">
-      <div class="phone"><img src="thumb-landscaper.jpg" alt="" width="390" height="720" loading="lazy"></div>
-      <h2>Greenline Garden Care</h2><p>Lawn and garden care around Castle Hill</p><p class="go">See the landscaper site</p>
-    </a></li>
-  </ul>
-  <section class="offer" aria-labelledby="offer-title">
-    <h2 id="offer-title">What you'd get</h2>
-    <ul>
-      <li><strong>A one-page site for your trade</strong>Your services, prices if you want them, hours, suburbs and a big call button.</li>
-      <li><strong>Your licence number and ABN on show</strong>Many trades must show licence details in advertising, like NSW and QLD licences and Victorian electrical contractors' REC numbers.</li>
-      <li><strong>Live about a week after your details are in</strong>A 5-minute form on your phone, then a quick call.</li>
-      <li><strong>$990, and you own your web address</strong>No lock-in. An optional monthly plan from $39 if you want someone to look after it.</li>
-    </ul>
+
+<main id="top">
+  <section class="hero gutter">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Websites for tradies · Australia-wide</span>
+        <h1>A proper website for your trade. <span class="done">Done for you.<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 22 C 90 6, 200 4, 396 16"/></svg></span></h1>
+        <p class="lead">One page with your jobs, your suburbs, your licence number and a big call button. You fill in a 10-minute form on your phone. I build it, check it, and put it live on your own web address in about a week.</p>
+        <div class="ctas">
+          <a class="btn btn-main" href="#samples">See the sample sites</a>
+          <a class="btn" href="tel:0475151548">Call 0475 151 548</a>
+        </div>
+        <div class="price-tag"><b>$990</b><span>All up. Half to start,<br>half when you're happy.</span></div>
+      </div>
+      <div class="fan" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="device d1"><div class="screen auto"><img src="thumb-plumber-tall.jpg" alt="" width="390" height="2200"></div></div>
+        <div class="device d3"><div class="screen auto"><img src="thumb-landscaper-tall.jpg" alt="" width="390" height="2200"></div></div>
+        <div class="device d2"><div class="screen auto"><img src="thumb-electrician-tall.jpg" alt="" width="390" height="2200"></div></div>
+        <div class="sticker">Live in about a week</div>
+      </div>
+    </div>
   </section>
-  <section class="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Want one for your business?</h2>
-    <p>Call or text Blaise. I'll have a look at what you've got now and tell you straight whether a site is worth it for you.</p>
-    <div class="ctas"><a class="btn btn-main" href="tel:0475151548">Call 0475 151 548</a><a class="btn" href="sms:0475151548">Text Blaise</a></div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Switchboard upgrades</span><span>Blocked drains</span><span>Safety switches</span><span>Hedging</span><span>Hot water</span><span>LED downlights</span><span>Leak detection</span><span>Lawn mowing</span><span>Power points</span><span>Garden clean-ups</span>
+      <span>Switchboard upgrades</span><span>Blocked drains</span><span>Safety switches</span><span>Hedging</span><span>Hot water</span><span>LED downlights</span><span>Leak detection</span><span>Lawn mowing</span><span>Power points</span><span>Garden clean-ups</span>
+    </div>
+  </div>
+
+  <section class="section gutter" id="samples">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sample sites</span>
+        <h2>Three trades. Three completely different looks.</h2>
+        <p>Every site is built around the business: its colours, its jobs, its area. Open one on your phone and tap around.</p>
+        <span class="madeup"><strong>Made-up businesses.</strong> Names, prices and numbers aren't real.</span>
+      </div>
+      <ul class="demos">
+        <li class="demo electrician reveal">
+          <div class="demo-copy">
+            <span class="tradechip">Electrician</span>
+            <h3>Tallowwood Electrical</h3>
+            <p class="where">Residential sparky around Penrith</p>
+            <ul>
+              <li>A bold blueprint style with a strong hero photo</li>
+              <li>A set spot for licence details, the way the rules want</li>
+              <li>Common questions answered before anyone calls</li>
+              <li>A call button that's always one tap away</li>
+            </ul>
+            <a class="btn open" href="electrician/">Open the electrician site <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="demo-phone"><div class="device"><div class="screen"><img src="thumb-electrician-tall.jpg" alt="The Tallowwood Electrical sample site on a phone" width="390" height="2200" loading="lazy"></div></div></div>
+        </li>
+        <li class="demo plumber reveal">
+          <div class="demo-copy">
+            <span class="tradechip">Plumber</span>
+            <h3>Ironbark Plumbing Co.</h3>
+            <p class="where">Plumbing and hot water around Parramatta</p>
+            <ul>
+              <li>A clean, water-inspired look</li>
+              <li>After-hours emergency badge right at the top</li>
+              <li>"From" prices for common jobs</li>
+              <li>Tap to call, text or save the number</li>
+            </ul>
+            <a class="btn open" href="plumber/">Open the plumber site <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="demo-phone"><div class="device"><div class="screen"><img src="thumb-plumber-tall.jpg" alt="The Ironbark Plumbing sample site on a phone" width="390" height="2200" loading="lazy"></div></div></div>
+        </li>
+        <li class="demo landscaper reveal">
+          <div class="demo-copy">
+            <span class="tradechip">Landscaper</span>
+            <h3>Greenline Garden Care</h3>
+            <p class="where">Lawns and gardens around Castle Hill</p>
+            <ul>
+              <li>A classic, earthy look with a serif headline</li>
+              <li>A month-by-month mowing calendar</li>
+              <li>A scrolling strip of their services</li>
+              <li>Green waste and pricing explained up front</li>
+            </ul>
+            <a class="btn open" href="landscaper/">Open the landscaper site <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="demo-phone"><div class="device"><div class="screen"><img src="thumb-landscaper-tall.jpg" alt="The Greenline Garden Care sample site on a phone" width="390" height="2200" loading="lazy"></div></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section gutter" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-title">No meetings. No tech to learn.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal"><span class="when">5 minutes</span><h3>A quick chat</h3><p>I show you a sample on your phone and answer anything. No pressure.</p></li>
+        <li class="step reveal"><span class="when">10 minutes</span><h3>A form on your phone</h3><p>Mostly tapping: your jobs, suburbs, hours, licence and photos. No meeting needed.</p></li>
+        <li class="step reveal"><span class="when">About a week</span><h3>Your preview</h3><p>Check every word on your phone. Two rounds of changes included.</p></li>
+        <li class="step reveal"><span class="when">Same day</span><h3>Live on your address</h3><p>On your own web address, in your name. You only pay the second half when you're happy.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section gutter" aria-labelledby="get-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What you get</span>
+        <h2 id="get-title">Everything a customer looks for, nothing they don't.</h2>
+      </div>
+      <div class="gets reveal">
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><h3>A big call button</h3><p>On every phone, always one tap away. Text and "save our number" too.</p></div>
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h4"/></svg><h3>Licence and ABN on show</h3><p>Many trades have to show licence details when they advertise. It's built in.</p></div>
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Your jobs, suburbs and hours</h3><p>With prices if you want them, and answers to the questions people always ask.</p></div>
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Fast and checked</h3><p>Tested on phone, tablet and desktop, in light and dark mode, for speed and accessibility.</p></div>
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 9.2-9.2M17 6l3 3M14 9l2 2"/></svg><h3>You own it</h3><p>Your web address is in your name. No lock-in contract, ever.</p></div>
+        <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.5 2.5-2.8-.4-.4-2.8z"/></svg><h3>Looked after, if you like</h3><p>Optional monthly plan from $39: hosting, checks and your small changes done for you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gutter" aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="deal reveal">
+        <p class="big" id="price-title">$990<small>All up for your website. No GST.</small></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Half to start, the other half only when you're happy with it</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Two rounds of changes included</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Your web address costs about $10 the first year, paid straight to the registrar in your name</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Optional monthly plan from $39, cancel any time</span></li>
+        </ul>
+      </div>
+
+      <div class="contact reveal" id="contact">
+        <h2>Want one for your business?</h2>
+        <p>Call or text Blaise. I'll have a look at what you've got now and tell you straight whether a site is worth it for you.</p>
+        <p class="num">0475 151 548</p>
+        <div class="ctas">
+          <a class="btn btn-main" href="tel:0475151548">Call Blaise</a>
+          <a class="btn" href="sms:0475151548">Text Blaise</a>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
+
+<footer class="gutter">
+  <div class="wrap">
+    <span>Blaise Davis · Websites for tradies · Albury–Wodonga, working Australia-wide</span>
+    <span>The sample businesses on this page are made up.</span>
+  </div>
+</footer>
+
 <nav class="actionbar" aria-label="Contact Blaise"><a class="btn btn-main" href="tel:0475151548">Call Blaise</a><a class="btn" href="sms:0475151548">Text</a></nav>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  els.forEach(function (el) { io.observe(el); });
+  // Anything already on screen shows straight away.
+  // Safety net: anything that has scrolled into view (or above it) shows, even if the observer misses it.
+  function sweep() { els.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }); }
+  requestAnimationFrame(sweep);
+  addEventListener('scroll', sweep, { passive: true });
+})();
+</script>
 </body>
 </html>
