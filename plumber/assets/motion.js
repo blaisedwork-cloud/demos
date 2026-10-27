@@ -13,7 +13,9 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) return;
   var root = document.documentElement;
-  root.classList.add('js');
+  root.classList.add('js', 'motion'); // 'js' is normally set already by the inline script in <head>
+
+  var all = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
 
   // Hero headline rises in word by word on load (screen readers get the plain text via aria-label).
   var h = document.querySelector('.hero-dir h1');
@@ -24,9 +26,21 @@
       return '<span class="w" aria-hidden="true"><span style="--i:' + i + '">' + w + '</span></span>';
     }).join(' ');
     h.classList.add('words');
+    // Rise only once the heading font is in, so the words don't re-wrap mid-animation (max 700 ms wait).
+    var go = function () { h.classList.add('go'); };
+    if (document.fonts && document.fonts.ready) Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 700); })]).then(go);
+    else go();
   }
 
-  var all = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+  // Lazy photos fade in once loaded instead of popping in (a blank box flashed on fast scrolls).
+  all('img[loading="lazy"]').forEach(function (img) {
+    if (img.complete && img.naturalWidth) return;
+    img.classList.add('pending');
+    var done = function () { img.classList.remove('pending'); };
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+  });
+
   all('[data-reveal-group]').forEach(function (g) {
     Array.prototype.forEach.call(g.children, function (el, i) { el.setAttribute('data-reveal', ''); el.style.setProperty('--i', i); });
   });
@@ -34,7 +48,7 @@
   // One-shot reveals: fade and rise in the first time they come on screen.
   var revealIO = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px 12% 0px', threshold: 0 }); // starts just before it scrolls into view
   all('[data-reveal]').forEach(function (el) { revealIO.observe(el); });
 
   // Lamps: on once their middle passes 62% of the screen height (and stay on above it).

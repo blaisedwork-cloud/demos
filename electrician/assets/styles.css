@@ -402,13 +402,15 @@ body.dir-lawn {
    one-shot: .in is added once and a transition does the rest (cheap on phones). Scroll-linked effects
    get CSS variables while on screen: --p (whole pass through the screen), --f (focus: top at 75% →
    bottom at 55%), --h (how far the hero has scrolled away). Only transform and opacity change. */
-.js [data-reveal] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(min(var(--i, 0), 6) * 60ms); }
+.js [data-reveal] { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity .6s cubic-bezier(.2, .7, .2, 1), transform .6s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(min(var(--i, 0), 6) * 60ms); }
 .js [data-reveal].in { opacity: 1; transform: none; }
 .js .rhythm li[data-reveal] { opacity: 1; transform: none; }
 .js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(0); transform-origin: bottom; transition: transform .8s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(min(var(--i, 0), 11) * 50ms); }
 .js .rhythm li[data-reveal].in .rhythm-bar i { transform: none; }
 .words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
-.words .w > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
+.words .w > span { display: inline-block; transform: translateY(105%); }
+.words.go .w > span { animation: rise .8s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 60ms); }
+.js .hero-dir h1:not(.words) { visibility: hidden; } /* until motion.js has split it into words (max a moment; shown if it never runs) */
 @keyframes rise { to { transform: none; } }
 
 /* Process: the line fills as you read down the steps; each step lights up as it passes */
@@ -500,15 +502,39 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 @media (max-width: 767px) { html { scroll-padding-bottom: 96px; } }
 
 /* ===================== Build (builders, kit homes, renovators, roofers) ===================== */
-/* No palette of its own: the client's brand colours, with their best photo as the hero. */
-.dir-build .hero { color: #fff; background-color: var(--brand); }
+/* No palette of its own: the client's brand colours. A deep brand panel with a fine vertical rib (like
+   insulated panel sheeting). On laptops the photo sits framed at its real size beside the headline,
+   so a small photo stays sharp instead of being stretched under a tint (27 Oct redesign). */
+.dir-build .hero, body.dir-build .hero.hero-photo { color: #fff; background-color: rgb(var(--brand-deep-rgb)); background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, .045) 0 1px, transparent 1px 56px); }
 .dir-build .hero::after { display: none; }
 .dir-build .hero .btn-ghost { color: #fff; }
-.dir-build .hero-photo { --shade: var(--brand-deep-rgb); } /* deeper than the brand, so a white roof doesn't turn pink under it */
-.dir-build .hero-dir h1 { font-size: clamp(3rem, 8.5vw, 7rem); font-weight: 700; line-height: .92; letter-spacing: -.01em; max-width: 11ch; }
+.dir-build .hero-photo { --shade: var(--brand-deep-rgb); }
+.dir-build .hero-dir h1 { font-size: clamp(3rem, 6.4vw, 5.5rem); font-weight: 700; line-height: .92; letter-spacing: -.01em; max-width: 12ch; }
+@media (min-width: 900px) {
+  .dir-build .hero-photo { display: block; min-height: 0; }
+  .dir-build .hero-photo .hero-grid { position: relative; z-index: 1; padding-top: clamp(72px, 8vw, 120px); padding-bottom: clamp(72px, 8vw, 120px); }
+  .dir-build .hero-photo .hero-copy { max-width: calc(100% - min(40vw, 580px) - 64px); } /* the space left of the framed photo */
+  .dir-build .hero-shade, .dir-build .hero-media::after { display: none; }
+  .dir-build .hero-media { inset: clamp(40px, 5vw, 64px) max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter))) clamp(40px, 5vw, 64px) auto; width: min(40vw, 580px); z-index: 0; border-radius: 22px; box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .1); }
+}
 .dir-build .svc-mark { border-radius: 12px; transition: background-color .25s ease-out, color .25s ease-out; }
 .js .dir-build .svc li.on .svc-mark { background: var(--brand-tint); }
-@media (min-width: 900px) { .dir-build .svc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s5); } }
+/* Line art beside the services: a panel-kit house whose wall and roof panels draw in as you scroll */
+.dir-build .svc-art { background-color: rgb(var(--brand-deep-rgb)); background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, .04) 0 1px, transparent 1px 40px); }
+.art-build .house, .art-build .wire { stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; }
+.art-build .house { stroke: #fff; stroke-width: 3; }
+.art-build .wire { stroke: var(--accent); stroke-width: 2; }
+.art-build .ground { stroke: rgba(255, 255, 255, .35); }
+.art-build .box { stroke: rgba(255, 255, 255, .7); stroke-width: 2; fill: rgba(255, 255, 255, .05); }
+.art-build .lbl { fill: #fff; font: 600 16px/1 var(--font-body); }
+.art-build .lbl.small { fill: rgba(255, 255, 255, .8); font-size: 15px; }
+/* Reviews: big type on the deep brand colour, not small cards */
+.dir-build #why-us { background: rgb(var(--brand-deep-rgb)); color: #fff; }
+.dir-build #why-us h2, .dir-build #why-us h3 { color: #fff; }
+.dir-build .quotes { gap: var(--s4); }
+.dir-build .quotes figure { background: transparent; box-shadow: none; border-radius: 0; border-left: 3px solid var(--accent); padding: 4px 0 4px var(--s3); }
+.dir-build .quotes blockquote { font: 600 clamp(1.35rem, 2.3vw, 1.9rem)/1.25 var(--font-head); color: #fff; }
+.dir-build .quotes figcaption { color: rgba(255, 255, 255, .78); font-weight: 600; }
 /* Gallery: the first photo leads, the rest sit beside it */
 @media (min-width: 900px) {
   .dir-build .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -537,3 +563,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 /* Each photo drifts a little inside its frame as it passes; the middle one a touch more, for depth */
 .js .ribbon img { transform: translate3d(0, calc((var(--p, .5) - .5) * -8%), 0) scale(1.1); }
 .js .ribbon li:nth-child(2) img { transform: translate3d(0, calc((var(--p, .5) - .5) * -14%), 0) scale(1.16); }
+
+/* Lazy photos fade in once loaded (motion.js marks them .pending until then) */
+img[loading="lazy"] { transition: opacity .4s ease-out; }
+.js img.pending { opacity: 0; }
+.ribbon-img, .band-media { background-color: var(--brand-tint); }
