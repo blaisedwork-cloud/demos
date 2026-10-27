@@ -7,6 +7,7 @@ Site: `electrician` · Checked: 2026-10-27 · Tool: tools/verify-site/verify.js
 | PASS | No placeholder text, lorem ipsum or unfilled values | 3 pages scanned |
 | PASS | Internal links and anchors resolve | 14 internal links/anchors checked |
 | PASS | External links load | https://www.oaic.gov.au: ok |
+| PASS | HTML is valid (html-validate) | 3 pages checked |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/electrician/checks/ (check them by eye) |
 | PASS | Keyboard navigation and visible focus | 27 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |

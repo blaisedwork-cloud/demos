@@ -7,6 +7,7 @@ Site: `landscaper` · Checked: 2026-10-27 · Tool: tools/verify-site/verify.js
 | PASS | No placeholder text, lorem ipsum or unfilled values | 3 pages scanned |
 | PASS | Internal links and anchors resolve | 14 internal links/anchors checked |
 | PASS | External links load | https://www.oaic.gov.au: ok |
+| PASS | HTML is valid (html-validate) | 3 pages checked |
 | PASS | Phone / tablet / desktop: no horizontal scroll | screenshots saved in demos/landscaper/checks/ (check them by eye) |
 | PASS | Keyboard navigation and visible focus | 25 stops; skip link first: true; stops without visible focus: 0; n/a |
 | PASS | Images have alt text | all images have alt text |
@@ -14,7 +15,7 @@ Site: `landscaper` · Checked: 2026-10-27 · Tool: tools/verify-site/verify.js
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | no "needs review" note (reviewed, or a demo) |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 99, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 98, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/landscaper/checks/ |
 
