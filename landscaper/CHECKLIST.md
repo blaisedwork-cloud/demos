@@ -1,6 +1,6 @@
 # Verification checklist
 
-Site: `landscaper` · Checked: 2026-10-23 · Tool: tools/verify-site/verify.js
+Site: `landscaper` · Checked: 2026-10-27 · Tool: tools/verify-site/verify.js
 
 | Result | Check | Notes |
 |---|---|---|

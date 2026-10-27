@@ -1,6 +1,6 @@
 # Verification checklist
 
-Site: `electrician` · Checked: 2026-10-23 · Tool: tools/verify-site/verify.js
+Site: `electrician` · Checked: 2026-10-27 · Tool: tools/verify-site/verify.js
 
 | Result | Check | Notes |
 |---|---|---|
@@ -14,7 +14,7 @@ Site: `electrician` · Checked: 2026-10-23 · Tool: tools/verify-site/verify.js
 | PASS | No JavaScript errors | none |
 | PASS | Privacy and terms pages exist | no "needs review" note (reviewed, or a demo) |
 | PASS | Demo clearly labelled | demo banner present; noindex set |
-| PASS | Lighthouse (mobile) scores recorded | performance 99, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
+| PASS | Lighthouse (mobile) scores recorded | performance 100, accessibility 100, best-practices 100, seo 66 (SEO is lowered on purpose: demo pages are set to noindex) |
 | CHECK | No invented testimonials, reviews, logos, numbers or licence numbers | compare every fact on the page with the client intake / site.json |
 | CHECK | Screenshots look right by eye (spacing, images, colours) | see demos/electrician/checks/ |
 

@@ -12,7 +12,7 @@
   --line-strong: #8a94a3;
   --brand-text: var(--brand-text-light);
   --brand-tint: var(--brand-tint-light);
-  --header-bg: rgba(251, 251, 249, .94);
+  --header-bg: rgba(251, 251, 249, .98);
   --note-bg: #fff4c2;
   --note-text: #3d3100;
   --note-line: #e8d77a;
@@ -41,7 +41,7 @@
     --line-strong: #5c6673;
     --brand-text: var(--brand-text-on-dark);
     --brand-tint: var(--brand-tint-on-dark);
-    --header-bg: rgba(15, 18, 21, .92);
+    --header-bg: rgba(15, 18, 21, .98);
     --note-bg: #2b2509;
     --note-text: #f3e6a6;
     --note-line: #4d431a;
@@ -88,12 +88,15 @@ a:hover { text-decoration-thickness: 2px; }
 .btn-lg { min-height: 56px; padding: .8em 1.6em; font-size: 1.0625rem; }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 20; background: var(--header-bg); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--header-bg); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; gap: var(--s2); min-height: 68px; }
 .brand { text-decoration: none; color: var(--text); margin-right: auto; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
 .wordmark { font: 800 1.2rem/1.1 var(--font-head); letter-spacing: -.015em; }
 .wordmark::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 10px; border-radius: 3px; background: var(--accent); vertical-align: .1em; }
 .logo { height: 44px; width: auto; }
+/* Most tradie logos are dark ink made for white paper: in dark mode they sit on a light plate so they
+   stay readable (found in the 27 Oct test build). A logo made for dark backgrounds sets logo.onDark "as-is". */
+@media (prefers-color-scheme: dark) { .logo-plate { background: #f4f4f2; padding: 4px 10px; border-radius: 10px; box-sizing: border-box; } }
 .nav { display: none; list-style: none; margin: 0; padding: 0; gap: 2px; }
 .nav a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 600; transition: background-color .15s; }
 .nav a:hover { background: var(--surface); }
@@ -312,10 +315,10 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- Blueprint (electricians): navy, grid paper, a wiring diagram that draws itself ---------- */
 body.dir-blueprint {
   --bg: #f5f8fc; --surface: #e8eef7; --raised: #ffffff; --text: #0b1f3a; --muted: #3c4f6d; --line: #c9d5e5; --line-strong: #7b8eab;
-  --brand-text: #0e4a8a; --brand-tint: #e1ecf8; --cyan: #5cc8ff; --header-bg: rgba(245, 248, 252, .94);
+  --brand-text: #0e4a8a; --brand-tint: #e1ecf8; --cyan: #5cc8ff; --header-bg: rgba(245, 248, 252, .98);
 }
 @media (prefers-color-scheme: dark) {
-  body.dir-blueprint { --bg: #081a31; --surface: #0b2140; --raised: #10284b; --text: #eaf1fa; --muted: #a9bad1; --line: #23426d; --line-strong: #5d7aa3; --brand-text: #7fd3ff; --brand-tint: #133a66; --header-bg: rgba(8, 26, 49, .92); }
+  body.dir-blueprint { --bg: #081a31; --surface: #0b2140; --raised: #10284b; --text: #eaf1fa; --muted: #a9bad1; --line: #23426d; --line-strong: #5d7aa3; --brand-text: #7fd3ff; --brand-tint: #133a66; --header-bg: rgba(8, 26, 49, .98); }
 }
 .dir-blueprint .hero { background-color: #0b1f3a; color: #f5f8fc; }
 .dir-blueprint .hero::before { background: radial-gradient(700px 420px at 80% 30%, rgba(92, 200, 255, .14), transparent 65%); box-shadow: inset 0 -6px 0 var(--accent); }
@@ -338,10 +341,10 @@ body.dir-blueprint {
 /* ---------- Flow (plumbers): deep teal, moving water, a pipe run ---------- */
 body.dir-flow {
   --bg: #f2fbfb; --surface: #e0f1f1; --raised: #ffffff; --text: #072a31; --muted: #3c5c61; --line: #c4e0e0; --line-strong: #6f9a9e;
-  --brand-text: #0b5f6d; --brand-tint: #d9f1f1; --aqua: #3fd0c9; --alert: #ff4d4d; --header-bg: rgba(242, 251, 251, .94);
+  --brand-text: #0b5f6d; --brand-tint: #d9f1f1; --aqua: #3fd0c9; --alert: #ff4d4d; --header-bg: rgba(242, 251, 251, .98);
 }
 @media (prefers-color-scheme: dark) {
-  body.dir-flow { --bg: #04232a; --surface: #062d35; --raised: #0a3741; --text: #e6f7f7; --muted: #9fc4c6; --line: #1b4c56; --line-strong: #4f858c; --brand-text: #5fe0d9; --brand-tint: #0e4752; --header-bg: rgba(4, 35, 42, .92); }
+  body.dir-flow { --bg: #04232a; --surface: #062d35; --raised: #0a3741; --text: #e6f7f7; --muted: #9fc4c6; --line: #1b4c56; --line-strong: #4f858c; --brand-text: #5fe0d9; --brand-tint: #0e4752; --header-bg: rgba(4, 35, 42, .98); }
 }
 .dir-flow .hero { color: #f2fbfb; background: #06343f; }
 .dir-flow .hero::before { box-shadow: inset 0 -6px 0 var(--aqua); background: radial-gradient(600px 300px at 15% 110%, rgba(63, 208, 201, .22), transparent 70%); }
@@ -366,10 +369,10 @@ body.dir-flow {
 /* ---------- Lawn (garden care): fresh-cut stripes, a big soft serif, the mowing year ---------- */
 body.dir-lawn {
   --bg: #f4f6ee; --surface: #e7eddc; --raised: #ffffff; --text: #15201a; --muted: #4a5a4d; --line: #d1dbc5; --line-strong: #7d907f;
-  --brand-text: #2c6a37; --brand-tint: #e2edd2; --fresh: #9bcb5b; --header-bg: rgba(244, 246, 238, .94);
+  --brand-text: #2c6a37; --brand-tint: #e2edd2; --fresh: #9bcb5b; --header-bg: rgba(244, 246, 238, .98);
 }
 @media (prefers-color-scheme: dark) {
-  body.dir-lawn { --bg: #0e1b12; --surface: #132418; --raised: #192e1f; --text: #e8efe4; --muted: #a9b9a8; --line: #2a4030; --line-strong: #5d7a62; --brand-text: #a9d86e; --brand-tint: #22402a; --header-bg: rgba(14, 27, 18, .92); }
+  body.dir-lawn { --bg: #0e1b12; --surface: #132418; --raised: #192e1f; --text: #e8efe4; --muted: #a9b9a8; --line: #2a4030; --line-strong: #5d7a62; --brand-text: #a9d86e; --brand-tint: #22402a; --header-bg: rgba(14, 27, 18, .98); }
 }
 .dir-lawn .hero { color: #f4f6ee; background-color: #1e4d2b; background-image: repeating-linear-gradient(100deg, rgba(255, 255, 255, .055) 0 90px, rgba(0, 0, 0, .07) 90px 180px); }
 .dir-lawn .hero::before { background: linear-gradient(180deg, rgba(10, 30, 15, .1), rgba(10, 30, 15, .55)); box-shadow: inset 0 -6px 0 var(--fresh); }
@@ -384,10 +387,6 @@ body.dir-lawn {
 .dir-flow .svc-mark { transition: background-color .25s ease-out, color .25s ease-out; }
 .js .dir-flow .svc li:not(.on) .svc-mark { background: transparent; }
 .dir-lawn .svc h3 { font-weight: 600; }
-.marquee { overflow: hidden; background: var(--bg); border-bottom: 1px solid var(--line); padding: var(--s3) 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.track { display: flex; gap: 3rem; width: max-content; animation: mq 45s linear infinite; font: 600 clamp(2.25rem, 6vw, 4.5rem)/1.1 var(--font-head); letter-spacing: -.02em; color: var(--brand-text); }
-.track span::after { content: ""; display: inline-block; width: .32em; height: .32em; margin-left: 3rem; border-radius: 50%; background: var(--fresh, var(--accent)); vertical-align: .18em; }
-@keyframes mq { to { transform: translateX(-50%); } }
 .rhythm { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; align-items: end; }
 .rhythm li { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .rhythm-bar { display: flex; flex-direction: column-reverse; gap: 4px; width: 100%; height: 108px; justify-content: flex-start; }
@@ -399,14 +398,15 @@ body.dir-lawn {
 .svc-note { margin-top: var(--s3); }
 
 /* ===================== Motion =====================
-   assets/motion.js adds .js to <html> and sets CSS variables from the scroll position:
-   --e (reveal, 0→1), --p (whole pass through the screen), --f (focus: top at 75% → bottom at 55%),
-   --h (how far the hero has scrolled away). Because they follow the scroll position, every effect
-   plays backwards when you scroll up. Nothing is hidden or moved without .js, and .js is never added
-   when the device asks for reduced motion. Only transform and opacity change (cheap on phones). */
-.js [data-reveal] { opacity: var(--e, 0); transform: translate3d(0, calc((1 - var(--e, 0)) * 32px), 0); }
+   assets/motion.js adds .js to <html> (never when the device asks for reduced motion). Reveals are
+   one-shot: .in is added once and a transition does the rest (cheap on phones). Scroll-linked effects
+   get CSS variables while on screen: --p (whole pass through the screen), --f (focus: top at 75% →
+   bottom at 55%), --h (how far the hero has scrolled away). Only transform and opacity change. */
+.js [data-reveal] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(min(var(--i, 0), 6) * 60ms); }
+.js [data-reveal].in { opacity: 1; transform: none; }
 .js .rhythm li[data-reveal] { opacity: 1; transform: none; }
-.js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(var(--e, 0)); transform-origin: bottom; }
+.js .rhythm li[data-reveal] .rhythm-bar i { transform: scaleY(0); transform-origin: bottom; transition: transform .8s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(min(var(--i, 0), 11) * 50ms); }
+.js .rhythm li[data-reveal].in .rhythm-bar i { transform: none; }
 .words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
 .words .w > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
 @keyframes rise { to { transform: none; } }
@@ -479,23 +479,61 @@ body.dir-blueprint .hero.hero-photo::after { display: block; opacity: .45; }
 .btn:active:not(:disabled) { transform: scale(.97); }
 h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
+/* Small details (make-interfaces-feel-better pass, 27 Oct) */
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.gallery img { outline: 1px solid rgba(0, 0, 0, .08); outline-offset: -1px; }
+@media (prefers-color-scheme: dark) { .gallery img { outline-color: rgba(255, 255, 255, .08); } }
+.price-table td { font-variant-numeric: tabular-nums; }
+.btn span, .rail-phone, .card-phone { white-space: nowrap; } /* a phone number never breaks across lines */
+.contact-list li { min-width: 0; } .contact-list a { overflow-wrap: anywhere; } /* long emails wrap on 320px screens */
 
 /* Service rows: hover feedback (UI/UX Pro Max "Home Services": service menu animations) */
 .svc li { transition: background-color .2s ease; border-radius: 4px; }
 .svc-mark { transition: transform .2s cubic-bezier(.22, 1, .36, 1); }
 @media (hover: hover) { .svc li:hover { background: var(--brand-tint); } .svc li:hover .svc-mark { transform: translateX(4px); } }
-.btn-accent:hover:not(:disabled) { transform: translateY(-1px); }
+@media (hover: hover) and (pointer: fine) { .btn-accent:hover:not(:disabled) { transform: translateY(-1px); } } /* a lift that would stick after a tap on phones */
 
 /* Moving strip: pause on hover or focus, and a visible pause button (WCAG 2.2.2) */
-.marquee-wrap { background: var(--bg); border-bottom: 1px solid var(--line); }
-.marquee { border-bottom: 0; }
 /* Hover-pause only on devices with a real pointer, and only over the strip itself: phones keep a
    'hover' after a tap, which used to stop Play from working */
-.marquee.paused .track { animation-play-state: paused; }
-@media (hover: hover) and (pointer: fine) { .marquee:hover .track { animation-play-state: paused; } }
-.marquee-toggle { margin: 0 0 var(--s2); min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: 600 .9375rem/1.2 var(--font-body); cursor: pointer; }
-.marquee-toggle:hover { background: var(--surface); }
-@media (prefers-reduced-motion: reduce) { .marquee-toggle { display: none; } }
-
 /* Phones: keep a keyboard-focused control from hiding under the call bar (WCAG 2.4.11) */
 @media (max-width: 767px) { html { scroll-padding-bottom: 96px; } }
+
+/* ===================== Build (builders, kit homes, renovators, roofers) ===================== */
+/* No palette of its own: the client's brand colours, with their best photo as the hero. */
+.dir-build .hero { color: #fff; background-color: var(--brand); }
+.dir-build .hero::after { display: none; }
+.dir-build .hero .btn-ghost { color: #fff; }
+.dir-build .hero-photo { --shade: var(--brand-deep-rgb); } /* deeper than the brand, so a white roof doesn't turn pink under it */
+.dir-build .hero-dir h1 { font-size: clamp(3rem, 8.5vw, 7rem); font-weight: 700; line-height: .92; letter-spacing: -.01em; max-width: 11ch; }
+.dir-build .svc-mark { border-radius: 12px; transition: background-color .25s ease-out, color .25s ease-out; }
+.js .dir-build .svc li.on .svc-mark { background: var(--brand-tint); }
+@media (min-width: 900px) { .dir-build .svc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s5); } }
+/* Gallery: the first photo leads, the rest sit beside it */
+@media (min-width: 900px) {
+  .dir-build .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dir-build .gallery li:first-child { grid-column: span 2; grid-row: span 2; }
+  .dir-build .gallery li:first-child figure { height: 100%; display: flex; flex-direction: column; }
+  .dir-build .gallery li:first-child img { aspect-ratio: auto; flex: 1; min-height: 0; }
+}
+.dir-build .why h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+/* ===================== Showcase: three photos of their work under the hero ===================== */
+/* Replaced the moving services strip (owner, 27 Oct: it looked scrappy and the site lagged). */
+.showcase { padding: clamp(40px, 6vw, 72px) 0; border-bottom: 1px solid var(--line); }
+.ribbon { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.ribbon li:first-child { grid-column: 1 / -1; }
+.ribbon figure { margin: 0; }
+.ribbon-img { overflow: hidden; border-radius: var(--radius-sm); aspect-ratio: 4 / 5; background: var(--surface); outline: 1px solid rgba(0, 0, 0, .08); outline-offset: -1px; }
+.ribbon li:first-child .ribbon-img { aspect-ratio: 16 / 10; }
+.ribbon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ribbon figcaption { font-size: .9rem; color: var(--muted); margin-top: 8px; }
+@media (min-width: 900px) {
+  .ribbon { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); align-items: start; }
+  .ribbon li:first-child { grid-column: auto; }
+  .ribbon li:first-child .ribbon-img { aspect-ratio: 4 / 5; }
+  .ribbon li:nth-child(2) { margin-top: clamp(32px, 5vw, 72px); } /* stepped, like panels going up */
+}
+/* Each photo drifts a little inside its frame as it passes; the middle one a touch more, for depth */
+.js .ribbon img { transform: translate3d(0, calc((var(--p, .5) - .5) * -8%), 0) scale(1.1); }
+.js .ribbon li:nth-child(2) img { transform: translate3d(0, calc((var(--p, .5) - .5) * -14%), 0) scale(1.16); }
