@@ -1,13 +1,13 @@
 # Website demos for local trades
 
-Three example websites for **fictional** Australian trade businesses, built with a site factory (intake form → build prompt → static site → automated checks).
+Three example websites for **fictional** Australian trade businesses, plus the landing page that links them. As you scroll each site, a 3D model of that trade's job builds itself in the order the business does it.
 
 | Demo | Folder |
 |---|---|
-| Ironbark Plumbing Co. (plumber, Parramatta) | `plumber/` |
-| Tallowwood Electrical (electrician, Penrith) | `electrician/` |
-| Greenline Garden Care (landscaper, Castle Hill) | `landscaper/` |
+| Gridline Electrical (electrician, Brisbane's north side) | `electrician/` |
+| Sunline Solar & Battery (solar installer, Sunshine Coast) | `solar/` |
+| Dirt Bros Landscaping (landscaper, Gold Coast) | `landscaper/` |
 
-All names, prices, phone numbers (ACMA-reserved fictional numbers) and emails are made up. Each folder has a `CHECKLIST.md` with verification results (accessibility, links, layout, Lighthouse).
+All names, licence numbers, figures, phone numbers (ACMA-reserved fictional numbers) and emails are made up. The work photos are AI-generated, and each site says so in its footer. `plumber/` only redirects old links to the landing page.
 
-This repository contains built output only. It is generated; don't edit it by hand.
+Built with the `build-trade-site` skill (sources in the private Research-and-ideas repo, `vibecoding-guide/trades/sources/`). This repository contains built output only; don't edit it by hand.
