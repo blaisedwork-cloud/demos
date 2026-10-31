@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Ironbark Plumbing Co.
+ORG:Ironbark Plumbing Co.
+TEL;TYPE=WORK,VOICE:+61491570156
+EMAIL;TYPE=WORK:hello@example.com
+NOTE:Plumber. Parramatta\, Westmead\, Harris Park\, Granville\, North Parramatta
+END:VCARD

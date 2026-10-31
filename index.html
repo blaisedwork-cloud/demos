@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Websites for tradies · Blaise Davis</title>
-<meta name="description" content="Websites for Australian tradies, done for you. Each one shows your kind of job building itself in 3D as customers scroll. See three sample sites: an electrician, a solar installer and a landscaper.">
+<meta name="description" content="Websites for Australian tradies, done for you: a page for each of your main jobs, your photos, your colours and a big call button. See three sample sites: an electrician, a plumber and a garden care business.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0a0d12">
 <meta property="og:type" content="website">
@@ -12,19 +12,19 @@
 <meta property="og:description" content="Websites for tradies, done for you. Open a sample site on your phone and scroll.">
 <meta property="og:locale" content="en_AU">
 <meta property="og:image" content="https://blaisedwork-cloud.github.io/demos/share.jpg">
-<meta property="og:image:alt" content="Three sample tradie websites on phones: an electrician, a solar installer and a landscaper">
+<meta property="og:image:alt" content="Three sample tradie websites on phones: an electrician, a plumber and a garden care business">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0d12'/%3E%3Cpath d='M36 8 18 36h12l-4 20 20-30H34z' fill='%23ff6a13'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* Concept: the sample sites' world after dark. A blue-hour site, a faint set-out grid, safety-orange light,
-   and phones that play each sample's build story on their own. */
+   and phones that scroll through each sample site on their own. */
 @font-face { font-family: "Bricolage"; src: url("fonts/bricolage.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
 @font-face { font-family: "Figtree"; src: url("fonts/figtree.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
 :root {
   --night: #0a0d12; --panel: #121822; --panel-2: #18202c; --line: #232c39; --ink: #eef1f5; --muted: #9ba6b5;
   --orange: #ff6a13; --orange-ink: #1a0d00; --orange-deep: #c44a00;
-  --gridline: #3db8ff; --sunline: #ffb020; --dirtbros: #ffd400;
+  --sparky: #ffb020; --plumb: #3fd0c9; --garden: #9bcb5b;
   --display: "Bricolage", "Arial Black", Arial, sans-serif;
   --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color-scheme: dark;
@@ -86,14 +86,14 @@ main, footer { position: relative; z-index: 1; }
 .price-tag b { font: 800 1.9rem/1 var(--display); padding: 12px 18px; background: var(--ink); color: var(--night); display: grid; place-items: center; }
 .price-tag span { padding: 10px 16px; font-size: .95rem; line-height: 1.35; display: grid; align-content: center; color: var(--muted); }
 
-/* phones that play each sample's build story */
+/* phones that scroll through each sample site */
 .phone { position: relative; width: 100%; aspect-ratio: 390 / 844; border-radius: 34px; padding: 9px; background: linear-gradient(160deg, #2b3340, #10141b 40%, #1d232d); box-shadow: 0 0 0 1px #343e4d inset, 0 30px 60px -20px rgba(0,0,0,.8), 0 0 70px -10px color-mix(in srgb, var(--c, #ff6a13) 45%, transparent); }
 .screen { position: relative; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
 .reel { width: 100%; height: 500%; background-size: 100% 100%; animation: reel 16s cubic-bezier(.65, 0, .35, 1) infinite; animation-delay: var(--delay, 0s); will-change: transform; }
 @keyframes reel { 0%, 15% { transform: translateY(0); } 20%, 35% { transform: translateY(-20%); } 40%, 55% { transform: translateY(-40%); } 60%, 75% { transform: translateY(-60%); } 80%, 95% { transform: translateY(-80%); } 100% { transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .reel { animation: none; } }
 .reel.r-electrician { background-image: url("reels/electrician.webp"); }
-.reel.r-solar { background-image: url("reels/solar.webp"); }
+.reel.r-plumber { background-image: url("reels/plumber.webp"); }
 .reel.r-landscaper { background-image: url("reels/landscaper.webp"); }
 
 .fan { position: relative; height: clamp(440px, 52vw, 600px); max-width: 620px; margin: 0 auto; width: 100%; }
@@ -139,7 +139,7 @@ section.block { padding-block: clamp(64px, 9vw, 120px); }
 .open { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; min-height: 48px; padding: 10px 18px; border-radius: 12px; border: 1.5px solid var(--c); color: var(--ink); text-decoration: none; font-weight: 700; transition: background .18s ease, color .18s ease; }
 .open:hover { background: var(--c); color: var(--night); }
 .open svg { width: 18px; height: 18px; }
-.c-electrician { --c: var(--gridline); } .c-solar { --c: var(--sunline); } .c-landscaper { --c: var(--dirtbros); }
+.c-electrician { --c: var(--sparky); } .c-plumber { --c: var(--plumb); } .c-landscaper { --c: var(--garden); }
 
 /* how it works */
 .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); list-style: none; margin: 0; padding: 0; }
@@ -198,7 +198,7 @@ footer .wrap { display: grid; gap: 6px; }
       <div>
         <span class="eyebrow">Websites for tradies · Australia-wide</span>
         <h1>A website that shows <em>how you work.</em></h1>
-        <p class="lead">A page for each of your main jobs, your suburbs, licence number, a quote form and a big call button. <strong>As customers scroll, a 3D model of your kind of job builds itself, in the order you do it.</strong> You fill in a 10-minute form on your phone. I build it, check it, and put it live on your own web address in about a week.</p>
+        <p class="lead">A page for each of your main jobs, your suburbs, licence number, a quote form and a big call button. <strong>Your colours, your photos and your own words, so it looks like your business, not a template.</strong> You fill in a 10-minute form on your phone. I build it, check it, and put it live on your own web address in about a week.</p>
         <div class="ctas">
           <a class="btn btn-main" href="#samples">See the sample sites
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
@@ -209,10 +209,10 @@ footer .wrap { display: grid; gap: 6px; }
         <p class="price-tag"><b>$990</b><span>All up. Half to start,<br>half when you're happy.</span></p>
       </div>
 
-      <div class="fan" aria-label="The three sample sites, each playing its build story">
-        <a class="f1" href="solar/" aria-label="Open the solar installer sample site">
-          <div class="phone c-solar"><div class="screen"><div class="reel r-solar" style="--delay:-5s"></div></div></div>
-          <span class="tag c-solar"><i></i>Solar</span>
+      <div class="fan" aria-label="The three sample sites, each scrolling on a phone">
+        <a class="f1" href="plumber/" aria-label="Open the plumber sample site">
+          <div class="phone c-plumber"><div class="screen"><div class="reel r-plumber" style="--delay:-5s"></div></div></div>
+          <span class="tag c-plumber"><i></i>Plumber</span>
         </a>
         <a class="f2" href="electrician/" aria-label="Open the electrician sample site">
           <div class="phone c-electrician"><div class="screen"><div class="reel r-electrician"></div></div></div>
@@ -220,7 +220,7 @@ footer .wrap { display: grid; gap: 6px; }
         </a>
         <a class="f3" href="landscaper/" aria-label="Open the landscaper sample site">
           <div class="phone c-landscaper"><div class="screen"><div class="reel r-landscaper" style="--delay:-10s"></div></div></div>
-          <span class="tag c-landscaper"><i></i>Landscaper</span>
+          <span class="tag c-landscaper"><i></i>Garden care</span>
         </a>
       </div>
     </div>
@@ -228,8 +228,8 @@ footer .wrap { display: grid; gap: 6px; }
 
   <div class="ticker" aria-hidden="true">
     <ul>
-      <li>Switchboard upgrades</li><li>Solar &amp; batteries</li><li>Retaining walls</li><li>EV chargers</li><li>Hot water</li><li>Decks</li><li>LED downlights</li><li>Turf &amp; paving</li><li>Blocked drains</li><li>Safety switches</li>
-      <li>Switchboard upgrades</li><li>Solar &amp; batteries</li><li>Retaining walls</li><li>EV chargers</li><li>Hot water</li><li>Decks</li><li>LED downlights</li><li>Turf &amp; paving</li><li>Blocked drains</li><li>Safety switches</li>
+      <li>Switchboard upgrades</li><li>Hot water</li><li>Lawn mowing</li><li>Safety switches</li><li>Blocked drains</li><li>Hedging</li><li>LED downlights</li><li>Leaking taps</li><li>Turf laying</li><li>Bathroom plumbing</li>
+      <li>Switchboard upgrades</li><li>Hot water</li><li>Lawn mowing</li><li>Safety switches</li><li>Blocked drains</li><li>Hedging</li><li>LED downlights</li><li>Leaking taps</li><li>Turf laying</li><li>Bathroom plumbing</li>
     </ul>
   </div>
 
@@ -237,56 +237,56 @@ footer .wrap { display: grid; gap: 6px; }
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">Sample sites</span>
-        <h2>Three trades. Three jobs that build themselves as you scroll.</h2>
-        <p>Every site gets an animation of that business's real work, its colours and its area, with a photo for each step. Open one on your phone and scroll slowly.</p>
+        <h2>Three trades. Three sites that look like the business.</h2>
+        <p>Same care on every one, but each is made for that business: its colours, its photos, the top of the page and the order of things chosen for how it wins work. Open one on your phone and tap through the pages.</p>
         <span class="note">Made-up businesses. Names, numbers and work photos aren't real.</span>
       </div>
 
       <div class="samples">
         <article class="sample c-electrician">
-          <a class="phone" href="electrician/" aria-label="Open the Gridline Electrical sample site"><div class="screen"><div class="reel r-electrician" style="--delay:-2s"></div></div></a>
+          <a class="phone" href="electrician/" aria-label="Open the Tallowwood Electrical sample site"><div class="screen"><div class="reel r-electrician" style="--delay:-2s"></div></div></a>
           <div class="body">
             <span class="trade">Electrician</span>
-            <h3>Gridline Electrical</h3>
-            <p class="where">Sparkies on Brisbane's north side and Moreton Bay</p>
+            <h3>Tallowwood Electrical</h3>
+            <p class="where">A local sparky around Penrith, owner on every job</p>
             <ol class="story">
-              <li><span>The roof lifts off and the camera finds the old fuse board, one fuse running hot</span></li>
-              <li><span>The new switchboard goes in, then the new circuits trace through the roof</span></li>
-              <li><span>Room by room the lights come back on, and the house closes up for the night</span></li>
+              <li><span>Opens on a big photo of a house at dusk, with the call button right there</span></li>
+              <li><span>Its own page for switchboards, safety switches and lighting</span></li>
+              <li><span>Navy and amber, with the licence and prices up front</span></li>
             </ol>
             <a class="open" href="electrician/">Open the electrician site
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
-        <article class="sample c-solar">
-          <a class="phone" href="solar/" aria-label="Open the Sunline Solar and Battery sample site"><div class="screen"><div class="reel r-solar" style="--delay:-7s"></div></div></a>
+        <article class="sample c-plumber">
+          <a class="phone" href="plumber/" aria-label="Open the Ironbark Plumbing Co. sample site"><div class="screen"><div class="reel r-plumber" style="--delay:-7s"></div></div></a>
           <div class="body">
-            <span class="trade">Solar installer</span>
-            <h3>Sunline Solar &amp; Battery</h3>
-            <p class="where">Solar and batteries on the Sunshine Coast</p>
+            <span class="trade">Plumber</span>
+            <h3>Ironbark Plumbing Co.</h3>
+            <p class="where">Drains, hot water and leaks around Parramatta</p>
             <ol class="story">
-              <li><span>A roof check, then roof hooks and rails go on</span></li>
-              <li><span>Panels drop in row by row, and the cable runs down to the inverter</span></li>
-              <li><span>The inverter and battery go on the wall, and the system switches on</span></li>
+              <li><span>Leads with after-hours call-outs and "priced before we start"</span></li>
+              <li><span>The van photo framed beside the headline, on a street of jacarandas</span></li>
+              <li><span>A page each for drains, hot water, leaks and bathrooms</span></li>
             </ol>
-            <a class="open" href="solar/">Open the solar site
+            <a class="open" href="plumber/">Open the plumber site
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="sample c-landscaper">
-          <a class="phone" href="landscaper/" aria-label="Open the Dirt Bros Landscaping sample site"><div class="screen"><div class="reel r-landscaper" style="--delay:-12s"></div></div></a>
+          <a class="phone" href="landscaper/" aria-label="Open the Greenline Garden Care sample site"><div class="screen"><div class="reel r-landscaper" style="--delay:-12s"></div></div></a>
           <div class="body">
-            <span class="trade">Landscaper</span>
-            <h3>Dirt Bros Landscaping</h3>
-            <p class="where">Walls, turf and paving on the Gold Coast</p>
+            <span class="trade">Garden care</span>
+            <h3>Greenline Garden Care</h3>
+            <p class="where">A two-person lawn and garden team in the Hills District</p>
             <ol class="story">
-              <li><span>Dig and road base, then the retaining wall goes up course by course</span></li>
-              <li><span>Pavers laid to fall, and fresh turf rolled out along the wall</span></li>
-              <li><span>Plants in, and the garden lights come on</span></li>
+              <li><span>A big headline on mown-stripe green, then their best photos straight away</span></li>
+              <li><span>"Same two people every visit" comes before the list of jobs</span></li>
+              <li><span>A mowing guide for the year, and a page for each job</span></li>
             </ol>
-            <a class="open" href="landscaper/">Open the landscaper site
+            <a class="open" href="landscaper/">Open the garden care site
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
@@ -317,10 +317,10 @@ footer .wrap { display: grid; gap: 6px; }
       </div>
       <div class="gets">
         <div><h3>Call, text or a quote form</h3><p>A call button always one tap away on phones, plus text, "save our number" and a quote form that goes straight to your email.</p></div>
-        <div><h3>Your job, built in 3D</h3><p>An animation of your kind of work, step by step, with your own photo of each stage.</p></div>
+        <div><h3>Looks like your business</h3><p>Your colours and logo, your own photos of your work, and the way you describe your jobs. Two sparkies in one town won't get the same site.</p></div>
         <div><h3>Licence and ABN on show</h3><p>Many trades have to show licence details when they advertise. It's built in.</p></div>
         <div><h3>A page for every main job</h3><p>Each of your main jobs gets its own page, so it can turn up when people search for that job. Plus About, Areas, prices and the questions people always ask.</p></div>
-        <div><h3>Fast and checked</h3><p>Tested on phone, tablet and desktop for speed and accessibility. The 3D only loads once someone starts scrolling.</p></div>
+        <div><h3>Fast and checked</h3><p>Tested on phone, tablet and desktop for speed and accessibility. Kept light, so it loads quickly on a phone.</p></div>
         <div><h3>You own it</h3><p>Your web address is in your name. No lock-in contract, ever. Optional monthly plan from $39 if you want it looked after.</p></div>
       </div>
     </div>

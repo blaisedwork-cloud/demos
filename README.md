@@ -1,13 +1,13 @@
 # Website demos for local trades
 
-Three example websites for **fictional** Australian trade businesses, plus the landing page that links them. As you scroll each site, a 3D model of that trade's job builds itself in the order the business does it.
+Three example websites for **fictional** Australian trade businesses, plus the landing page that links them. Each is a multi-page site (Home, Services, a page per main job, About, Areas, FAQ, Contact with a quote form that never sends) made to look like that one business.
 
 | Demo | Folder |
 |---|---|
-| Gridline Electrical (electrician, Brisbane's north side) | `electrician/` |
-| Sunline Solar & Battery (solar installer, Sunshine Coast) | `solar/` |
-| Dirt Bros Landscaping (landscaper, Gold Coast) | `landscaper/` |
+| Tallowwood Electrical (electrician, Penrith) | `electrician/` |
+| Ironbark Plumbing Co. (plumber, Parramatta) | `plumber/` |
+| Greenline Garden Care (lawn and garden care, Castle Hill) | `landscaper/` |
 
-All names, licence numbers, figures, phone numbers (ACMA-reserved fictional numbers) and emails are made up. The work photos are AI-generated, and each site says so in its footer. `plumber/` only redirects old links to the landing page.
+All names, figures, phone numbers (ACMA-reserved fictional numbers) and emails are made up. The work photos are AI-generated, and each site says so in its footer.
 
-Built with the `build-trade-site` skill (sources in the private Research-and-ideas repo, `vibecoding-guide/trades/sources/`). This repository contains built output only; don't edit it by hand.
+Built from the private Website-buisness repo (`demos/publish.sh`, the site template in `template/`). This repository contains built output only; don't edit it by hand. The old `solar/` demo is removed; links to it 404.
