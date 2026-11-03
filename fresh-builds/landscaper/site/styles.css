@@ -323,7 +323,7 @@ figure{margin:0}
 /* Footer */
 .site-footer{background:#10231A;color:#CBD4C6;padding-top:clamp(56px,8vw,96px);font-size:.95rem;background-image:var(--stripes)}
 .foot-grid{display:grid;gap:36px}
-@media (min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+@media (min-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}@media (min-width:1080px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr 1.1fr 1fr}}
 .site-footer h2{font:600 .78rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
 .site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .site-footer a{color:var(--cream);text-decoration:none;display:inline-flex;min-height:36px;align-items:center}
