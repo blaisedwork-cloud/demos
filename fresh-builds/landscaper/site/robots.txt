@@ -1,0 +1,5 @@
+# Demo site: kept out of search results (pages also carry noindex).
+User-agent: *
+Disallow:
+
+Sitemap: https://blaisedwork-cloud.github.io/demos/landscaper/sitemap.xml

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+<rect width="1600" height="900" fill="#1F3D29"/><rect x="0" y="0" width="133" height="900" fill="#264A31"/><rect x="133" y="0" width="133" height="900" fill="#1F3D29"/><rect x="266" y="0" width="133" height="900" fill="#264A31"/><rect x="399" y="0" width="133" height="900" fill="#1F3D29"/><rect x="532" y="0" width="133" height="900" fill="#264A31"/><rect x="665" y="0" width="133" height="900" fill="#1F3D29"/><rect x="798" y="0" width="133" height="900" fill="#264A31"/><rect x="931" y="0" width="133" height="900" fill="#1F3D29"/><rect x="1064" y="0" width="133" height="900" fill="#264A31"/><rect x="1197" y="0" width="133" height="900" fill="#1F3D29"/><rect x="1330" y="0" width="133" height="900" fill="#264A31"/><rect x="1463" y="0" width="133" height="900" fill="#1F3D29"/><rect x="1596" y="0" width="133" height="900" fill="#264A31"/>
+<rect width="1600" height="900" fill="url(#g)"/>
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9E265" stop-opacity=".10"/><stop offset="1" stop-color="#0D1C12" stop-opacity=".45"/></linearGradient></defs>
+<g font-family="Georgia,serif" text-anchor="middle">
+<rect x="570" y="54" width="460" height="156" rx="26" fill="#F6F2E8" fill-opacity=".94"/>
+<text x="800" y="102" font-family="Arial,sans-serif" font-size="17" letter-spacing="3" fill="#2F5D3A" font-weight="700">PHOTO PLACEHOLDER</text>
+<text x="800" y="146" font-size="40" fill="#17301F" font-style="italic">band</text>
+<text x="800" y="182" font-family="Arial,sans-serif" font-size="16" fill="#4A564D">A freshly mown backyard lawn with mowing...</text>
+</g></svg>
