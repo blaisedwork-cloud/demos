@@ -3,367 +3,748 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Websites for tradies · Blaise Davis</title>
-<meta name="description" content="Websites for Australian tradies, done for you: a page for each of your main jobs, your photos, your colours and a big call button. See three sample sites: an electrician, a plumber and a garden care business.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0a0d12">
+<title>Websites for Tradies, $990 All Up | Blaise Davis</title>
+<meta name="description" content="A proper multi-page website for your trade business, built by Blaise Davis in Albury–Wodonga. $990 all up. Nothing to pay until you've seen it and you're happy.">
+<meta name="theme-color" content="#16181b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Websites for tradies · Blaise Davis">
-<meta property="og:description" content="Websites for tradies, done for you. Open a sample site on your phone and scroll.">
 <meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="Blaise Davis, websites for tradies">
+<meta property="og:title" content="A proper website for your trade. $990 all up.">
+<meta property="og:description" content="Your jobs, your photos, your licence on show, tap-to-call on every page. Nothing to pay until you're happy with it.">
+<meta property="og:url" content="https://blaisedwork-cloud.github.io/demos/">
 <meta property="og:image" content="https://blaisedwork-cloud.github.io/demos/share.jpg">
-<meta property="og:image:alt" content="Three sample tradie websites on phones: an electrician, a plumber and a garden care business">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0d12'/%3E%3Cpath d='M36 8 18 36h12l-4 20 20-30H34z' fill='%23ff6a13'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="twitter:title" content="A proper website for your trade. $990 all up.">
+<meta name="twitter:description" content="Your jobs, your photos, your licence on show, tap-to-call on every page. Nothing to pay until you're happy with it.">
+<meta name="twitter:image" content="https://blaisedwork-cloud.github.io/demos/share.jpg">
+
 <style>
-/* Concept: the sample sites' world after dark. A blue-hour site, a faint set-out grid, safety-orange light,
-   and phones that scroll through each sample site on their own. */
-@font-face { font-family: "Bricolage"; src: url("fonts/bricolage.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
-@font-face { font-family: "Figtree"; src: url("fonts/figtree.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
-:root {
-  --night: #0a0d12; --panel: #121822; --panel-2: #18202c; --line: #232c39; --ink: #eef1f5; --muted: #9ba6b5;
-  --orange: #ff6a13; --orange-ink: #1a0d00; --orange-deep: #c44a00;
-  --sparky: #ffb020; --plumb: #3fd0c9; --garden: #9bcb5b;
-  --display: "Bricolage", "Arial Black", Arial, sans-serif;
-  --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color-scheme: dark;
+@font-face{
+  font-family:"Archivo";
+  src:url(fonts/archivo-var.woff2) format("woff2");
+  font-weight:100 900; font-stretch:62% 125%; font-style:normal; font-display:swap;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--night); }
-body { margin: 0; background: var(--night); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); overflow-x: hidden; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-p { margin: 0; }
-h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02em; line-height: .98; margin: 0; text-wrap: balance; }
-.gutter { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
-.wrap { max-width: 1180px; margin: 0 auto; }
-.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.eyebrow::before { content: ""; width: 26px; height: 3px; border-radius: 2px; background: var(--orange); box-shadow: 0 0 12px var(--orange); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 12px 22px; border-radius: 14px; font: 700 1rem var(--body); text-decoration: none; border: 1.5px solid #3a4556; color: var(--ink); background: rgba(255,255,255,.02); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-.btn:hover { border-color: var(--ink); }
-.btn svg { width: 20px; height: 20px; flex: none; }
-.btn-main { background: var(--orange); border-color: var(--orange); color: var(--orange-ink); box-shadow: 0 6px 0 -1px var(--orange-deep), 0 10px 40px -8px rgba(255,106,19,.55); }
-.btn-main:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 0 -1px var(--orange-deep), 0 14px 46px -8px rgba(255,106,19,.65); }
-.btn-main:active { transform: translateY(3px); box-shadow: 0 2px 0 -1px var(--orange-deep); }
-.btn:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+:root{
+  --ink:#16181b; --ink-2:#23262b; --ink-3:#30343a;
+  --paper:#f4f1ea; --paper-2:#ebe6db; --card:#ffffff;
+  --line:#d9d3c6; --line-dark:#3a3e45;
+  --muted:#565b63; --muted-dark:#b9bdc4;
+  --hivis:#ffcc1f; --hivis-deep:#f2b705;
+  --ok:#1f7a45;
+  --head:"Archivo","Arial Narrow",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --r:14px; --gutter:20px; --max:1180px;
+  --bar:76px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.55 var(--body);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);font-stretch:78%;font-weight:850;line-height:.98;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+h2{font-size:clamp(2.3rem,7.4vw,4rem)}
+h3{font-size:1.45rem;line-height:1.05}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.hide-s{display:none}
+@media (min-width:420px){.hide-s{display:inline}}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--hivis);outline-offset:3px;border-radius:6px;box-shadow:0 0 0 6px var(--ink)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--hivis);color:var(--ink);padding:10px 14px;font-weight:700;border-radius:8px;z-index:50;text-decoration:none}
+.skip:focus{top:12px}
 
-/* the night site: set-out grid that fades out, a warm glow where the phones stand */
-.sky { position: absolute; inset: 0 0 auto; height: 1100px; pointer-events: none; z-index: 0; overflow: hidden;
-  background:
-    radial-gradient(60% 50% at 72% 46%, rgba(255,106,19,.16), transparent 70%),
-    radial-gradient(70% 60% at 20% 0%, rgba(61,184,255,.10), transparent 70%); }
-.sky::before { content: ""; position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(150,170,200,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(150,170,200,.07) 1px, transparent 1px);
-  background-size: 48px 48px; -webkit-mask-image: linear-gradient(#000 20%, transparent 95%); mask-image: linear-gradient(#000 20%, transparent 95%); }
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 1.35em;border-radius:12px;font:800 1.08rem/1.1 var(--body);text-decoration:none;border:2px solid transparent;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease;white-space:nowrap}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-hv{background:var(--hivis);color:var(--ink);box-shadow:0 4px 0 #b88a00}
+.btn-hv:hover{background:#ffd84d}
+.btn-hv:active{transform:translateY(3px);box-shadow:0 1px 0 #b88a00}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-ink{background:var(--ink);color:#fff;box-shadow:0 4px 0 #000}
+.btn-ink:hover{background:var(--ink-3)}
+.btn-ink:active{transform:translateY(3px);box-shadow:0 1px 0 #000}
 
-/* top bar */
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 31; background: var(--night); }
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: rgba(10,13,18,.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.mark { width: 40px; height: 40px; border-radius: 11px; background: #161c26; border: 1px solid var(--line); display: grid; place-items: center; flex: none; }
-.mark svg { width: 22px; height: 22px; filter: drop-shadow(0 0 6px rgba(255,106,19,.6)); }
-.brand b { font: 800 1.15rem/1.1 var(--display); display: block; }
-.brand span { font-size: .8rem; color: var(--muted); display: block; }
-.bar-call { display: none; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; }
-.bar-call .btn { min-height: 44px; padding: 8px 16px; }
-@media (min-width: 700px) { .bar-call { display: inline-flex; } }
+/* Label/eyebrow */
+.tag{display:inline-flex;align-items:center;gap:.5em;font:800 .78rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase}
+.tag::before{content:"";width:22px;height:4px;background:var(--hivis);flex:none}
+.on-paper .tag::before{background:var(--ink)}
 
-main, footer { position: relative; z-index: 1; }
+/* Hazard stripe */
+.hazard{height:12px;background:repeating-linear-gradient(-45deg,var(--hivis) 0 14px,var(--ink) 14px 28px)}
 
-/* hero */
-.hero { padding-block: clamp(40px, 7vw, 92px) clamp(48px, 7vw, 96px); }
-.hero .wrap { display: grid; gap: 56px; align-items: center; }
-@media (min-width: 980px) { .hero .wrap { grid-template-columns: 1fr 1.02fr; } }
-.hero h1 { font-size: clamp(2.6rem, 6.8vw, 5.2rem); margin: 18px 0 22px; }
-.hero h1 em { font-style: normal; color: var(--orange); text-shadow: 0 0 34px rgba(255,106,19,.45); }
-.lead { font-size: clamp(1.08rem, 1.9vw, 1.25rem); color: var(--muted); max-width: 34em; }
-.lead strong { color: var(--ink); font-weight: 600; }
-.ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-.price-tag { margin-top: 30px; display: inline-flex; align-items: stretch; border: 1.5px solid #3a4556; border-radius: 14px; overflow: hidden; background: var(--panel); }
-.price-tag b { font: 800 1.9rem/1 var(--display); padding: 12px 18px; background: var(--ink); color: var(--night); display: grid; place-items: center; }
-.price-tag span { padding: 10px 16px; font-size: .95rem; line-height: 1.35; display: grid; align-content: center; color: var(--muted); }
+/* Header */
+.top{background:var(--ink);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{display:grid;place-items:center;width:40px;height:40px;border-radius:9px;background:var(--hivis);color:var(--ink);font:900 1.05rem/1 var(--head);font-stretch:85%;letter-spacing:-.02em;flex:none}
+.brand b{display:block;font:850 1.1rem/1 var(--head);font-stretch:80%;text-transform:uppercase;letter-spacing:.01em}
+.brand small{display:block;font-size:.78rem;color:var(--muted-dark);margin-top:3px}
+.top-call{display:none}
+.top-call a{color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 6px}
+.top-call svg{width:20px;height:20px;color:var(--hivis)}
 
-/* phones that scroll through each sample site */
-.phone { position: relative; width: 100%; aspect-ratio: 390 / 844; border-radius: 34px; padding: 9px; background: linear-gradient(160deg, #2b3340, #10141b 40%, #1d232d); box-shadow: 0 0 0 1px #343e4d inset, 0 30px 60px -20px rgba(0,0,0,.8), 0 0 70px -10px color-mix(in srgb, var(--c, #ff6a13) 45%, transparent); }
-.screen { position: relative; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
-.reel { width: 100%; height: 500%; background-size: 100% 100%; animation: reel 16s cubic-bezier(.65, 0, .35, 1) infinite; animation-delay: var(--delay, 0s); will-change: transform; }
-@keyframes reel { 0%, 15% { transform: translateY(0); } 20%, 35% { transform: translateY(-20%); } 40%, 55% { transform: translateY(-40%); } 60%, 75% { transform: translateY(-60%); } 80%, 95% { transform: translateY(-80%); } 100% { transform: translateY(0); } }
-@media (prefers-reduced-motion: reduce) { .reel { animation: none; } }
-.reel.r-electrician { background-image: url("reels/electrician.webp"); }
-.reel.r-plumber { background-image: url("reels/plumber.webp"); }
-.reel.r-landscaper { background-image: url("reels/landscaper.webp"); }
+/* Hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(180deg,#000 30%,transparent 95%);-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 95%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:30px;padding-top:18px;padding-bottom:44px}
+.hero h1{font-size:clamp(2.9rem,13.6vw,5.8rem);font-stretch:64%;line-height:.92;margin:12px 0 14px}
+.hero h1 .price{color:var(--hivis);display:inline-block}
+.hero .lede{font-size:1.1rem;color:#e3e5e8;max-width:34em;margin-bottom:16px}
+.hero .lede strong{color:#fff}
+.promise{display:flex;align-items:flex-start;gap:12px;background:var(--ink-2);border:1px solid var(--line-dark);border-left:5px solid var(--hivis);border-radius:10px;padding:12px 14px;margin-bottom:18px;max-width:34em}
+.promise svg{width:26px;height:26px;color:var(--hivis);flex:none;margin-top:1px}
+.promise p{margin:0;font-size:1rem;line-height:1.4}
+.promise b{display:block;font:850 1.15rem/1.1 var(--head);font-stretch:85%;text-transform:uppercase;letter-spacing:.01em;margin-bottom:2px}
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:440px}
+.cta-row .btn{width:100%}
+.see{display:inline-flex;align-items:center;gap:.4em;margin-top:16px;font-weight:700;color:#fff;text-underline-offset:4px;min-height:44px}
+.see svg{width:18px;height:18px}
+.jump{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;margin:12px 0 0}
+.jump .see{margin:0}
+.jump-trades{display:flex;align-items:center;gap:6px;color:var(--muted-dark);font-size:.95rem}
+.jump-trades a{color:#fff;border:1px solid var(--line-dark);border-radius:999px;padding:0 12px;min-height:40px;display:inline-flex;align-items:center;text-decoration:none;font-weight:700}
+.jump-trades a:hover{border-color:var(--hivis);color:var(--hivis)}
+.chips{display:flex;flex-wrap:wrap;gap:8px 18px;margin:18px 0 0;padding:0;list-style:none;font-size:.95rem;color:#d7dade}
+.chips li{display:flex;align-items:center;gap:7px}
+.chips svg{width:18px;height:18px;color:var(--hivis)}
 
-.fan { position: relative; height: clamp(440px, 52vw, 600px); max-width: 620px; margin: 0 auto; width: 100%; }
-.fan a { position: absolute; top: 50%; left: 50%; width: clamp(170px, 21vw, 250px); translate: calc(-50% + var(--x)) calc(-50% + var(--y)); rotate: var(--r); transition: translate .35s ease, scale .35s ease; text-decoration: none; }
-.fan a:hover { scale: 1.03; }
-.fan .f1 { --x: -62%; --y: 4%; --r: -7deg; z-index: 1; }
-.fan .f2 { --x: 0%; --y: -2%; --r: 0deg; z-index: 3; width: clamp(190px, 23vw, 278px); }
-.fan .f3 { --x: 62%; --y: 4%; --r: 7deg; z-index: 2; }
-.fan .tag { position: absolute; left: 50%; bottom: -14px; translate: -50% 0; white-space: nowrap; font-size: .78rem; font-weight: 700; letter-spacing: .06em; padding: 6px 12px; border-radius: 99px; background: var(--panel-2); border: 1px solid var(--line); color: var(--ink); }
-.fan .tag i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; background: var(--c); box-shadow: 0 0 10px var(--c); vertical-align: 1px; }
-@media (max-width: 560px) { .fan .f1 { --x: -54%; } .fan .f3 { --x: 54%; } }
+.hero-visual{position:relative;display:flex;justify-content:center;padding:6px 0 0}
+.hero-visual .phone{width:min(58vw,240px)}
+.sticker{position:absolute;left:calc(50% - min(29vw,120px) - 40px);bottom:40px;width:108px;height:108px;border-radius:50%;background:var(--hivis);color:var(--ink);display:grid;place-items:center;text-align:center;transform:rotate(-10deg);box-shadow:0 10px 30px rgba(0,0,0,.4);font:850 .82rem/1.05 var(--head);font-stretch:85%;text-transform:uppercase;padding:12px}
+.sticker strong{display:block;font-size:1.95rem;line-height:.9;font-stretch:70%}
+.visual-note{position:absolute;right:0;bottom:-6px;font-size:.78rem;color:var(--muted-dark)}
 
-/* trade ticker */
-.ticker { border-block: 1px solid var(--line); overflow: hidden; background: #0d1118; }
-.ticker ul { display: flex; gap: 40px; width: max-content; margin: 0; padding: 14px 0; list-style: none; animation: tick 46s linear infinite; }
-.ticker li { font: 800 1.05rem var(--display); color: #6f7b8c; white-space: nowrap; display: flex; align-items: center; gap: 40px; }
-.ticker li::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 8px var(--orange); }
-@keyframes tick { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .ticker ul { animation: none; } }
+/* Phone mock */
+.phone{position:relative;aspect-ratio:390/844;border-radius:42px;background:#0b0c0e;padding:11px;box-shadow:0 0 0 2px #3a3e45,0 30px 60px -20px rgba(0,0,0,.55),0 10px 24px rgba(0,0,0,.25)}
+.phone::after{content:"";position:absolute;top:20px;left:50%;width:30%;height:22px;background:#0b0c0e;border-radius:20px;transform:translateX(-50%);z-index:2}
+.screen{height:100%;border-radius:32px;overflow:hidden;background:#fff;position:relative}
+.ph{height:100%;display:flex;flex-direction:column;font-family:var(--body);color:#1b1d20;--c:#1f4fd1;--c2:#e9effd}
+.ph[data-trade="plumber"]{--c:#0d6e7a;--c2:#e2f3f4}
+.ph[data-trade="landscaper"]{--c:#2f6b2a;--c2:#e8f2e3}
+.ph-top{background:var(--c);color:#fff;padding:52px 16px 18px}
+.ph-name{font:850 1.15rem/1 var(--head);font-stretch:80%;text-transform:uppercase;letter-spacing:.01em}
+.ph-h{font:800 1.5rem/1.02 var(--head);font-stretch:78%;text-transform:uppercase;margin:16px 0 8px}
+.ph-sub{font-size:.72rem;opacity:.9;line-height:1.35}
+.ph-btn{margin:14px 0 0;background:#fff;color:var(--c);border-radius:8px;text-align:center;font-weight:800;font-size:.8rem;padding:9px}
+.ph-body{padding:14px 16px;display:grid;gap:9px;flex:1;background:#fafafa;align-content:start}
+.ph-row{display:flex;gap:9px;align-items:center;background:#fff;border:1px solid #e6e6e6;border-radius:8px;padding:9px}
+.ph-ico{width:28px;height:28px;border-radius:7px;background:var(--c2);flex:none}
+.ph-lines{flex:1;display:grid;gap:5px}
+.ph-lines i{display:block;height:6px;border-radius:3px;background:#dadada}
+.ph-lines i:first-child{width:70%;background:#bdbdbd}
+.ph-lic{font-size:.62rem;color:#555;text-align:center;padding:2px 0}
+.ph-label{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(22,24,27,.86);color:#fff;font-size:.66rem;font-weight:700;padding:5px 9px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
 
-/* sections */
-section.block { padding-block: clamp(64px, 9vw, 120px); }
-.head { display: grid; gap: 16px; max-width: 760px; margin-bottom: clamp(36px, 5vw, 60px); }
-.head h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
-.head p { color: var(--muted); font-size: 1.1rem; }
-.note { display: inline-flex; gap: 8px; align-items: center; font-size: .9rem; color: var(--muted); }
-.note::before { content: "i"; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #3a4556; font: 700 .72rem var(--body); flex: none; }
+/* Sections */
+section{padding:64px 0}
+.sec-head{display:grid;gap:12px;margin-bottom:30px;max-width:46em}
+.sec-head p{font-size:1.1rem;color:var(--muted);margin:0}
+.dark{background:var(--ink);color:#fff}
+.dark .sec-head p{color:var(--muted-dark)}
 
-/* sample sites */
-.samples { display: grid; gap: 22px; }
-.sample { display: grid; gap: 28px; align-items: center; padding: clamp(22px, 3vw, 36px); border-radius: 24px; background: linear-gradient(180deg, var(--panel), #0f141c); border: 1px solid var(--line); position: relative; overflow: hidden; }
-.sample::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 70% at 12% 50%, color-mix(in srgb, var(--c) 14%, transparent), transparent 70%); pointer-events: none; }
-@media (min-width: 820px) { .sample { grid-template-columns: 240px 1fr; gap: 48px; } .sample .phone { width: 240px; } }
-.sample .phone { max-width: 240px; margin: 0 auto; }
-.sample .body { position: relative; display: grid; gap: 14px; min-width: 0; }
-.trade { font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
-.sample h3 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
-.sample .where { color: var(--muted); }
-.story { list-style: none; margin: 6px 0 4px; padding: 0; display: grid; gap: 10px; counter-reset: s; }
-.story li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; }
-.story li::before { content: counter(s); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; font: 800 .9rem var(--display); color: var(--night); background: var(--c); box-shadow: 0 0 16px -2px var(--c); }
-.story li span { padding-top: 3px; }
-.open { justify-self: start; display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; min-height: 48px; padding: 10px 18px; border-radius: 12px; border: 1.5px solid var(--c); color: var(--ink); text-decoration: none; font-weight: 700; transition: background .18s ease, color .18s ease; }
-.open:hover { background: var(--c); color: var(--night); }
-.open svg { width: 18px; height: 18px; }
-.c-electrician { --c: var(--sparky); } .c-plumber { --c: var(--plumb); } .c-landscaper { --c: var(--garden); }
+/* Trade picker */
+.picker{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px}
+.pick{appearance:none;border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:12px;min-height:84px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font:800 .95rem/1.1 var(--body);cursor:pointer;text-decoration:none;text-align:center;transition:background-color .15s ease,transform .15s ease}
+.pick svg{width:30px;height:30px}
+.pick:hover{background:var(--paper-2)}
+.pick[aria-selected="true"]{background:var(--ink);color:var(--hivis)}
+.panel{display:grid;gap:26px;align-items:center;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:22px;box-shadow:8px 8px 0 var(--ink)}
+.js .panel[hidden]{display:none}
+.panel + .panel{margin-top:22px}
+.js .panel + .panel{margin-top:0}
+.panel .phone{width:min(56vw,230px);margin:0 auto}
+.panel h3{font-size:clamp(1.8rem,6vw,2.6rem);font-stretch:75%}
+.panel .kind{font-weight:700;color:var(--muted);margin:6px 0 14px}
+.panel ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.panel li{display:flex;gap:10px;align-items:flex-start}
+.panel li svg{width:22px;height:22px;flex:none;color:var(--ok);margin-top:1px}
+.panel .btns{display:flex;flex-wrap:wrap;gap:10px}
+.made-up{font-size:.88rem;color:var(--muted);margin:16px 0 0;padding-top:14px;border-top:1px dashed var(--line)}
 
-/* how it works */
-.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); list-style: none; margin: 0; padding: 0; }
-.steps li { position: relative; padding: 24px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
-.steps .time { font-weight: 700; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
-.steps h3 { font-size: 1.35rem; }
-.steps p { color: var(--muted); font-size: 1rem; }
+/* Blaise note */
+.note{display:grid;gap:24px;align-items:start}
+.letter{background:var(--card);border-radius:18px;padding:26px 22px;position:relative;border:1px solid var(--line);box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(0,0,0,.35)}
+.letter::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;border-radius:18px 18px 0 0;background:repeating-linear-gradient(-45deg,var(--hivis) 0 12px,var(--ink) 12px 24px)}
+.letter p{font-size:1.12rem;line-height:1.6}
+.letter .hi{font:850 1.9rem/1 var(--head);font-stretch:78%;text-transform:uppercase;margin:6px 0 14px}
+.sign{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.sign .mono{width:64px;height:64px;border-radius:50%;font-size:1.6rem;box-shadow:0 0 0 4px var(--ink)}
+.sign b{display:block;font-size:1.1rem}
+.sign span{color:var(--muted);font-size:.95rem}
+.facts{display:grid;gap:10px}
+.fact{display:flex;gap:14px;align-items:center;background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px}
+.fact svg{width:30px;height:30px;color:var(--hivis);flex:none}
+.fact b{display:block;font:850 1.2rem/1.05 var(--head);font-stretch:82%;text-transform:uppercase}
+.fact span{color:var(--muted-dark);font-size:.95rem}
 
-/* what you get */
-.gets { display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
-.gets div { background: var(--night); padding: 26px; display: grid; gap: 8px; align-content: start; }
-.gets h3 { font-size: 1.25rem; }
-.gets p { color: var(--muted); font-size: 1rem; }
+/* Included */
+.inc{display:grid;gap:14px}
+.inc-card{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--r);padding:20px}
+.inc-card h3{color:var(--hivis);font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.inc-card h3 svg{width:26px;height:26px;flex:none}
+.inc-card ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.inc-card li{display:flex;gap:10px;color:#e6e8eb;line-height:1.4}
+.inc-card li::before{content:"";flex:none;width:9px;height:9px;margin-top:.45em;background:var(--hivis);transform:rotate(45deg)}
+.inc-card li strong{color:#fff}
+.notinc{margin-top:22px;border:2px dashed var(--line-dark);border-radius:var(--r);padding:18px 20px;color:var(--muted-dark)}
+.notinc b{color:#fff;display:block;margin-bottom:6px;font:850 1.15rem/1.1 var(--head);font-stretch:85%;text-transform:uppercase}
+.notinc p{margin:0}
 
-/* price */
-.price { display: grid; gap: 28px; align-items: center; padding: clamp(26px, 4vw, 48px); border-radius: 26px; border: 1px solid #3a2a1f; background: radial-gradient(80% 120% at 0% 0%, rgba(255,106,19,.16), transparent 60%), var(--panel); }
-@media (min-width: 820px) { .price { grid-template-columns: auto 1fr; gap: 56px; } }
-.price .big { font: 800 clamp(4rem, 10vw, 6.6rem)/.9 var(--display); letter-spacing: -.04em; }
-.price .big small { display: block; font: 600 1rem/1.4 var(--body); letter-spacing: 0; color: var(--muted); margin-top: 10px; }
-.price ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-.price li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
-.price li svg { width: 22px; height: 22px; color: var(--orange); margin-top: 2px; }
+/* Steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.step{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:20px 20px 20px 84px;min-height:110px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:50px;height:50px;border-radius:10px;background:var(--hivis);color:var(--ink);display:grid;place-items:center;font:900 1.8rem/1 var(--head);font-stretch:75%;border:2px solid var(--ink)}
+.step h3{font-size:1.4rem;margin-bottom:6px}
+.step p{margin:0;color:var(--muted)}
+.step .when{display:inline-block;margin-bottom:8px;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--paper-2);padding:3px 8px;border-radius:6px}
 
-/* contact */
-.contact { text-align: center; display: grid; justify-items: center; gap: 18px; }
-.contact h2 { font-size: clamp(2.2rem, 5.6vw, 4rem); }
-.contact p { color: var(--muted); max-width: 34em; font-size: 1.1rem; }
-.contact .num { font: 800 clamp(2rem, 6vw, 3.2rem) var(--display); letter-spacing: -.01em; text-decoration: none; text-shadow: 0 0 30px rgba(255,106,19,.35); }
+/* Price */
+.price-grid{display:grid;gap:18px}
+.pricebox{background:var(--ink);color:#fff;border-radius:20px;padding:26px 22px;position:relative;overflow:hidden}
+.pricebox .hazard{position:absolute;left:0;right:0;top:0}
+.pricebox .tag::before{background:var(--hivis)}
+.pricebox .amount{font:900 clamp(5rem,26vw,8rem)/.85 var(--head);font-stretch:68%;color:var(--hivis);margin:18px 0 4px;letter-spacing:-.02em}
+.pricebox .amount small{font-size:.28em;color:#fff;font-stretch:85%;letter-spacing:0;margin-left:.2em}
+.pricebox .lead{font-size:1.15rem;margin:10px 0 18px}
+.pricebox ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+.pricebox li{display:flex;gap:10px;align-items:flex-start}
+.pricebox li svg{width:22px;height:22px;color:var(--hivis);flex:none;margin-top:1px}
+.pricebox .btn{width:100%}
+.pricebox .fine{font-size:.9rem;color:var(--muted-dark);margin:16px 0 0}
+.after h3{font-size:1.6rem;margin-bottom:6px}
+.after > p{color:var(--muted)}
+.plans{display:grid;gap:10px;margin:14px 0}
+.plan{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.plan b{font:850 1.2rem/1.1 var(--head);font-stretch:85%;text-transform:uppercase}
+.plan .pp{grid-row:span 2;font:900 1.8rem/1 var(--head);font-stretch:75%;text-align:right}
+.plan .pp small{display:block;font:600 .8rem/1.2 var(--body);color:var(--muted)}
+.plan span{color:var(--muted);font-size:.95rem}
+.after .small{font-size:.95rem;color:var(--muted);margin:0}
 
-footer { border-top: 1px solid var(--line); padding-block: 32px calc(110px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: .92rem; }
-footer .wrap { display: grid; gap: 6px; }
-@media (min-width: 700px) { footer { padding-bottom: 40px; } }
+/* auDA stat */
+.stat{background:var(--hivis);color:var(--ink);padding:48px 0}
+.stat .wrap{display:grid;gap:14px;align-items:center}
+.stat .big{font:900 clamp(4.6rem,22vw,9rem)/.82 var(--head);font-stretch:68%}
+.stat p{font:800 clamp(1.3rem,4.6vw,1.9rem)/1.15 var(--head);font-stretch:85%;text-transform:uppercase;margin:0;max-width:22em}
+.stat .src{font:600 .82rem/1.3 var(--body);text-transform:none;margin-top:10px;color:#3d3300}
+.stat .src a{color:inherit}
 
-/* phone action bar */
-.actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); background: rgba(10,13,18,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
-.actionbar .btn { min-height: 50px; }
-@media (min-width: 700px) { .actionbar { display: none; } }
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{background:var(--card);border:2px solid var(--ink);border-radius:12px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;min-height:60px;font:800 1.08rem/1.25 var(--body)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:30px;height:30px;border-radius:8px;background:var(--hivis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316181b' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/18px no-repeat;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details[open] summary{border-bottom:1px solid var(--line)}
+.faq .a{padding:14px 18px 6px;color:#2e3238}
+.faq .a p{margin:0 0 .8em}
+
+/* Final CTA */
+.final{background:var(--ink);color:#fff;text-align:left;position:relative;overflow:hidden}
+.final h2{font-size:clamp(2.6rem,10vw,5.2rem);font-stretch:70%}
+.final h2 span{color:var(--hivis)}
+.final .lede{font-size:1.15rem;color:#e3e5e8;max-width:36em;margin:16px 0 24px}
+.final .wrap{display:grid;gap:28px}
+.final-ctas{display:grid;gap:10px;max-width:520px}
+.final-ctas .btn{width:100%}
+.final .bignum{display:inline-block;margin-top:24px;font:900 clamp(2.2rem,10vw,3.6rem)/1 var(--head);font-stretch:72%;color:#fff;text-decoration:none;letter-spacing:.01em}
+.final .bignum:hover{color:var(--hivis)}
+.minor{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:14px}
+.minor a{color:#fff;font-weight:700;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.minor svg{width:18px;height:18px;color:var(--hivis)}
+
+/* Footer */
+footer{background:#0e0f11;color:var(--muted-dark);font-size:.92rem;padding:36px 0 calc(30px + var(--bar) + env(safe-area-inset-bottom))}
+footer .wrap{display:grid;gap:16px}
+footer b{color:#fff}
+footer a{color:#fff}
+footer p{margin:0}
+
+/* Sticky mobile bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(22,24,27,.97);border-top:3px solid var(--hivis);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1.35fr 1fr;gap:10px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.bar .btn{min-height:52px;width:100%;font-size:1.05rem}
+.bar .btn-ghost{color:#fff}
+
+/* Motion */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.04s}.rise.d2{animation-delay:.08s}.rise.d3{animation-delay:.12s}.rise.d4{animation-delay:.16s}
+  .hero-visual .phone{animation:float .6s cubic-bezier(.2,.7,.2,1) .1s both}
+  .sticker{animation:stamp .4s cubic-bezier(.3,1.6,.5,1) .45s both}
+  @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+  @keyframes float{from{transform:translateY(30px) rotate(2deg)}to{transform:none}}
+  @keyframes stamp{from{opacity:0;transform:rotate(-10deg) scale(1.5)}to{opacity:1;transform:rotate(-10deg) scale(1)}}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+
+/* Small phones */
+@media (max-width:360px){
+  :root{--gutter:16px}
+  .btn{font-size:1rem;padding:0 1em}
+  .pick{font-size:.85rem}
+}
+
+/* Tablet up */
+@media (min-width:700px){
+  :root{--gutter:32px}
+  section{padding:88px 0}
+  .top-call{display:block}
+  .inc{grid-template-columns:1fr 1fr}
+  .panel{grid-template-columns:auto 1fr;padding:30px 34px}
+  .panel .phone{width:250px}
+  .price-grid{grid-template-columns:1.05fr 1fr;align-items:start}
+  .final-ctas{grid-template-columns:1fr 1fr}
+  .stat .wrap{grid-template-columns:auto 1fr;gap:34px}
+  footer .wrap{grid-template-columns:1.2fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+/* Desktop */
+@media (min-width:980px){
+  footer{padding-bottom:30px}
+  .bar{display:none}
+  .hero .wrap{grid-template-columns:1.25fr .9fr;align-items:center;padding-top:40px;padding-bottom:80px;gap:40px}
+  .hero h1{font-size:clamp(4.8rem,8vw,7.2rem)}
+  .hero-visual .phone{width:320px}
+  .sticker{left:auto;right:calc(50% + 120px);bottom:90px;width:132px;height:132px}
+  .note{grid-template-columns:1.5fr 1fr;gap:40px}
+  .inc{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .step{padding:84px 22px 24px}
+  .picker{max-width:640px}
+  .panel{gap:48px;padding:36px 48px}
+  .panel .phone{width:280px}
+  .final .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
+}
+
+/* real screenshots of the sample sites (3 Nov) */
+.screen{container-type:size}
+.shot{position:absolute;inset:0;overflow:hidden;background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot:not(.shot-scroll) img{height:100%;object-fit:cover;object-position:top}
+.shot-scroll img{animation:shotscroll 22s ease-in-out 1.5s infinite alternate}
+@keyframes shotscroll{0%,8%{transform:translateY(0)}100%{transform:translateY(calc(-100% + 100cqh))}}
+@media (prefers-reduced-motion:reduce){.shot-scroll img{animation:none}}
 </style>
 </head>
 <body>
-<div class="sky" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="bar gutter">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="i-tap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 4h8"/><path d="M5 13a7 7 0 0 0 14 0c0-3-2-4.5-4-5H9c-2 .5-4 2-4 5z"/><path d="M12 13v3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.2-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+  <symbol id="i-pages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.3 1.7-2 3-2s2.4.7 3 2M15 10h3M15 13h3"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+</svg>
+
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Blaise Davis, websites for tradies">
-      <span class="mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M36 4 14 38h14l-4 22 26-36H36z" fill="#ff6a13"/></svg></span>
-      <span><b>Blaise Davis</b><span>Websites for tradies · Albury–Wodonga</span></span>
+    <a class="brand" href="#top">
+      <span class="mono" aria-hidden="true">BD</span>
+      <span><b>Blaise Davis</b><small>Websites for tradies</small></span>
     </a>
-    <span class="bar-call"><a class="btn btn-main" href="tel:+61475151548">Call 0475 151 548</a></span>
+    <div class="top-call">
+      <a href="tel:+61475151548"><svg aria-hidden="true"><use href="#i-phone"/></svg>0475 151 548</a>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero gutter">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">Websites for tradies · Australia-wide</span>
-        <h1>A website that shows <em>how you work.</em></h1>
-        <p class="lead">A page for each of your main jobs, your suburbs, licence number, a quote form and a big call button. <strong>Your colours, your photos and your own words, so it looks like your business, not a template.</strong> You fill in a 5-minute form on your phone. I build it, check it, and put it live on your own web address in about a week.</p>
-        <div class="ctas">
-          <a class="btn btn-main" href="#samples">See the sample sites
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-          <a class="btn" href="tel:+61475151548">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-            Call 0475 151 548</a>
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap">
+    <div>
+      <p class="tag rise">Websites for tradies<span class="hide-s"> · Albury–Wodonga</span></p>
+      <h1 class="rise d1">A proper website for your trade. <span class="price">$990 all&nbsp;up.</span></h1>
+      <p class="lede rise d2">Your jobs, your photos, your licence on show, and <strong>tap-to-call on every page</strong>. Built for you by a local bloke, not a call centre.</p>
+      <div class="promise rise d2">
+        <svg aria-hidden="true"><use href="#i-shield"/></svg>
+        <p><b>Nothing to pay until you're happy</b>No deposit. You see the finished site first. Only then one invoice.</p>
+      </div>
+      <div class="cta-row rise d3">
+        <a class="btn btn-hv" href="tel:+61475151548"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call Blaise</a>
+        <a class="btn btn-ghost" href="sms:+61475151548?&amp;body=Hi%20Blaise%2C%20I%27d%20like%20to%20see%20a%20website%20for%20my%20business"><svg aria-hidden="true"><use href="#i-text"/></svg>Text Blaise</a>
+      </div>
+      <p class="jump rise d3"><a class="see" href="#samples">See a sample site <svg aria-hidden="true"><use href="#i-down"/></svg></a>
+        <span class="jump-trades">I'm a <a href="#s-electrician">sparky</a> <a href="#s-plumber">plumber</a> <a href="#s-landscaper">gardener</a></span></p>
+      <ul class="chips rise d4" aria-label="The deal">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No deposit</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No lock-in contract</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>In your name</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="screen">
+          <div class="shot shot-scroll"><img src="shots/electrician-long.webp" width="585" height="3900" alt="The Tallowwood Electrical sample site on a phone (a made-up business), scrolling from the top" fetchpriority="high"></div>
         </div>
-        <p class="price-tag"><b>$990</b><span>All up. Nothing to pay<br>until you're happy.</span></p>
       </div>
-
-      <div class="fan" aria-label="The three sample sites, each scrolling on a phone">
-        <a class="f1" href="plumber/" aria-label="Open the plumber sample site">
-          <div class="phone c-plumber"><div class="screen"><div class="reel r-plumber" style="--delay:-5s"></div></div></div>
-          <span class="tag c-plumber"><i></i>Plumber</span>
-        </a>
-        <a class="f2" href="electrician/" aria-label="Open the electrician sample site">
-          <div class="phone c-electrician"><div class="screen"><div class="reel r-electrician"></div></div></div>
-          <span class="tag c-electrician"><i></i>Electrician</span>
-        </a>
-        <a class="f3" href="landscaper/" aria-label="Open the landscaper sample site">
-          <div class="phone c-landscaper"><div class="screen"><div class="reel r-landscaper" style="--delay:-10s"></div></div></div>
-          <span class="tag c-landscaper"><i></i>Garden care</span>
-        </a>
-      </div>
+      <div class="sticker" aria-hidden="true"><span><strong>$0</strong>until you're happy</span></div>
     </div>
-  </section>
-
-  <div class="ticker" aria-hidden="true">
-    <ul>
-      <li>Switchboard upgrades</li><li>Hot water</li><li>Lawn mowing</li><li>Safety switches</li><li>Blocked drains</li><li>Hedging</li><li>LED downlights</li><li>Leaking taps</li><li>Turf laying</li><li>Bathroom plumbing</li>
-      <li>Switchboard upgrades</li><li>Hot water</li><li>Lawn mowing</li><li>Safety switches</li><li>Blocked drains</li><li>Hedging</li><li>LED downlights</li><li>Leaking taps</li><li>Turf laying</li><li>Bathroom plumbing</li>
-    </ul>
   </div>
+  <div class="hazard" aria-hidden="true"></div>
+</section>
 
-  <section class="block gutter" id="samples">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">Sample sites</span>
-        <h2>Three trades. Three sites that look like the business.</h2>
-        <p>Same care on every one, but each is made for that business: its colours, its photos, the top of the page and the order of things chosen for how it wins work. Open one on your phone and tap through the pages.</p>
-        <span class="note">Made-up businesses. Names, numbers and work photos aren't real.</span>
-      </div>
-
-      <div class="samples">
-        <article class="sample c-electrician">
-          <a class="phone" href="electrician/" aria-label="Open the Tallowwood Electrical sample site"><div class="screen"><div class="reel r-electrician" style="--delay:-2s"></div></div></a>
-          <div class="body">
-            <span class="trade">Electrician</span>
-            <h3>Tallowwood Electrical</h3>
-            <p class="where">A local sparky around Penrith, owner on every job</p>
-            <ol class="story">
-              <li><span>Opens on a big photo of a house at dusk, with the call button right there</span></li>
-              <li><span>Its own page for switchboards, safety switches and lighting</span></li>
-              <li><span>Navy and amber, with the licence and prices up front</span></li>
-            </ol>
-            <a class="open" href="electrician/">Open the electrician site
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-
-        <article class="sample c-plumber">
-          <a class="phone" href="plumber/" aria-label="Open the Ironbark Plumbing Co. sample site"><div class="screen"><div class="reel r-plumber" style="--delay:-7s"></div></div></a>
-          <div class="body">
-            <span class="trade">Plumber</span>
-            <h3>Ironbark Plumbing Co.</h3>
-            <p class="where">Drains, hot water and leaks around Parramatta</p>
-            <ol class="story">
-              <li><span>Leads with after-hours call-outs and "priced before we start"</span></li>
-              <li><span>The van photo framed beside the headline, on a street of jacarandas</span></li>
-              <li><span>A page each for drains, hot water, leaks and bathrooms</span></li>
-            </ol>
-            <a class="open" href="plumber/">Open the plumber site
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-
-        <article class="sample c-landscaper">
-          <a class="phone" href="landscaper/" aria-label="Open the Greenline Garden Care sample site"><div class="screen"><div class="reel r-landscaper" style="--delay:-12s"></div></div></a>
-          <div class="body">
-            <span class="trade">Garden care</span>
-            <h3>Greenline Garden Care</h3>
-            <p class="where">A two-person lawn and garden team in the Hills District</p>
-            <ol class="story">
-              <li><span>A big headline on mown-stripe green, then their best photos straight away</span></li>
-              <li><span>"Same two people every visit" comes before the list of jobs</span></li>
-              <li><span>A mowing guide for the year, and a page for each job</span></li>
-            </ol>
-            <a class="open" href="landscaper/">Open the garden care site
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-      </div>
+<!-- SAMPLES / TRADE PICKER -->
+<section id="samples" class="on-paper">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">See one like yours</p>
+      <h2>What's your trade?</h2>
+      <p>Pick yours and have a look at a sample site, the way your customers would see it on their phone.</p>
     </div>
-  </section>
 
-  <section class="block gutter" id="how">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">How it works</span>
-        <h2>One short video call. No tech to learn.</h2>
-      </div>
-      <ol class="steps">
-        <li><span class="time">15 minutes</span><h3>A quick video call</h3><p>I show you a site like yours on screen and answer anything. No pressure.</p></li>
-        <li><span class="time">5 minutes</span><h3>A form on your phone</h3><p>Mostly tapping: your jobs, suburbs, hours, licence and photos.</p></li>
-        <li><span class="time">About a week</span><h3>Your preview</h3><p>Check every word on your phone. Two rounds of changes included.</p></li>
-        <li><span class="time">Same day</span><h3>Live on your address</h3><p>On your own web address, in your name. You only pay once you're happy with it.</p></li>
-      </ol>
+    <div class="picker" role="tablist" aria-label="Pick your trade">
+      <a class="pick" href="#s-electrician" role="tab" id="t-electrician" aria-controls="s-electrician" aria-selected="true"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Electrician</a>
+      <a class="pick" href="#s-plumber" role="tab" id="t-plumber" aria-controls="s-plumber" aria-selected="false"><svg aria-hidden="true"><use href="#i-tap"/></svg>Plumber</a>
+      <a class="pick" href="#s-landscaper" role="tab" id="t-landscaper" aria-controls="s-landscaper" aria-selected="false"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Garden care</a>
     </div>
-  </section>
 
-  <section class="block gutter" id="get">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">What you get</span>
-        <h2>Everything a customer looks for, nothing they don't.</h2>
-      </div>
-      <div class="gets">
-        <div><h3>Call, text or a quote form</h3><p>A call button always one tap away on phones, plus text, "save our number" and a quote form that goes straight to your email.</p></div>
-        <div><h3>Looks like your business</h3><p>Your colours and logo, your own photos of your work, and the way you describe your jobs. Two sparkies in one town won't get the same site.</p></div>
-        <div><h3>Licence and ABN on show</h3><p>Many trades have to show licence details when they advertise. It's built in.</p></div>
-        <div><h3>A page for every main job</h3><p>Each of your main jobs gets its own page, so it can turn up when people search for that job. Plus About, Areas, prices and the questions people always ask.</p></div>
-        <div><h3>Fast and checked</h3><p>Tested on phone, tablet and desktop for speed and accessibility. Kept light, so it loads quickly on a phone.</p></div>
-        <div><h3>You own it</h3><p>Your web address is in your name. No lock-in contract, ever. Optional monthly plan from $39 if you want it looked after.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block gutter" id="price">
-    <div class="wrap">
-      <div class="price">
-        <p class="big">$990<small>All up for your website. No GST.</small></p>
+    <div class="panel" id="s-electrician" role="tabpanel" aria-labelledby="t-electrician">
+      <div class="phone"><div class="screen">
+        <div class="shot"><img src="shots/electrician.webp" width="585" height="1266" alt="The Tallowwood Electrical sample site on a phone (a made-up business)" loading="lazy" decoding="async"></div>
+      </div></div>
+      <div>
+        <h3>Tallowwood Electrical</h3>
+        <p class="kind">Sample site for an electrician</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Nothing to pay until you've seen it and you're happy with it</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Two rounds of changes included</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Your web address costs about $10 the first year, paid straight to the registrar in your name</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Optional monthly plan from $39, cancel any time</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A page for each main job, so customers find the one they need</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Room for your licence number and ABN</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tap-to-call and a quote form on every page</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-ink" href="electrician/">Open the sample site <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="made-up">Tallowwood Electrical is a made-up business. It's a sample, built to show what your site could look like.</p>
+      </div>
+    </div>
+
+    <div class="panel" id="s-plumber" role="tabpanel" aria-labelledby="t-plumber">
+      <div class="phone"><div class="screen">
+        <div class="shot"><img src="shots/plumber.webp" width="585" height="1266" alt="The Ironbark Plumbing Co. sample site on a phone (a made-up business)" loading="lazy" decoding="async"></div>
+      </div></div>
+      <div>
+        <h3>Ironbark Plumbing Co.</h3>
+        <p class="kind">Sample site for a plumber</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A page for each main job, so customers find the one they need</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Room for your licence number and ABN</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tap-to-call and a quote form on every page</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-ink" href="plumber/">Open the sample site <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="made-up">Ironbark Plumbing Co. is a made-up business. It's a sample, built to show what your site could look like.</p>
+      </div>
+    </div>
+
+    <div class="panel" id="s-landscaper" role="tabpanel" aria-labelledby="t-landscaper">
+      <div class="phone"><div class="screen">
+        <div class="shot"><img src="shots/landscaper.webp" width="585" height="1266" alt="The Greenline Garden Care sample site on a phone (a made-up business)" loading="lazy" decoding="async"></div>
+      </div></div>
+      <div>
+        <h3>Greenline Garden Care</h3>
+        <p class="kind">Sample site for garden care and landscaping</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A page for each main job, so customers find the one they need</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>The suburbs and areas covered, spelled out</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tap-to-call and a quote form on every page</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-ink" href="landscaper/">Open the sample site <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="made-up">Greenline Garden Care is a made-up business. It's a sample, built to show what your site could look like.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTE FROM BLAISE -->
+<section id="blaise" class="on-paper" style="padding-top:0">
+  <div class="wrap note">
+    <div class="letter">
+      <p class="tag">A word from Blaise</p>
+      <p class="hi">I'll be straight with you.</p>
+      <p>G'day, I'm Blaise. I build websites for tradies from Albury–Wodonga, for jobs right across Australia.</p>
+      <p>I'm new and I'm local. So I don't have a wall of reviews to show you yet, and I won't make any up. What I've got is the sample sites above, and a fair deal.</p>
+      <p>I build your site first. You check every word. If you're not happy with it, you don't pay. The risk is on me, not you.</p>
+      <p>No lock-in contracts. No promises I can't keep. Just a proper site with your name on it.</p>
+      <div class="sign">
+        <span class="mono" aria-hidden="true">BD</span>
+        <div><b>Blaise Davis</b><span>Web builder, Albury–Wodonga</span></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><svg aria-hidden="true"><use href="#i-shield"/></svg><div><b>Nothing to pay up front</b><span>No deposit. You pay once you've approved it.</span></div></div>
+      <div class="fact"><svg aria-hidden="true"><use href="#i-key"/></svg><div><b>It's yours</b><span>Your own web address, in your name.</span></div></div>
+      <div class="fact"><svg aria-hidden="true"><use href="#i-unlock"/></svg><div><b>No lock-in</b><span>Monthly plans are optional. Cancel any time by email.</span></div></div>
+      <div class="fact"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Local bloke, Australia-wide</b><span>Based in Albury–Wodonga. Building for tradies everywhere.</span></div></div>
+      <a class="btn btn-hv" href="tel:+61475151548" style="margin-top:6px"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call Blaise: 0475 151 548</a>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section id="included" class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">What you get for $990</p>
+      <h2>A whole site. Not a <span style="white-space:nowrap">one-pager.</span></h2>
+      <p>Made for your business, so it looks like you and not like a template.</p>
+    </div>
+    <div class="inc">
+      <div class="inc-card">
+        <h3><svg aria-hidden="true"><use href="#i-pages"/></svg>The pages</h3>
+        <ul>
+          <li><span><strong>Home</strong> and <strong>Services</strong></span></li>
+          <li><span><strong>Its own page for each of your 3–4 main jobs</strong></span></li>
+          <li><span><strong>About</strong> and <strong>the areas you cover</strong></span></li>
+          <li><span><strong>FAQ</strong></span></li>
+          <li><span><strong>Contact</strong>, with a quote form that goes straight to your email</span></li>
+        </ul>
+      </div>
+      <div class="inc-card">
+        <h3><svg aria-hidden="true"><use href="#i-phone"/></svg>Easy to ring you</h3>
+        <ul>
+          <li><span><strong>Tap-to-call on every page</strong></span></li>
+          <li><span>Tap to text you</span></li>
+          <li><span>A "save our number" button for your customers</span></li>
+          <li><span>Checked on phone, tablet and desktop</span></li>
+          <li><span>Fast to load, even on patchy reception</span></li>
+        </ul>
+      </div>
+      <div class="inc-card">
+        <h3><svg aria-hidden="true"><use href="#i-badge"/></svg>Looks legit</h3>
+        <ul>
+          <li><span><strong>Your licence number and ABN</strong> on show (many states require licence details in advertising)</span></li>
+          <li><span><strong>Your own photos, your colours, your words</strong></span></li>
+          <li><span>Your Google reviews quoted word for word (with your OK)</span></li>
+          <li><span>A privacy page and terms (drafts for you to check)</span></li>
+          <li><span>Live on <strong>your own web address, in your name</strong></span></li>
         </ul>
       </div>
     </div>
-  </section>
+    <div class="notinc">
+      <b>What's not included (so you know up front)</b>
+      <p>Google rankings (SEO), ads, social media, logo design and photography. I won't promise you "page 1 of Google" or a number of calls. Nobody honest can.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="block gutter" id="contact">
-    <div class="wrap contact">
-      <span class="eyebrow">Want one for your business?</span>
-      <h2>Call or text Blaise.</h2>
-      <p>I'll have a look at what you've got now and tell you straight whether a site is worth it for you.</p>
-      <a class="num" href="tel:+61475151548">0475 151 548</a>
-      <div class="ctas">
-        <a class="btn btn-main" href="tel:+61475151548">Call Blaise</a>
-        <a class="btn" href="sms:+61475151548">Text Blaise</a>
+<!-- HOW IT WORKS -->
+<section id="how" class="on-paper">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">How it works</p>
+      <h2>Four steps. About a week.</h2>
+      <p>You don't need to learn anything techy. Most of your part is done from your phone.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="when">15 minutes</span>
+        <h3>Quick video call</h3>
+        <p>On Google Meet. I share my screen, show you a site like yours and what it costs.</p>
+      </li>
+      <li class="step">
+        <span class="when">5 minutes</span>
+        <h3>Fill in a short form</h3>
+        <p>On your phone, mostly tapping: your jobs, suburbs, hours, licence and photos.</p>
+      </li>
+      <li class="step">
+        <span class="when">About a week</span>
+        <h3>Check your preview</h3>
+        <p>Go over every word. Two rounds of changes are included.</p>
+      </li>
+      <li class="step">
+        <span class="when">Then you pay</span>
+        <h3>Approve and go live</h3>
+        <p>Say "approved", pay the $990 and it goes live on your own web address, in your name.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="on-paper" style="padding-top:0">
+  <div class="wrap price-grid">
+    <div class="pricebox">
+      <div class="hazard" aria-hidden="true"></div>
+      <p class="tag">The price</p>
+      <p class="amount">$990 <small>all up</small></p>
+      <p class="lead">One invoice. <strong>Nothing to pay until you've seen your site and you're happy with it.</strong></p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No deposit</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Two rounds of changes included</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No GST (I'm not registered for GST)</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No lock-in contract</li>
+      </ul>
+      <a class="btn btn-hv" href="sms:+61475151548?&amp;body=Hi%20Blaise%2C%20I%27d%20like%20to%20see%20a%20website%20for%20my%20business"><svg aria-hidden="true"><use href="#i-text"/></svg>Text Blaise for a 15-min call</a>
+      <p class="fine">Your web address: a .com.au costs about $10 for the first year, paid by you straight to the registrar. I'll set it up with you on a short call.</p>
+    </div>
+    <div class="after">
+      <p class="tag">After it's live (optional)</p>
+      <h3>Want me to look after it?</h3>
+      <p>Pick a plan and I'll host it and make your small changes. Or don't. Month to month, cancel any time by email.</p>
+      <div class="plans">
+        <div class="plan"><b>Essentials</b><span class="pp">$39<small>a month</small></span><span>Hosting plus 1 small change a month</span></div>
+        <div class="plan"><b>Standard</b><span class="pp">$69<small>a month</small></span><span>Hosting plus 3 small changes a month</span></div>
+        <div class="plan"><b>No plan</b><span class="pp">$0<small>a month</small></span><span>I set it up on your own free hosting so it runs without me</span></div>
+      </div>
+      <p class="small">Bigger changes later are $90 an hour, and I'll quote you first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- auDA STAT -->
+<aside class="stat" aria-label="Why a .au web address">
+  <div class="wrap">
+    <div class="big">3 in 4</div>
+    <div>
+      <p>Australians say they're more likely to trust an Australian business if its website ends in .au.</p>
+      <p class="src">Source: auDA (.au Domain Administration). Your site goes live on your own .com.au, in your name.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- FAQ -->
+<section id="faq" class="on-paper">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">Fair questions</p>
+      <h2>Straight answers.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>I get enough work from word of mouth.</summary>
+        <div class="a"><p>Good on you. Word of mouth is the best work there is. But when someone gets your name from a mate, most will look you up before they ring. A proper site shows them you're real, licensed and local, and puts your number one tap away.</p></div>
+      </details>
+      <details>
+        <summary>I've got a Facebook page. Isn't that enough?</summary>
+        <div class="a"><p>Keep it. A website sits alongside it. It's the place that's yours: your own web address, your licence and ABN, a page for each job you do and a quote form that lands in your email. Not everyone's on Facebook, and you don't control how it shows your business.</p></div>
+      </details>
+      <details>
+        <summary>What do I have to do?</summary>
+        <div class="a"><p>Not much. A 15-minute video call, then a 5-minute form on your phone (mostly tapping): your jobs, suburbs, hours, licence and photos. Then you check the preview and tell me what to change. I do the rest.</p></div>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <div class="a"><p>You'll see a preview in about a week after you send the form. Two rounds of changes are included. Once you say "approved", it goes live.</p></div>
+      </details>
+      <details>
+        <summary>Who owns it?</summary>
+        <div class="a"><p>You do. It goes live on your own web address, registered in your name and paid by you straight to the registrar (a .com.au is about $10 for the first year).</p></div>
+      </details>
+      <details>
+        <summary>What if I don't like it?</summary>
+        <div class="a"><p>Then you don't pay. There's no deposit. You see the finished site, you get two rounds of changes, and you only pay the $990 once you're happy and say "approved".</p></div>
+      </details>
+      <details>
+        <summary>Are there ongoing costs?</summary>
+        <div class="a"><p>Only your web address (about $10 for the first year for a .com.au). The monthly plans are optional: Essentials $39 a month or Standard $69 a month, month to month, cancel any time by email. Or no plan at all: I set it up on your own free hosting so it runs without me.</p></div>
+      </details>
+      <details>
+        <summary>Will it get me to the top of Google?</summary>
+        <div class="a"><p>No one can honestly promise that, and I won't. What you get is a proper, fast site with the basics Google looks for: clear pages for each job, the areas you cover, and your business details. SEO and ads aren't part of the $990.</p></div>
+      </details>
+      <details>
+        <summary>Why so cheap compared with agencies?</summary>
+        <div class="a"><p>I'm small and local, I only build for tradies, and there are no account managers or big office to pay for. You deal with me, start to finish.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="final">
+  <div class="wrap">
+    <div>
+      <p class="tag">Have a yarn</p>
+      <h2>See a site like yours. <span>Pay nothing until you're happy.</span></h2>
+      <p class="lede">Call or text Blaise. Ask for the 15-minute video call and you'll know if it's for you.</p>
+      <a class="bignum" href="tel:+61475151548">0475 151 548</a>
+    </div>
+    <div>
+      <div class="final-ctas">
+        <a class="btn btn-hv" href="tel:+61475151548"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call Blaise</a>
+        <a class="btn btn-ghost" href="sms:+61475151548?&amp;body=Hi%20Blaise%2C%20I%27d%20like%20to%20see%20a%20website%20for%20my%20business"><svg aria-hidden="true"><use href="#i-text"/></svg>Text Blaise</a>
+      </div>
+      <div class="minor">
+        <a href="sms:+61475151548?&amp;body=Hi%20Blaise%2C%20can%20we%20do%20the%2015-minute%20video%20call%3F"><svg aria-hidden="true"><use href="#i-video"/></svg>Text for the video call</a>
+        <a href="mailto:blaisedwork@gmail.com?subject=Website%20for%20my%20business"><svg aria-hidden="true"><use href="#i-mail"/></svg>blaisedwork@gmail.com</a>
+        <a href="blaise-davis.vcf" download><svg aria-hidden="true"><use href="#i-user"/></svg>Save Blaise's number</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
-<footer class="gutter">
+<footer>
   <div class="wrap">
-    <p>Blaise Davis · Websites for tradies · Albury–Wodonga, working Australia-wide · ABN 16 593 428 787</p>
-    <p>The sample businesses on this page are made up. Their work photos are AI-generated.</p>
+    <div>
+      <p><b>Blaise Davis</b> · Websites for tradies · Albury–Wodonga, building Australia-wide</p>
+      <p>ABN 16 593 428 787 · Not registered for GST, so no GST is charged.</p>
+    </div>
+    <div>
+      <p><a href="tel:+61475151548">0475 151 548</a> · <a href="mailto:blaisedwork@gmail.com">blaisedwork@gmail.com</a></p>
+      <p>Tallowwood Electrical, Ironbark Plumbing Co. and Greenline Garden Care are made-up businesses: sample sites built to show what a site can look like.</p>
+    </div>
   </div>
 </footer>
 
-<nav class="actionbar" aria-label="Contact Blaise">
-  <a class="btn btn-main" href="tel:+61475151548">Call Blaise</a>
-  <a class="btn" href="sms:+61475151548">Text</a>
+<nav class="bar" aria-label="Contact Blaise">
+  <a class="btn btn-hv" href="tel:+61475151548"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call Blaise</a>
+  <a class="btn btn-ghost" href="sms:+61475151548?&amp;body=Hi%20Blaise%2C%20I%27d%20like%20to%20see%20a%20website%20for%20my%20business"><svg aria-hidden="true"><use href="#i-text"/></svg>Text</a>
 </nav>
+
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var tabs=[].slice.call(document.querySelectorAll('.pick'));
+  function show(id,focus){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('aria-controls')===id;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      var p=document.getElementById(t.getAttribute('aria-controls'));
+      if(p) p.hidden=!on;
+      if(on&&focus) t.focus();
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(e){e.preventDefault();show(t.getAttribute('aria-controls'));});
+    t.addEventListener('keydown',function(e){
+      var k=e.key, n=null;
+      if(k==='ArrowRight') n=tabs[(i+1)%tabs.length];
+      else if(k==='ArrowLeft') n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();show(n.getAttribute('aria-controls'),true);}
+    });
+  });
+  function fromHash(){var h=location.hash.slice(1); if(/^s-/.test(h)&&document.getElementById(h)){show(h); var s=document.getElementById('samples'); if(s) s.scrollIntoView();}}
+  show('s-electrician'); fromHash();
+  window.addEventListener('hashchange',fromHash);
+})();
+</script>
 </body>
 </html>

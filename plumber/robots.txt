@@ -1,2 +1,5 @@
+# Demo site: pages also carry meta robots noindex.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://blaisedwork-cloud.github.io/demos/plumber/sitemap.xml
