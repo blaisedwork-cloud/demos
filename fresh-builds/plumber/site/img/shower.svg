@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a4a73"/><stop offset="1" stop-color="#0b2540"/></linearGradient></defs>
+<rect width="1200" height="900" fill="url(#g)"/>
+<g fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="18" stroke-linecap="round"><path d="M-20 90 H1080 q40 0 40 40 V200" /><path d="M-20 240 H940 q40 0 40 40 V350" /><path d="M-20 390 H800 q40 0 40 40 V500" /><path d="M-20 540 H1080 q40 0 40 40 V650" /><path d="M-20 690 H940 q40 0 40 40 V800" /><path d="M-20 840 H800 q40 0 40 40 V950" /></g>
+<g transform="translate(554.0 330.0)" fill="none" stroke="#f2a900" stroke-width="7" stroke-linejoin="round"><rect x="0" y="22" width="92" height="66" rx="10"/><path d="M28 22 l8-14 h20 l8 14"/><circle cx="46" cy="55" r="18"/></g>
+<text x="600.0" y="480.0" font-size="44" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Manrope,Arial,sans-serif">Photo: shower</text>
+<text x="600.0" y="542.0" font-size="28" fill="#c9d6e3" text-anchor="middle" font-family="Inter,Arial,sans-serif">a renovated bathroom with a walk-in shower,</text><text x="600.0" y="582.0" font-size="28" fill="#c9d6e3" text-anchor="middle" font-family="Inter,Arial,sans-serif">chrome mixer and tiled niche</text>
+</svg>
