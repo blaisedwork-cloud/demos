@@ -389,13 +389,15 @@ p{margin:0 0 1em}
 @media (max-width:767px){.actionbar{display:grid}body{padding-bottom:76px}}
 
 /* ---------- reveal ---------- */
-.js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*90ms);animation:reveal-failsafe 0s 2.6s forwards}
-.js [data-reveal].in{opacity:1;transform:none;animation:none}
+.reveal-on [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.reveal-on [data-reveal].in{opacity:1;transform:none}
 @keyframes reveal-failsafe{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
-  .js [data-reveal]{opacity:1;transform:none;transition:none;animation:none}
+  .reveal-on [data-reveal]{opacity:1;transform:none;transition:none}
   .hero-media img{animation:none}
   .pulse{animation:none}
   .svc-card,.svc-media img,.g-item img{transition:none}
 }
 @media (max-width:600px){.em-long{display:none}.emergency-strip{font-size:.85rem}}
+
+@media print{[data-reveal]{opacity:1!important;transform:none!important}}

@@ -28,16 +28,21 @@
     });
   }
 
-  // Reveal on scroll, with a 2 second "show everything anyway" fallback
+  // Reveal on scroll: hidden only while the watcher runs; everything shows if it never fires, with reduced motion, or when printing
   var items = document.querySelectorAll('[data-reveal]');
   function showAll() { items.forEach(function (el) { el.classList.add('in'); }); }
   if (reduce || !('IntersectionObserver' in window)) { showAll(); }
   else {
+
+    var fired = false;
+    document.documentElement.classList.add('reveal-on');
+    setTimeout(function () { if (!fired) showAll(); }, 2500); // the watcher never ran: show everything
+    window.addEventListener('beforeprint', function () { showAll(); });
     var io = new IntersectionObserver(function (entries) {
+      fired = true;
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     items.forEach(function (el) { io.observe(el); });
-    setTimeout(showAll, 2000);
   }
 
   // Before / after slider

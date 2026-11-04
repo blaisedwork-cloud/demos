@@ -43,10 +43,16 @@
     });
   }
 
-  /* Reveal on scroll, with a 2 second failsafe */
+  /* Reveal on scroll: hidden only while the watcher runs; everything shows if it never fires, with reduced motion, or when printing */
   var revealEls = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && !reduce) {
+
+    var fired = false;
+    document.documentElement.classList.add('reveal-on');
+    setTimeout(function () { if (!fired) root.classList.add('reveal-all'); }, 2500); // the watcher never ran: show everything
+    window.addEventListener('beforeprint', function () { root.classList.add('reveal-all'); });
     var io = new IntersectionObserver(function (entries) {
+      fired = true;
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
@@ -55,7 +61,6 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
-  setTimeout(function () { root.classList.add('reveal-all'); }, 2000);
 
   /* Before / after slider */
   document.querySelectorAll('.ba input[type=range]').forEach(function (r) {

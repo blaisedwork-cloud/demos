@@ -428,10 +428,10 @@ ul{padding-left:1.2em}
 @media (max-width:767px){.actionbar{display:grid}body{padding-bottom:78px}}
 
 /* Reveal */
-.js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
-.js [data-reveal].in,.js.reveal-all [data-reveal]{opacity:1;transform:none}
+.reveal-on [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.reveal-on [data-reveal].in,.reveal-all [data-reveal]{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .js [data-reveal]{opacity:1;transform:none;transition:none}
+  .reveal-on [data-reveal]{opacity:1;transform:none;transition:none}
   .hero-media img{animation:none}
   .split .w>span{transform:none;animation:none}
   .circuit-trace path{animation:none;stroke-dashoffset:0}
@@ -448,3 +448,5 @@ ul{padding-left:1.2em}
 /* checks (verify.js): readable eyebrow on dark page heroes, visible focus on card links */
 .page-hero .eyebrow,.page-hero-split .eyebrow{color:#c9d2da}
 .svc-card h3 a:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+@media print{[data-reveal]{opacity:1!important;transform:none!important}}
